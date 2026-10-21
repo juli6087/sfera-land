@@ -1,0 +1,5607 @@
+/* ==========================================================================
+   СФЕРА. — ЧИСТЫЙ МИНИМАЛИСТИЧНЫЙ ДИЗАЙН (Apple / Clean SaaS)
+   Без пестрых бейджей, без цветных рамок, максимум воздуха и крупных скриншотов
+   ========================================================================== */
+
+:root {
+  --font-heading: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --color-primary: #00A3FF;
+  --color-primary-hover: #008fe0;
+
+  /* Свежий акцентный оттенок (Lime / Mint) */
+  --color-accent: #D1F7AE;
+  --color-accent-hover: #c4f39c;
+  --color-accent-subtle: #F1FCE8;
+  --color-accent-dark: #1F380A;
+  --color-accent-border: #B7EE7F;
+
+  --color-dark: #0A0F1D;
+  --color-body: #475569;
+  --color-muted: #94A3B8;
+  --color-border: #F1F5F9;
+  --color-border-subtle: rgba(0, 0, 0, 0.06);
+  --color-bg-page: #FFFFFF;
+  --color-bg-card: #F1F5F9;
+  --color-bg-card-hover: #E2E8F0;
+
+  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.03);
+  --shadow-screen: 0 30px 60px -15px rgba(0, 0, 0, 0.08);
+  --shadow-float: 0 20px 40px -10px rgba(0, 0, 0, 0.12);
+
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --radius-xl: 36px;
+  --radius-pill: 9999px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 500 !important;
+  letter-spacing: -0.02em;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-dark);
+  background-color: var(--color-bg-page);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+.sf-container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ==========================================================================
+   КНОПКИ — ЧИСТЫЕ И ЛАКОНИЧНЫЕ
+   ========================================================================== */
+.sf-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.sf-btn-primary {
+  background: var(--color-primary);
+  color: #FFFFFF;
+}
+
+.sf-btn-primary:hover {
+  background: var(--color-primary-hover);
+  transform: translateY(-1px);
+}
+
+.sf-btn-accent {
+  background: var(--color-accent);
+  color: var(--color-accent-dark);
+  box-shadow: 0 4px 14px rgba(209, 247, 174, 0.4);
+}
+
+.sf-btn-accent:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(209, 247, 174, 0.55);
+}
+
+.sf-btn-secondary {
+  background: var(--color-bg-card);
+  color: var(--color-dark);
+}
+
+.sf-btn-secondary:hover {
+  background: #E2E8F0;
+}
+
+.sf-btn-ghost {
+  background: transparent;
+  color: var(--color-body);
+}
+
+.sf-btn-ghost:hover {
+  color: var(--color-dark);
+}
+
+.sf-btn-white {
+  background: #FFFFFF;
+  color: var(--color-dark);
+}
+
+.sf-btn-white:hover {
+  background: #F8FAFC;
+}
+
+.sf-btn-ghost-white {
+  background: rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+}
+
+.sf-btn-ghost-white:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.sf-btn-sm {
+  padding: 8px 16px;
+  font-size: 0.85rem;
+}
+
+.sf-btn-lg {
+  padding: 14px 28px;
+  font-size: 1rem;
+}
+
+.sf-btn-xl {
+  padding: 16px 32px;
+  font-size: 1.05rem;
+}
+
+.sf-btn-block {
+  width: 100%;
+}
+
+/* ==========================================================================
+   ШАПКА (NAVBAR)
+   ========================================================================== */
+.sf-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--color-border-subtle);
+  padding: 18px 0;
+}
+
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sf-brand {
+  display: flex;
+  align-items: center;
+}
+
+.brand-text {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  color: var(--color-dark);
+}
+
+.brand-dot {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* ==========================================================================
+   1. HERO — ПОЛНАЯ ШИРИНА С ПАНОРАМНЫМ СКРИНШОТОМ ГЛАВНОЙ СТРАНИЦЫ
+   ========================================================================== */
+.hero-split-section {
+  position: relative;
+  overflow: hidden;
+  padding: 60px 0 100px;
+  background: #FFFFFF;
+}
+
+.hero-container-rel {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-header-center {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 960px;
+  margin: 0 auto 52px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-accent-subtle);
+  color: var(--color-accent-dark);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 22px;
+  letter-spacing: -0.01em;
+}
+
+.eyebrow-sparkle {
+  color: #16A34A;
+  font-size: 0.9rem;
+}
+
+.hero-heading {
+  font-size: 3.4rem;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--color-dark);
+  margin-bottom: 24px;
+  max-width: 880px;
+}
+
+.hero-subheading {
+  font-size: 1.15rem;
+  line-height: 1.65;
+  color: var(--color-body);
+  margin-bottom: 34px;
+  max-width: 720px;
+}
+
+.hero-cta-group {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Сцена Hero: Обертка для выступающих плашек и суженного мокапа */
+.hero-stage-wrapper {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 30px 40px;
+}
+
+/* ==========================================================================
+   КОНЦЕНТРИЧЕСКИЕ ОРБИТАЛЬНЫЕ КРУГИ (СФЕРЫ) — РАССЕЯННЫЕ, БЕЗ ПУНКТИРА, БЕЗ ВРАЩЕНИЯ
+   ========================================================================== */
+.hero-orbital-system {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1500px;
+  height: 1500px;
+  pointer-events: none;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orbit-circle {
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  will-change: transform, opacity, box-shadow;
+  border-style: solid;
+}
+
+/* Внутренняя сфера: мягкая сплошная линия с рассеянным неоново-салатовым свечением */
+.orbit-1 {
+  width: 760px;
+  height: 760px;
+  border-width: 1.5px;
+  border-color: rgba(163, 230, 53, 0.45);
+  box-shadow: 0 0 35px 2px rgba(163, 230, 53, 0.25);
+  animation: orbitPulseSmooth1 6s ease-in-out infinite alternate;
+}
+
+/* Средняя сфера: широкая, рассеянная, без пунктира */
+.orbit-2 {
+  width: 1100px;
+  height: 1100px;
+  border-width: 1.5px;
+  border-color: rgba(163, 230, 53, 0.35);
+  box-shadow: 0 0 45px 3px rgba(163, 230, 53, 0.2);
+  animation: orbitPulseSmooth2 8s ease-in-out infinite alternate;
+}
+
+/* Внешняя масштабная сфера: очень мягкая, растворяющаяся */
+.orbit-3 {
+  width: 1440px;
+  height: 1440px;
+  border-width: 1.5px;
+  border-color: rgba(163, 230, 53, 0.22);
+  box-shadow: 0 0 55px 4px rgba(163, 230, 53, 0.14);
+  animation: orbitPulseSmooth3 10s ease-in-out infinite alternate;
+}
+
+/* Центральное рассеянное свечение (мягкое фоновое био-свечение под мокапом) */
+.orbit-glow-center {
+  position: absolute;
+  width: 820px;
+  height: 820px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(209, 247, 174, 0.55) 0%, rgba(183, 238, 127, 0.22) 40%, rgba(255, 255, 255, 0) 70%);
+  filter: blur(55px);
+  animation: glowCenterPulse 7s ease-in-out infinite alternate;
+}
+
+/* Только плавная пульсация масштаба и прозрачности (БЕЗ ВРАЩЕНИЯ) */
+@keyframes orbitPulseSmooth1 {
+  0% {
+    transform: translate(-50%, -50%) scale(0.97);
+    opacity: 0.55;
+    box-shadow: 0 0 25px 1px rgba(163, 230, 53, 0.2);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1.03);
+    opacity: 0.95;
+    box-shadow: 0 0 45px 4px rgba(163, 230, 53, 0.35);
+  }
+}
+
+@keyframes orbitPulseSmooth2 {
+  0% {
+    transform: translate(-50%, -50%) scale(0.98);
+    opacity: 0.45;
+    box-shadow: 0 0 30px 2px rgba(163, 230, 53, 0.15);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1.025);
+    opacity: 0.85;
+    box-shadow: 0 0 55px 5px rgba(163, 230, 53, 0.28);
+  }
+}
+
+@keyframes orbitPulseSmooth3 {
+  0% {
+    transform: translate(-50%, -50%) scale(0.985);
+    opacity: 0.3;
+    box-shadow: 0 0 35px 2px rgba(163, 230, 53, 0.1);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1.02);
+    opacity: 0.7;
+    box-shadow: 0 0 65px 6px rgba(163, 230, 53, 0.22);
+  }
+}
+
+@keyframes glowCenterPulse {
+  0% {
+    transform: scale(0.92);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1.08);
+    opacity: 0.9;
+  }
+}
+
+/* Компактный мокап браузера — сужен по ширине до 82% */
+.hero-browser-mockup {
+  width: 82%;
+  margin: 0 auto;
+  background: #FFFFFF;
+  border-radius: var(--radius-xl);
+  box-shadow: 0 30px 70px -15px rgba(10, 15, 29, 0.08);
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+
+.screen-mac-bar {
+  background: #FAFAFA;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.mac-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.m-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.m-dot.red {
+  background: #E2E8F0;
+}
+
+.m-dot.yellow {
+  background: #E2E8F0;
+}
+
+.m-dot.green {
+  background: #CBD5E1;
+}
+
+.screen-url-capsule {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  font-weight: 500;
+  background: #FFFFFF;
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+}
+
+.screen-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 0 2px rgba(183, 238, 127, 0.4);
+}
+
+.hero-screen-canvas {
+  position: relative;
+  background: #F8FAFC;
+}
+
+.hero-panorama-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================================================
+   ПЛАШКИ С ИНФОГРАФИКОЙ (СТИЛЬ REF2 — ВЫРАЗИТЕЛЬНЫЕ, АКЦЕНТНЫЕ, НЕ СЛИВАЮТСЯ)
+   ========================================================================== */
+.hero-float-card {
+  position: absolute;
+  background: #FFFFFF;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.08), 0 2px 10px rgba(0, 0, 0, 0.04);
+  z-index: 10;
+  padding: 18px 22px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hero-float-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 60px -12px rgba(15, 23, 42, 0.22), 0 6px 16px rgba(15, 23, 42, 0.08);
+}
+
+.card-chart-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.card-head-title {
+  font-family: var(--font-heading);
+  font-size: 0.96rem;
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+.card-head-badge {
+  margin-left: auto;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-muted);
+  background: var(--color-bg-card);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.card-head-badge.text-blue {
+  color: #0284C7;
+  background: rgba(0, 163, 255, 0.12);
+}
+
+.card-head-badge.text-green {
+  color: var(--color-accent-dark);
+  background: var(--color-accent);
+}
+
+.card-dot-pulse {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #00A3FF;
+  box-shadow: 0 0 0 3px rgba(0, 163, 255, 0.2);
+}
+
+/* 1. Плашка: Синхронизация Wildberries (справа сверху на месте стиля) */
+.card-sync {
+  top: 35px;
+  right: -40px;
+  left: auto;
+  min-width: 320px;
+}
+
+.wb-logo-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #CB11AB, #481173);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(203, 17, 171, 0.25);
+  flex-shrink: 0;
+}
+
+.wb-logo-icon span {
+  font-family: var(--font-heading);
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 0.92rem;
+  letter-spacing: -0.04em;
+}
+
+.wb-head-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.wb-head-sub {
+  font-size: 0.72rem;
+  color: var(--color-muted);
+}
+
+.wb-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 4px;
+}
+
+.wb-metric-box {
+  background: var(--color-bg-card);
+  padding: 12px 16px;
+  border-radius: 12px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.wb-metric-num {
+  font-family: var(--font-heading);
+  font-size: 1.55rem;
+  font-weight: 500;
+  color: var(--color-dark);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.wb-metric-sub {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+.wb-sync-indicator-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: var(--color-accent-dark);
+  font-weight: 600;
+  background: var(--color-accent-subtle);
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.wb-sync-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #65A30D;
+  box-shadow: 0 0 0 3px var(--color-accent);
+}
+
+/* 2. Плашка 2: Визуальный редактор (справа сверху — ультраминимализм) */
+.card-editor {
+  top: 40px;
+  right: -30px;
+  width: auto;
+  min-width: 285px;
+  max-width: 310px;
+  padding: 14px 18px;
+}
+
+.card-editor .card-chart-head {
+  margin-bottom: 12px;
+}
+
+.editor-widget-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: #F1F5F9;
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: none;
+}
+
+.editor-palette-capsule {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.e-bubble {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.e-bubble:hover {
+  transform: scale(1.15);
+}
+
+.e-bubble.blue {
+  background: #00A3FF;
+}
+
+.e-bubble.lime {
+  background: var(--color-accent);
+}
+
+.e-bubble.purple {
+  background: #8B5CF6;
+}
+
+.e-bubble.amber {
+  background: #F59E0B;
+}
+
+/* Без черной обводки: чистый мягкий белый ободок с легким ореолом */
+.e-bubble.active {
+  transform: scale(1.18);
+  box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px #00A3FF;
+}
+
+.editor-font-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #FFFFFF;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-dark);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  border: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.font-tag-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 0 2px rgba(183, 238, 127, 0.5);
+  flex-shrink: 0;
+}
+
+/* 3. Плашка 3: Карточка товара 3:4 (слева по центру / снизу) */
+.card-aspect {
+  top: 215px;
+  left: -65px;
+  max-width: 260px;
+  padding: 12px 16px;
+}
+
+.aspect-icon-frame {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(139, 92, 246, 0.1);
+  color: #7C3AED;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.card-head-badge.text-purple {
+  color: #7C3AED;
+  background: rgba(139, 92, 246, 0.1);
+}
+
+.aspect-card-body {
+  padding-top: 4px;
+}
+
+.aspect-visual-diagram {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--color-bg-card);
+  border: none;
+  padding: 10px 12px;
+  border-radius: 12px;
+}
+
+/* Иллюстрация пропорции 3:4 */
+.diagram-canvas-34 {
+  width: 50px;
+  height: 66px;
+  background: #FFFFFF;
+  border: none;
+  border-radius: 9px;
+  box-shadow: 0 4px 14px rgba(10, 15, 29, 0.08);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px;
+  flex-shrink: 0;
+}
+
+.diagram-tag-ratio {
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #65A30D;
+  line-height: 1;
+}
+
+.diagram-mock-photo {
+  height: 32px;
+  background: #F1F5F9;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.d-photo-sun {
+  position: absolute;
+  top: 4px;
+  right: 5px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #F59E0B;
+}
+
+.d-photo-mountain {
+  position: absolute;
+  bottom: 0;
+  left: 3px;
+  right: 3px;
+  height: 14px;
+  background: #CBD5E1;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.diagram-aspect-notes {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.aspect-note-bold {
+  font-family: var(--font-heading);
+  font-size: 0.96rem;
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+.aspect-note-sub {
+  font-size: 0.74rem;
+  color: var(--color-muted);
+  line-height: 1.35;
+}
+
+/* 3. Плашка 3: Прибыль 0% комиссий (справа снизу — акцентная плашка) */
+.card-revenue {
+  bottom: 40px;
+  right: -25px;
+  min-width: 295px;
+  background: var(--color-accent);
+  border: none;
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.12), 0 2px 10px rgba(0, 0, 0, 0.04);
+  padding: 16px 20px;
+}
+
+.card-revenue .card-chart-head {
+  margin-bottom: 12px;
+}
+
+.card-revenue .card-head-title {
+  color: var(--color-accent-dark);
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.revenue-widget-body {
+  padding-top: 0;
+}
+
+.revenue-bars-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.micro-bars-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 42px;
+  padding: 5px 7px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  flex-shrink: 0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.m-bar {
+  width: 6px;
+  border-radius: 2px;
+  background: #D9E5C9;
+}
+
+.m-bar.h1 {
+  height: 14px;
+}
+
+.m-bar.h2 {
+  height: 20px;
+}
+
+.m-bar.h3 {
+  height: 26px;
+}
+
+.m-bar.h4.active {
+  height: 32px;
+  background: #1F380A;
+}
+
+.revenue-sum-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.v-card-sum {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1F380A;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.v-card-sub {
+  font-size: 0.74rem;
+  color: #3F5E1B;
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+.text-green {
+  color: #1F380A;
+  background: #FFFFFF;
+  font-weight: 600;
+  font-size: 0.72rem;
+  padding: 3px 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* ==========================================================================
+   2. ЭКРАН 2. ОТКАЗ ОТ ЛИШНЕГО (ПРОБЛЕМА → РЕШЕНИЕ)
+   ========================================================================== */
+.screen2-bento-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-rows: auto auto;
+  gap: 24px;
+}
+
+.s2-bento-card {
+  background: #F1F5F9;
+  /* строго по правилу серого фона #F1F5F9 */
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(10, 15, 29, 0.03);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.s2-bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(10, 15, 29, 0.08);
+}
+
+/* 1. Карточка с фото команды за ноутбуком (Верхняя левая) */
+.card-team-visual {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  background: #F1F5F9;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  overflow: hidden;
+  padding: 0;
+}
+
+.s2-team-img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 2. Карточка 1: Запуск за пару вечеров с фирменной иконкой приложения Сфера (Верхняя правая) */
+.card-quick-launch {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  padding: 36px 32px;
+  justify-content: space-between;
+  cursor: default;
+}
+
+/* Нарисованная микро-иллюстрация готовой витрины сайта */
+.s2-launch-canvas-art {
+  display: flex;
+  align-items: center;
+  background: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: 0 4px 18px rgba(10, 15, 29, 0.04);
+  margin-bottom: 24px;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: s2CanvasFloat 6s ease-in-out infinite;
+}
+
+@keyframes s2CanvasFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.card-quick-launch:hover .s2-launch-canvas-art {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(10, 15, 29, 0.08);
+}
+
+.s2-art-app-col {
+  flex-shrink: 0;
+}
+
+.s2-app-icon-hero {
+  width: 82px;
+  height: 82px;
+  border-radius: 22px;
+  box-shadow: 0 10px 24px rgba(0, 163, 255, 0.18);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: s2IconPulse 4.5s ease-in-out infinite;
+}
+
+@keyframes s2IconPulse {
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 10px 24px rgba(0, 163, 255, 0.18);
+  }
+
+  50% {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 16px 30px rgba(0, 163, 255, 0.28);
+  }
+}
+
+.card-quick-launch:hover .s2-app-icon-hero {
+  transform: translateY(-7px) scale(1.05);
+  box-shadow: 0 20px 36px rgba(0, 163, 255, 0.32);
+}
+
+.s2-app-icon-hero-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 22px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Нарисованное окно браузера */
+.s2-art-browser-window {
+  flex: 1;
+  background: #F8FAFC;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(10, 15, 29, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-quick-launch:hover .s2-art-browser-window {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(10, 15, 29, 0.06);
+}
+
+.s2-art-browser-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  background: #F1F5F9;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.s2-art-traffic-dots {
+  display: flex;
+  gap: 4px;
+}
+
+.s2-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.s2-dot.red {
+  background: #FDA4AF;
+}
+
+.s2-dot.yellow {
+  background: #FDE047;
+}
+
+.s2-dot.green {
+  background: #86EFAC;
+  animation: s2DotPulse 3s ease-in-out infinite;
+}
+
+@keyframes s2DotPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(134, 239, 172, 0);
+  }
+
+  50% {
+    transform: scale(1.25);
+    box-shadow: 0 0 8px rgba(134, 239, 172, 0.6);
+  }
+}
+
+.s2-art-address-bar {
+  flex: 1;
+  background: #FFFFFF;
+  border-radius: 6px;
+  padding: 2px 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.68rem;
+  color: #475569;
+  font-family: var(--font-heading);
+  white-space: nowrap;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(10, 15, 29, 0.03);
+}
+
+.s2-art-ssl {
+  font-size: 0.62rem;
+  opacity: 0.7;
+}
+
+.s2-art-url {
+  font-weight: 500;
+  color: #0F172A;
+}
+
+.s2-art-browser-content {
+  display: flex;
+  gap: 14px;
+  padding: 16px 14px;
+}
+
+.s2-art-mini-card {
+  flex: 1;
+  background: #FFFFFF;
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 4px 14px rgba(10, 15, 29, 0.06);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.s2-art-mini-card:nth-child(1) {
+  animation: s2CardHoverFloat1 4.5s ease-in-out infinite;
+}
+
+.s2-art-mini-card:nth-child(2) {
+  animation: s2CardHoverFloat2 4.5s ease-in-out infinite 0.6s;
+}
+
+.s2-art-mini-card:nth-child(3) {
+  animation: s2CardHoverFloat1 4.5s ease-in-out infinite 1.2s;
+}
+
+@keyframes s2CardHoverFloat1 {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(10, 15, 29, 0.07);
+  }
+}
+
+@keyframes s2CardHoverFloat2 {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(10, 15, 29, 0.07);
+  }
+}
+
+.s2-art-mini-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.75), transparent);
+  transform: skewX(-20deg);
+  pointer-events: none;
+  animation: s2CardGleam 4.5s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+.s2-art-mini-card:nth-child(2)::after {
+  animation-delay: 1.5s;
+}
+
+.s2-art-mini-card:nth-child(3)::after {
+  animation-delay: 3s;
+}
+
+@keyframes s2CardGleam {
+
+  0%,
+  40% {
+    left: -120%;
+  }
+
+  75%,
+  100% {
+    left: 200%;
+  }
+}
+
+.card-quick-launch:hover .s2-art-mini-card {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(10, 15, 29, 0.09);
+}
+
+.s2-art-ssl-svg {
+  stroke: #64748B;
+  flex-shrink: 0;
+}
+
+.s2-art-full-card-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  object-fit: contain;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-quick-launch:hover .s2-art-full-card-img {
+  transform: scale(1.03);
+}
+
+.s2-card-body {
+  margin-top: auto;
+}
+
+/* Нижняя бенто-строка с индивидуальными пропорциями (Карточка 3 уже, Карточка 4 шире) */
+.s2-bento-row-lower {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: 24px;
+}
+
+/* 3. Карточка 3: Любой формат продаж (Сценарный стек — более компактная по ширине) */
+.card-business-fit {
+  padding: 32px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* 4. Карточка 4: Нейро-копирайтер внутри сайта (Более широкая) */
+.card-ai-writer {
+  padding: 32px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.s2-ai-mockup-frame {
+  background: #FFFFFF;
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 4px 18px rgba(10, 15, 29, 0.04);
+  margin-bottom: 24px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.card-ai-writer:hover .s2-ai-mockup-frame {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(10, 15, 29, 0.07);
+}
+
+.s2-ai-mockup-top {
+  margin-bottom: 10px;
+}
+
+.s2-ai-field-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.s2-ai-field-name {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #0F172A;
+}
+
+.s2-ai-spark-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(0, 163, 255, 0.08);
+  color: #00A3FF;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 0.68rem;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.card-ai-writer:hover .s2-ai-spark-tag {
+  background: rgba(0, 163, 255, 0.14);
+}
+
+.s2-ai-spark-icon {
+  stroke: #00A3FF;
+  animation: s2SparklePulse 3s ease-in-out infinite;
+}
+
+@keyframes s2SparklePulse {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.15) rotate(15deg);
+  }
+}
+
+.s2-ai-editor-box {
+  background: #F8FAFC;
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.s2-ai-typing-stream {
+  font-size: 0.76rem;
+  color: #334155;
+  line-height: 1.45;
+  font-style: italic;
+  position: relative;
+}
+
+.s2-ai-caret {
+  display: inline-block;
+  width: 2px;
+  height: 12px;
+  background: #00A3FF;
+  margin-left: 2px;
+  vertical-align: middle;
+  animation: s2BlinkCaret 1s step-end infinite;
+}
+
+@keyframes s2BlinkCaret {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.s2-ai-box-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(226, 232, 240, 0.8);
+  padding-top: 8px;
+  font-size: 0.66rem;
+}
+
+.s2-ai-status-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #10B981;
+  font-weight: 500;
+}
+
+.s2-ai-status-note svg {
+  stroke: #10B981;
+}
+
+.s2-ai-tokens-count {
+  color: #94A3B8;
+  font-family: var(--font-heading);
+}
+
+.s2-fit-head {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.s2-scenarios-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.s2-scenario-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #FFFFFF;
+  padding: 12px 14px;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(10, 15, 29, 0.04);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.s2-scenario-row:hover {
+  transform: translateX(4px);
+  background: #FFFFFF;
+  box-shadow: 0 6px 18px rgba(10, 15, 29, 0.07);
+}
+
+.s2-row-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(10, 15, 29, 0.06);
+}
+
+.s2-row-icon.wb {
+  background: #CB11AB;
+  color: #FFFFFF;
+}
+
+.s2-row-icon.yclients {
+  background: #00A3FF;
+  color: #FFFFFF;
+}
+
+.s2-row-icon.b2b {
+  background: #cef3ae;
+  color: #0A0F1D;
+}
+
+.s2-row-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.s2-row-title {
+  font-family: var(--font-heading);
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: #0F172A;
+  line-height: 1.25;
+}
+
+.s2-row-hint {
+  font-size: 0.72rem;
+  color: #64748B;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.s2-row-check {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #F1F5F9;
+  color: #10B981;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.s2-scenario-row:hover .s2-row-check {
+  background: #cef3ae;
+  color: #0A0F1D;
+  transform: scale(1.08);
+}
+
+.clean-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.benefit-card {
+  background: #F1F5F9;
+  border-radius: 28px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 20px rgba(10, 15, 29, 0.03);
+}
+
+.benefit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(10, 15, 29, 0.08);
+}
+
+.benefit-card-subtle {
+  background: #F4FBF0;
+  /* легчайший пастельно-салатовый оттенок */
+}
+
+.benefit-visual-box {
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 22px 18px;
+  margin-bottom: 24px;
+  min-height: 136px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 12px rgba(10, 15, 29, 0.04);
+}
+
+.benefit-title {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 500 !important;
+  color: var(--color-dark);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.benefit-desc {
+  font-size: 0.98rem;
+  color: var(--color-body);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* 1. Инфографика шагов Запуск за пару вечеров */
+.benefit-speed-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 6px 0;
+}
+
+.benefit-flow-step {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #F1F5F9;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  color: var(--color-dark);
+  font-weight: 500;
+}
+
+.benefit-flow-step.active {
+  background: #D1F7AE;
+  color: #1F380A;
+}
+
+.flow-pill-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: currentColor;
+}
+
+.benefit-flow-arrow {
+  color: #94A3B8;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* 2. Инфографика Всё для продаж из коробки */
+.benefit-toolkit-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  width: 100%;
+  padding: 4px 0;
+}
+
+.toolkit-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #F1F5F9;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+.tool-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #00A3FF;
+}
+
+/* 3. Инфографика Сценарии бизнеса */
+.benefit-scenarios-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  width: 100%;
+  padding: 4px 0;
+}
+
+.scenario-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #FFFFFF;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 1px 4px rgba(10, 15, 29, 0.05);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+.scenario-icon {
+  font-size: 0.9rem;
+}
+
+.clean-metrics-section {
+  padding: 60px 0 80px;
+  background: #FFFFFF;
+}
+
+.clean-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.metric-card {
+  background: #F1F5F9;
+  border-radius: 24px;
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 18px rgba(10, 15, 29, 0.03);
+}
+
+.metric-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(10, 15, 29, 0.08);
+}
+
+.metric-card-accent {
+  background: var(--color-accent);
+  /* #D1F7AE */
+  box-shadow: 0 8px 26px rgba(10, 15, 29, 0.07);
+}
+
+.metric-card-accent:hover {
+  box-shadow: 0 16px 36px rgba(10, 15, 29, 0.12);
+}
+
+.metric-card-header {
+  margin-bottom: 14px;
+}
+
+.metric-step-badge {
+  font-family: var(--font-heading);
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: var(--color-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.metric-card-accent .metric-step-badge {
+  color: #2F4D12;
+}
+
+/* ==========================================================================
+   МИКРО-ИНФОГРАФИКА ДЛЯ ШАГОВ (БОЛЕЕ ИНФОРМАТИВНАЯ, ЧИСТАЯ)
+   ========================================================================== */
+.metric-visual-box {
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 18px 14px;
+  margin-bottom: 18px;
+  min-height: 128px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 10px rgba(10, 15, 29, 0.04);
+}
+
+.metric-card-accent .metric-visual-box {
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 4px 16px rgba(31, 56, 10, 0.09);
+}
+
+.visual-meta-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  color: var(--color-muted);
+  font-weight: 500;
+  background: #F1F5F9;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.visual-meta-chip.accent {
+  background: #F1FCE8;
+  color: #1F380A;
+}
+
+.v-chip-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #10B981;
+}
+
+/* 1. Инфографика моста API */
+.visual-api-bridge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 2px 4px;
+}
+
+.v-service-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.v-service-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #FFFFFF;
+}
+
+.v-service-box.wb .v-service-logo {
+  background: linear-gradient(135deg, #CB11AB, #481173);
+}
+
+.v-service-box.sfera {
+  width: 48px;
+}
+
+.v-service-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #F1F5F9;
+  border: 1.5px solid #00A3FF;
+  position: relative;
+}
+
+.v-service-dot::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #00A3FF;
+}
+
+.v-service-name {
+  font-size: 0.68rem;
+  color: var(--color-dark);
+  font-weight: 500;
+}
+
+.v-sync-stream {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  padding: 0 8px;
+}
+
+.v-stream-track {
+  position: relative;
+  width: 100%;
+  height: 3px;
+  background: #E2E8F0;
+  border-radius: 3px;
+}
+
+.v-stream-pulse {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: #00A3FF;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  animation: streamMove 1.6s ease-in-out infinite;
+  box-shadow: 0 0 6px rgba(0, 163, 255, 0.6);
+}
+
+@keyframes streamMove {
+  0% {
+    left: 0%;
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    left: 90%;
+    opacity: 0.3;
+  }
+}
+
+.v-stream-label {
+  font-size: 0.65rem;
+  color: var(--color-muted);
+  font-weight: 500;
+}
+
+/* 2. Инфографика каталога 3:4 */
+.visual-catalog-sync {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.v-product-mini {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #F1F5F9;
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 1px solid #E2E8F0;
+  width: 100%;
+}
+
+.v-prod-photo {
+  width: 32px;
+  height: 42px;
+  border-radius: 6px;
+  background: #E0F2FE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.v-aspect-mark {
+  font-family: var(--font-heading);
+  font-size: 0.6rem;
+  font-weight: 500;
+  color: #0284C7;
+}
+
+.v-prod-details {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+}
+
+.v-prod-title-bar {
+  width: 70%;
+  height: 5px;
+  background: #CBD5E1;
+  border-radius: 3px;
+}
+
+.v-prod-price-tag {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+.v-prod-status {
+  font-size: 0.64rem;
+  color: #16A34A;
+  font-weight: 500;
+}
+
+/* 3. Инфографика мокапа витрины magazin.ru */
+.visual-storefront-mock {
+  width: 100%;
+  background: #F1F5F9;
+  border-radius: 12px;
+  border: 1px solid #E2E8F0;
+  overflow: hidden;
+}
+
+.v-store-header {
+  background: #EDF2F7;
+  padding: 5px 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.v-store-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.v-store-dot.red {
+  background: #FDA4AF;
+}
+
+.v-store-dot.yellow {
+  background: #FDE047;
+}
+
+.v-store-dot.green {
+  background: #86EFAC;
+}
+
+.v-store-domain {
+  margin-left: auto;
+  font-size: 0.62rem;
+  color: var(--color-muted);
+  font-weight: 500;
+  background: #FFFFFF;
+  padding: 1px 8px;
+  border-radius: 10px;
+}
+
+.v-store-body {
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.v-time-badge {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #00A3FF;
+}
+
+.v-status-live {
+  font-size: 0.68rem;
+  color: #15803D;
+  font-weight: 500;
+}
+
+/* 4. Инфографика 0% комиссии vs 100% выручки */
+.visual-profit-comparison {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  padding: 4px 0;
+}
+
+.v-split-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.v-big-zero {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #1F380A;
+  line-height: 1;
+}
+
+.v-zero-caption {
+  font-size: 0.64rem;
+  color: #4A6E24;
+  font-weight: 500;
+  margin-top: 3px;
+}
+
+.v-profit-divider {
+  width: 1px;
+  height: 36px;
+  background: rgba(31, 56, 10, 0.15);
+}
+
+.v-big-full {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #00A3FF;
+  line-height: 1;
+}
+
+.v-full-caption {
+  font-size: 0.64rem;
+  color: var(--color-dark);
+  font-weight: 500;
+  margin-top: 3px;
+}
+
+/* Типографика карточек */
+.metric-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 500 !important;
+  color: var(--color-dark);
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+
+.metric-label {
+  font-size: 0.86rem;
+  color: var(--color-body);
+  line-height: 1.45;
+  margin-top: 0;
+}
+
+.metric-card-accent .metric-label {
+  color: rgba(10, 15, 29, 0.85);
+}
+
+/* ==========================================================================
+   3. ЗАГОЛОВКИ СЕКЦИЙ — МИНИМАЛИЗМ
+   ========================================================================== */
+.section-title-center {
+  font-size: 2.6rem;
+  text-align: center;
+  letter-spacing: -0.035em;
+  color: var(--color-dark);
+  max-width: 860px;
+  margin: 0 auto 16px;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+.section-subtitle-center {
+  font-size: 1.15rem;
+  text-align: center;
+  color: var(--color-body);
+  max-width: 660px;
+  margin: 0 auto 56px;
+  line-height: 1.55;
+  text-wrap: balance;
+}
+
+/* ==========================================================================
+   3. ЭКРАН 3: ПРОСТОЙ И ДОСТУПНЫЙ САЙТ (ВСЁ ДЛЯ ПРОДАЖ)
+   ========================================================================== */
+.screen3-sales-ready-section {
+  padding: 100px 0;
+  background: #F1F5F9;
+}
+
+/* Бенто-сетка Экрана 3: верхняя карточка во всю ширину + нижний ряд из 3 сценариев */
+.s3-bento-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.s3-bento-card {
+  background: #FFFFFF;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(10, 15, 29, 0.03);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.s3-bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(10, 15, 29, 0.08);
+}
+
+.card-s3-fullwidth {
+  width: 100%;
+}
+
+.s3-bento-row-bottom {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+.card-s3-mini-feature {
+  padding: 32px 28px;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.s3-mini-feat-visual {
+  background: #F8FAFC;
+  border-radius: 20px;
+  padding: 24px 20px;
+  min-height: 108px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.s3-mock-cart-row {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.s3-mock-cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #FFFFFF;
+  padding: 8px 12px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(10, 15, 29, 0.04);
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #0F172A;
+}
+
+.s3-cart-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10B981;
+}
+
+.s3-cart-val {
+  color: #00A3FF;
+}
+
+.s3-mock-cart-badge {
+  text-align: center;
+  font-size: 0.72rem;
+  color: #15803D;
+  background: #F0FDF4;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.s3-market-chips-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.s3-market-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  background: #FFFFFF;
+  border: 1px solid rgba(148, 163, 184, 0.32);
+  border-radius: 12px;
+  font-family: var(--font-heading);
+  font-size: 0.94rem;
+  font-weight: 500;
+  color: #334155;
+  box-shadow: 0 2px 6px rgba(10, 15, 29, 0.03);
+  transition: all 0.2s ease;
+}
+
+.card-s3-mini-feature:hover .s3-market-chip {
+  border-color: rgba(148, 163, 184, 0.5);
+  color: #0F172A;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(10, 15, 29, 0.06);
+}
+
+.s3-scenario-badges-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.s3-booking-preview-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.s3-booking-btn-mock {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #00A3FF;
+  color: #FFFFFF;
+  padding: 11px 20px;
+  border-radius: 12px;
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 500;
+  box-shadow: 0 4px 14px rgba(0, 163, 255, 0.25);
+  transition: transform 0.2s ease;
+}
+
+.card-s3-mini-feature:hover .s3-booking-btn-mock {
+  transform: translateY(-1px);
+}
+
+.s3-booking-link-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-size: 0.74rem;
+  color: #64748B;
+  background: #FFFFFF;
+  padding: 6px 12px;
+  border-radius: 10px;
+  border: 1px dashed rgba(148, 163, 184, 0.4);
+}
+
+.s3-cart-preview-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  width: 100%;
+}
+
+.s3-cart-btn-circle-ui {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #00A3FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 22px rgba(0, 163, 255, 0.35);
+  flex-shrink: 0;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-s3-mini-feature:hover .s3-cart-btn-circle-ui {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 12px 28px rgba(0, 163, 255, 0.42);
+}
+
+.s3-cart-count-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #E11D48;
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 2px 8px rgba(225, 29, 72, 0.35);
+}
+
+.s3-cart-status-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #0F172A;
+  background: #FFFFFF;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  box-shadow: 0 2px 6px rgba(10, 15, 29, 0.03);
+}
+
+.s3-cart-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10B981;
+  flex-shrink: 0;
+}
+
+.s3-badge-ratio-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  border-radius: 9px;
+  background: #0F172A;
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+.s3-card-footer {
+  margin-top: auto;
+}
+
+/* Коллаж продающих элементов внутри главной карточки */
+.s3-collage-stage {
+  position: relative;
+  width: 100%;
+  min-height: 440px;
+  background: #F8FAFC;
+  border-radius: 22px;
+  padding: 34px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+/* Фирменная иконка приложения Сфера (парящая слева сверху) */
+.s3-collage-app-icon {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  width: 68px;
+  height: 68px;
+  border-radius: 20px;
+  box-shadow: 0 10px 24px rgba(0, 163, 255, 0.2);
+  z-index: 5;
+  animation: s3FloatAppIcon 6s ease-in-out infinite;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+}
+
+@keyframes s3FloatAppIcon {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(-3deg);
+  }
+}
+
+.card-s3-hero-collage:hover .s3-collage-app-icon {
+  transform: translateY(-7px) scale(1.05);
+  box-shadow: 0 14px 30px rgba(0, 163, 255, 0.28);
+}
+
+.s3-app-icon-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-s3-hero-collage {
+  padding: 0;
+  justify-content: flex-start;
+  background: #FFFFFF;
+}
+
+.s3-detail-window-top {
+  padding: 14px 20px;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+}
+
+.s3-detail-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.s3-dot-mini {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #CBD5E1;
+}
+
+.s3-detail-tagline {
+  font-family: var(--font-heading);
+  font-size: 0.74rem;
+  color: #64748B;
+  font-weight: 500;
+}
+
+/* Сценический блок с мокапом окна браузера */
+.s3-collage-stage.s3-stage-with-mockup {
+  position: relative;
+  width: 100%;
+  background: #F8FAFC;
+  padding: 44px 36px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+/* Мокап окна браузера */
+.s3-browser-frame-mockup {
+  width: 100%;
+  max-width: 960px;
+  background: #FFFFFF;
+  border-radius: 18px;
+  box-shadow: 0 16px 40px rgba(10, 15, 29, 0.08), 0 2px 8px rgba(10, 15, 29, 0.03);
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.card-s3-hero-collage:hover .s3-browser-frame-mockup {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 50px rgba(10, 15, 29, 0.12);
+}
+
+.s3-browser-frame-top {
+  padding: 10px 16px;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.s3-dot-mini.red { background: #FDA4AF; }
+.s3-dot-mini.yellow { background: #FDE047; }
+.s3-dot-mini.green { background: #86EFAC; }
+
+.s3-browser-search-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #F1F5F9;
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  color: #475569;
+  flex: 1;
+  max-width: 440px;
+}
+
+.s3-browser-search-pill svg {
+  color: #94A3B8;
+  flex-shrink: 0;
+}
+
+.s3-browser-mockup-label {
+  margin-left: auto;
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  color: #94A3B8;
+  font-weight: 500;
+}
+
+.s3-browser-frame-content {
+  width: 100%;
+  line-height: 0;
+  background: #FFFFFF;
+}
+
+.s3-browser-shot-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.s3-footer-bordered {
+  padding: 24px 32px;
+  background: #FFFFFF;
+  border-top: 1px solid rgba(15, 23, 42, 0.05);
+  margin-top: auto;
+}
+
+/* 2. Общие стили плашек-бейджей (размещены по углам сцены без перекрытия скриншота) */
+.s3-collage-float-badge {
+  position: absolute;
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 12px 18px;
+  box-shadow: 0 16px 36px rgba(10, 15, 29, 0.12), 0 3px 10px rgba(10, 15, 29, 0.04);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 4;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+}
+
+/* 3. Бейдж формата 3:4 (Сверху справа, над мокапом) */
+.s3-badge-cart {
+  top: 14px;
+  right: 28px;
+  animation: s3FloatCart 5s ease-in-out infinite;
+}
+
+@keyframes s3FloatCart {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.s3-badge-cart-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.s3-badge-cart-text {
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #0F172A;
+  white-space: nowrap;
+}
+
+.s3-badge-cart-sub {
+  font-size: 0.76rem;
+  color: #64748B;
+}
+
+/* 4. Плашка инфографики (Слева снизу под мокапом) */
+.s3-badge-infographics {
+  bottom: 12px;
+  left: 28px;
+  animation: s3FloatFeat 5.5s ease-in-out infinite 0.4s;
+}
+
+@keyframes s3FloatFeat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.s3-badge-info-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #EFF6FF;
+  color: #00A3FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.s3-badge-info-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.s3-badge-info-text-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.s3-badge-info-title {
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #0F172A;
+  white-space: nowrap;
+}
+
+.s3-badge-info-sub {
+  font-size: 0.76rem;
+  color: #64748B;
+}
+
+/* 5. Плашка подтвержденного заказа (Справа снизу под мокапом) */
+.s3-badge-lead {
+  bottom: 12px;
+  right: 28px;
+  animation: s3FloatLead 5.5s ease-in-out infinite 0.8s;
+}
+
+@keyframes s3FloatLead {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.s3-badge-lead-check {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #cef3ae;
+  color: #0A0F1D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.s3-badge-lead-check svg {
+  width: 16px;
+  height: 16px;
+}
+
+.s3-badge-lead-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.s3-badge-lead-title {
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #0F172A;
+}
+
+.s3-badge-lead-contact {
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  color: #475569;
+  font-weight: 500;
+}
+
+.s3-badge-lead-time {
+  font-size: 0.7rem;
+  color: #94A3B8;
+  align-self: flex-start;
+  margin-left: 2px;
+}
+
+
+
+/* ==========================================================================
+   4. СРАВНЕНИЕ (МАРКЕТПЛЕЙС VS СВОЙ САЙТ) — БЕЗ ЦВЕТНЫХ РАМОК
+   ========================================================================== */
+.clean-compare-section {
+  padding: 90px 0;
+  background: var(--color-bg-card);
+}
+
+.clean-compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.clean-compare-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-xl);
+  padding: 48px;
+  box-shadow: var(--shadow-subtle);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.clean-compare-card-highlight {
+  background: var(--color-accent-subtle);
+  /* чистый пастельный #F1FCE8 */
+  border: none;
+  box-shadow: 0 16px 36px rgba(10, 15, 29, 0.05);
+}
+
+.compare-card-badge {
+  display: inline-block;
+  align-self: flex-start;
+  background: var(--color-accent);
+  color: var(--color-accent-dark);
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 16px;
+}
+
+.compare-card-title {
+  font-size: 1.6rem;
+  margin-bottom: 24px;
+  color: var(--color-dark);
+}
+
+.compare-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 32px;
+}
+
+.compare-list li {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  font-size: 1rem;
+  color: var(--color-body);
+  line-height: 1.5;
+}
+
+.compare-list li strong {
+  color: var(--color-dark);
+}
+
+.list-mark {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.list-mark.gray {
+  color: #CBD5E1;
+}
+
+.list-mark.blue {
+  color: var(--color-primary);
+}
+
+.list-mark.accent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: var(--color-accent-dark);
+  font-size: 0.8rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ==========================================================================
+   4. ЭКРАН: СЕРТИФИКАТЫ И ДОКУМЕНТЫ В КАРТОЧКЕ ТОВАРА
+   ========================================================================== */
+.screen-docs-section {
+  padding: 100px 0 60px;
+  background: #FFFFFF;
+}
+
+.s-docs-bento-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.s-docs-card {
+  background: #F1F5F9;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 20px rgba(10, 15, 29, 0.04);
+}
+
+.s-docs-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(10, 15, 29, 0.07);
+}
+
+/* Главная карточка: витрина документов */
+.s-docs-hero-card {
+  padding: 36px 40px 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.s-docs-stage-wrapper {
+  position: relative;
+  margin-bottom: 26px;
+}
+
+/* Парящие плашки-инфографика */
+.s-docs-float-pill {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #FFFFFF;
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 10px 28px rgba(10, 15, 29, 0.08);
+  pointer-events: none;
+  animation: s-docs-float 4s ease-in-out infinite alternate;
+}
+
+.s-docs-float-pill.pill-law {
+  top: -16px;
+  left: -12px;
+}
+
+.s-docs-float-pill.pill-formats {
+  bottom: -14px;
+  right: 20px;
+  animation-delay: 2s;
+}
+
+@keyframes s-docs-float {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-4px); }
+}
+
+.s-docs-pill-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #cef3ae;
+  color: #15803d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.s-docs-pill-text-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.s-docs-pill-label {
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--color-dark);
+  line-height: 1.25;
+}
+
+.s-docs-pill-sub {
+  font-size: 0.74rem;
+  color: #64748B;
+  margin-top: 1px;
+}
+
+/* Индикатор в нижних карточках */
+.s-docs-inline-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.s-docs-ind-badge {
+  font-size: 0.72rem;
+  color: #15803d;
+  background: #cef3ae;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.s-docs-ind-text {
+  font-size: 0.78rem;
+  color: #64748B;
+  font-weight: 500;
+}
+
+.s-docs-mockup-browser {
+  background: #FFFFFF;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 32px rgba(10, 15, 29, 0.06);
+}
+
+.s-docs-browser-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: #F8FAFC;
+  border-bottom: 1px solid #EEF2F6;
+  gap: 16px;
+}
+
+.s-docs-browser-address {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #FFFFFF;
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  color: #64748B;
+  box-shadow: 0 2px 6px rgba(10, 15, 29, 0.03);
+}
+
+.s-docs-browser-badge {
+  font-size: 0.8rem;
+  color: #64748B;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.s-docs-hero-screen {
+  background: #F8FAFC;
+  padding: 24px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.s-docs-main-img {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(10, 15, 29, 0.04);
+}
+
+.s-docs-card-content {
+  padding-top: 4px;
+}
+
+.s-docs-card-content .benefit-title {
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--color-dark);
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+
+.s-docs-card-content .benefit-desc {
+  font-size: 0.98rem;
+  color: var(--color-body);
+  line-height: 1.6;
+  max-width: 100%;
+  margin: 0;
+}
+
+.s-docs-hero-card .s-docs-card-content .benefit-desc {
+  max-width: 100%;
+  width: 100%;
+}
+
+/* Нижний ряд: 2 карточки админки */
+.s-docs-bento-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.s-docs-sub-card {
+  padding: 30px 30px 26px;
+  display: flex;
+  flex-direction: column;
+}
+
+.s-docs-sub-mockup {
+  background: #FFFFFF;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(10, 15, 29, 0.05);
+  margin-bottom: 22px;
+  display: flex;
+  flex-direction: column;
+  height: 280px;
+}
+
+.s-docs-sub-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: #F8FAFC;
+  border-bottom: 1px solid #EEF2F6;
+  flex-shrink: 0;
+}
+
+.s-docs-sub-title {
+  font-size: 0.78rem;
+  color: #64748B;
+  font-weight: 500;
+}
+
+.s-docs-sub-body {
+  background: #FFFFFF;
+  flex: 1;
+  height: calc(100% - 37px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  overflow: hidden;
+}
+
+.s-docs-crm-img {
+  width: 100%;
+  max-width: 480px;
+  max-height: 200px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.s-docs-sub-card .s-docs-card-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.s-docs-sub-card .benefit-title {
+  min-height: 2.8rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+@media (max-width: 991px) {
+  .s-docs-hero-card {
+    padding: 24px 20px 22px;
+  }
+  .s-docs-hero-screen {
+    padding: 16px 12px;
+  }
+  .s-docs-bento-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .s-docs-sub-body {
+    min-height: 190px;
+  }
+}
+
+@media (max-width: 640px) {
+  .screen-docs-section {
+    padding: 60px 0 40px;
+  }
+  .s-docs-hero-card,
+  .s-docs-sub-card {
+    padding: 18px 14px 16px;
+  }
+  .s-docs-float-pill {
+    position: static;
+    margin-bottom: 12px;
+    animation: none;
+  }
+  .s-docs-float-pill.pill-formats {
+    display: none;
+  }
+  .s-docs-browser-top {
+    padding: 8px 12px;
+  }
+  .s-docs-browser-badge {
+    display: none;
+  }
+  .s-docs-card-content .benefit-title {
+    font-size: 1.2rem;
+  }
+}
+
+/* ==========================================================================
+   5. ЭКРАН 5: ГОТОВАЯ КОРЗИНА И ПРИЕМ ЗАЯВОК В 1С-БИТРИКС
+   ========================================================================== */
+.screen4-cart-crm-section {
+  padding: 90px 0 100px;
+  background: #F1F5F9;
+}
+
+.s4-bento-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.s4-bento-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 20px rgba(10, 15, 29, 0.05);
+}
+
+.s4-bento-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(10, 15, 29, 0.08);
+}
+
+.s4-balanced-subtitle {
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+  text-wrap: balance;
+}
+
+/* 1. Главная карточка со скриншотом чекаута */
+.s4-hero-card {
+  background: #cef3ae;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.s4-hero-card:hover {
+  background: #cef3ae;
+}
+
+.s4-hero-stage {
+  position: relative;
+  width: 100%;
+  padding: 38px 36px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.s4-mockup-window {
+  width: 100%;
+  max-width: 980px;
+  background: #FFFFFF;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 16px 38px rgba(10, 15, 29, 0.08), 0 2px 8px rgba(10, 15, 29, 0.03);
+  position: relative;
+  z-index: 2;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.s4-hero-card:hover .s4-mockup-window {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 46px rgba(10, 15, 29, 0.11);
+}
+
+.s4-mockup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: #F8FAFC;
+  border-bottom: 1px solid #EEF2F6;
+  gap: 16px;
+}
+
+.s4-mockup-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.s4-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #CBD5E1;
+}
+
+.s4-dot.red {
+  background: #FFA19B;
+}
+
+.s4-dot.yellow {
+  background: #FFD271;
+}
+
+.s4-dot.green {
+  background: #86EFAC;
+}
+
+.s4-mockup-address {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #FFFFFF;
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  color: #64748B;
+  box-shadow: 0 2px 6px rgba(10, 15, 29, 0.03);
+}
+
+.s4-mockup-status {
+  font-size: 0.8rem;
+  color: #64748B;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.s4-mockup-body {
+  position: relative;
+  background: #F8FAFC;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  max-height: 520px;
+}
+
+.s4-screen-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* Слева поверх товаров: парящая плашка с составом корзины (свободная верхняя зона) */
+.s4-float-cart-pill {
+  position: absolute;
+  top: 24px;
+  left: 20px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #FFFFFF;
+  padding: 11px 20px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 14px 34px rgba(10, 15, 29, 0.14), 0 3px 10px rgba(10, 15, 29, 0.04);
+  pointer-events: none;
+  animation: s4-cart-badge-float 4s ease-in-out infinite alternate;
+}
+
+@keyframes s4-cart-badge-float {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-4px); }
+}
+
+.s4-float-pill-cart-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #cef3ae;
+  color: #15803d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.s4-float-pill-text-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.s4-float-pill-strong {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--color-dark);
+  line-height: 1.25;
+}
+
+.s4-float-pill-sub {
+  font-size: 0.74rem;
+  color: #64748B;
+  margin-top: 1px;
+}
+
+/* Справа рядом с полями: тонкая выноска «Заполнение за 10 секунд» */
+.s4-float-callout-pill {
+  position: absolute;
+  bottom: 18px;
+  right: 22px;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  background: #FFFFFF;
+  padding: 11px 20px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 14px 34px rgba(10, 15, 29, 0.14), 0 3px 10px rgba(10, 15, 29, 0.04);
+  pointer-events: none;
+  animation: s4-callout-float 4.2s ease-in-out infinite alternate;
+  animation-delay: 1.4s;
+}
+
+@keyframes s4-callout-float {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-3px); }
+}
+
+.s4-callout-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #EBF5FF;
+  color: #0284C7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.s4-callout-text-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.s4-callout-title {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--color-dark);
+  line-height: 1.25;
+}
+
+.s4-callout-sub {
+  font-size: 0.74rem;
+  color: #0284C7;
+  font-weight: 500;
+  margin-top: 1px;
+}
+
+.s4-hero-card .s4-card-content {
+  background: #FFFFFF;
+  padding: 26px 36px 28px;
+  border-top: 1px solid rgba(10, 15, 29, 0.06);
+}
+
+.s4-hero-card .s4-card-content .benefit-title {
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--color-dark);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.s4-hero-card .s4-card-content .benefit-desc {
+  font-size: 0.98rem;
+  color: var(--color-body);
+  line-height: 1.55;
+  max-width: 100%;
+  margin: 0;
+}
+
+.s4-card-content {
+  padding-top: 6px;
+}
+
+.s4-card-content .benefit-title {
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--color-dark);
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+
+.s4-card-content .benefit-desc {
+  font-size: 0.98rem;
+  color: var(--color-body);
+  line-height: 1.6;
+  max-width: 820px;
+  margin: 0;
+}
+
+/* Нижний ряд из 2 колонок */
+.s4-bento-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.s4-sub-card {
+  padding: 32px 32px 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.s4-sub-screen-wrap {
+  background: #FFFFFF;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(10, 15, 29, 0.05);
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  height: 295px;
+}
+
+.s4-sub-browser-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background: #F8FAFC;
+  border-bottom: 1px solid #EEF2F6;
+  flex-shrink: 0;
+}
+
+.s4-sub-address {
+  font-size: 0.78rem;
+  color: #64748B;
+  font-weight: 500;
+}
+
+.s4-sub-image-box {
+  background: #FFFFFF;
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+}
+
+.s4-sub-card .benefit-title {
+  min-height: 3.2rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.s4-crm-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
+  display: block;
+}
+
+/* Визуал: Финансы, заказ без касс и комиссий */
+.s4-finance-visual-wrap {
+  height: 295px;
+  background: #F8FAFC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.s4-finance-card-mockup {
+  width: 100%;
+  max-width: 440px;
+  background: #FFFFFF;
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(10, 15, 29, 0.06);
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.s4-finance-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #F1F5F9;
+  padding-bottom: 12px;
+}
+
+.s4-finance-order-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.s4-finance-order-num {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+.s4-finance-status-pill {
+  font-size: 0.72rem;
+  color: #15803d;
+  background: #cef3ae;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  font-weight: 500;
+}
+
+.s4-finance-order-sum {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--color-dark);
+  letter-spacing: -0.02em;
+}
+
+.s4-finance-items-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.s4-finance-item-tag {
+  font-size: 0.74rem;
+  color: #64748B;
+  background: #F1F5F9;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.s4-finance-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  padding-top: 4px;
+}
+
+.s4-finance-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #F8FAFC;
+  padding: 8px 12px;
+  border-radius: 10px;
+}
+
+.s4-stat-icon-wrap {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.s4-stat-icon-wrap.green {
+  background: #cef3ae;
+  color: #15803d;
+}
+
+.s4-stat-icon-wrap.blue {
+  background: #EBF5FF;
+  color: #0284C7;
+}
+
+.s4-stat-text-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.s4-stat-label {
+  font-size: 0.68rem;
+  color: #64748B;
+  line-height: 1.2;
+}
+
+.s4-stat-val {
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--color-dark);
+  line-height: 1.2;
+  margin-top: 1px;
+}
+
+.s4-dialog-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+@media (max-width: 991px) {
+  .s4-hero-card {
+    padding: 28px 24px 24px;
+  }
+  .s4-bento-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .s4-mockup-body {
+    max-height: 400px;
+  }
+  .s4-sub-image-box {
+    height: 220px;
+  }
+  .s4-dialog-wrap {
+    min-height: 240px;
+    padding: 18px;
+  }
+}
+
+@media (max-width: 640px) {
+  .screen4-cart-crm-section {
+    padding: 60px 0;
+  }
+  .s4-hero-card {
+    padding: 20px 16px 18px;
+  }
+  .s4-sub-card {
+    padding: 20px 16px 18px;
+  }
+  .s4-float-cart-pill {
+    top: 14px;
+    left: 14px;
+    padding: 6px 12px;
+  }
+  .s4-float-pill-strong {
+    font-size: 0.78rem;
+  }
+  .s4-float-pill-sub {
+    display: none;
+  }
+  .s4-float-callout-pill {
+    display: none;
+  }
+  .s4-mockup-header {
+    padding: 8px 12px;
+  }
+  .s4-mockup-status {
+    display: none;
+  }
+  .s4-card-content .benefit-title {
+    font-size: 1.2rem;
+  }
+}
+
+/* ==========================================================================
+   6. ЛЕГКАЯ ВНЕШНЯЯ КАСТОМИЗАЦИЯ ПОД СВОЙ БРЕНД (БЕЛЫЙ ФОН)
+   ========================================================================== */
+.screen-brand-customizer-section {
+  padding: 100px 0;
+  background: #FFFFFF;
+}
+
+.s-customizer-subtitle {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  text-wrap: balance;
+}
+
+.s-customizer-stage-card {
+  background: #FFFFFF;
+  border-radius: 28px;
+  box-shadow: 0 8px 32px rgba(10, 15, 29, 0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.s-customizer-stage {
+  position: relative;
+  background: #F8FAFC;
+  padding: 44px 36px 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: flex-start;
+}
+
+.s-customizer-modal-window {
+  background: #FFFFFF;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(10, 15, 29, 0.07);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.s-customizer-modal-window:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(10, 15, 29, 0.1);
+}
+
+.s-modal-window-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  background: #FFFFFF;
+  border-bottom: 1px solid #EEF2F6;
+}
+
+.s-modal-window-title {
+  font-size: 0.8rem;
+  color: #64748B;
+  font-weight: 500;
+}
+
+.s-modal-window-content {
+  background: #FFFFFF;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 380px;
+}
+
+.s-modal-img {
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* Парящая плашка по центру/снизу */
+.s-customizer-floating-callout {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #FFFFFF;
+  padding: 11px 22px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 14px 36px rgba(10, 15, 29, 0.14), 0 3px 10px rgba(10, 15, 29, 0.04);
+  pointer-events: none;
+  animation: sCustomizerCalloutFloat 4s ease-in-out infinite alternate;
+}
+
+@keyframes sCustomizerCalloutFloat {
+  0% { transform: translate(-50%, 0); }
+  100% { transform: translate(-50%, -4px); }
+}
+
+.s-customizer-callout-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #cef3ae;
+  color: #15803d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.s-customizer-callout-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.s-customizer-callout-strong {
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: var(--color-dark);
+  line-height: 1.25;
+}
+
+.s-customizer-callout-sub {
+  font-size: 0.74rem;
+  color: #64748B;
+  margin-top: 1px;
+}
+
+/* Нижняя зона описания */
+.s-customizer-footer-desc {
+  padding: 26px 36px 30px;
+  background: #FFFFFF;
+  border-top: 1px solid rgba(10, 15, 29, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.s-customizer-tags-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.s-customizer-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #F1F5F9;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  color: #475569;
+  font-weight: 500;
+}
+
+.s-chip-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.s-chip-dot.blue {
+  background: #00A3FF;
+}
+
+.s-chip-dot.green {
+  background: #10B981;
+}
+
+.s-customizer-chip.active-blue {
+  background: #EBF5FF;
+  color: #0284C7;
+}
+
+.s-customizer-footer-note {
+  font-size: 0.95rem;
+  color: var(--color-body);
+  line-height: 1.55;
+  margin: 0;
+}
+
+@media (max-width: 991px) {
+  .s-customizer-stage {
+    grid-template-columns: 1fr;
+    padding: 28px 20px 50px;
+  }
+  .s-modal-window-content {
+    min-height: auto;
+  }
+  .s-customizer-floating-callout {
+    width: 90%;
+    justify-content: center;
+    bottom: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .screen-brand-customizer-section {
+    padding: 60px 0;
+  }
+  .s-customizer-stage {
+    padding: 16px 12px 60px;
+  }
+  .s-customizer-footer-desc {
+    padding: 20px 16px;
+  }
+  .s-customizer-floating-callout {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin-top: 14px;
+    animation: none;
+  }
+}
+
+/* ==========================================================================
+   7. УДОБНО ПОКУПАТЬ С ТЕЛЕФОНА (МОБИЛЬНАЯ ВЕРСИЯ)
+   ========================================================================== */
+.screen-mobile-ready-section {
+  padding: 80px 0;
+  background: var(--color-bg-card); /* Чистый серый #F1F5F9 */
+}
+
+.s-mobile-bento-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-xl);
+  padding: 56px 60px;
+  box-shadow: 0 16px 40px rgba(10, 15, 29, 0.04);
+  position: relative;
+  overflow: hidden;
+}
+
+.s-mobile-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.95fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.s-mobile-text-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.s-mobile-heading {
+  font-family: var(--font-heading);
+  font-size: 2.3rem;
+  font-weight: 500;
+  line-height: 1.22;
+  letter-spacing: -0.025em;
+  color: var(--color-dark);
+  margin-bottom: 20px;
+}
+
+.s-mobile-desc {
+  font-size: 1.05rem;
+  line-height: 1.62;
+  color: var(--color-body);
+  margin-bottom: 32px;
+}
+
+.s-mobile-perks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.s-mobile-perk-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.s-perk-icon-wrap {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #cef3ae;
+  color: #1a4218;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.s-perk-text-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.s-perk-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+.s-perk-sub {
+  font-size: 0.88rem;
+  color: var(--color-muted);
+  line-height: 1.4;
+}
+
+/* Правая колонка: Рендер смартфона */
+.s-mobile-visual-col {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.s-mobile-device-frame {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 24px 50px rgba(15, 23, 42, 0.12);
+  background: #F8FAFC;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.s-mobile-device-frame:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.16);
+}
+
+.s-mobile-device-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Парящий инфографический статус-бейдж */
+.s-mobile-float-stat {
+  position: absolute;
+  top: 20px;
+  right: -16px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 14px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
+  z-index: 2;
+  animation: sFloatBadge 4s ease-in-out infinite alternate;
+}
+
+@keyframes sFloatBadge {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-6px);
+  }
+}
+
+.s-mobile-stat-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+  flex-shrink: 0;
+}
+
+.s-mobile-stat-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.s-mobile-stat-bold {
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-dark);
+  line-height: 1.2;
+}
+
+.s-mobile-stat-muted {
+  font-size: 0.72rem;
+  color: var(--color-muted);
+  line-height: 1.2;
+}
+
+@media (max-width: 991px) {
+  .s-mobile-bento-card {
+    padding: 40px 32px;
+  }
+
+  .s-mobile-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .s-mobile-visual-col {
+    order: -1;
+  }
+
+  .s-mobile-device-frame {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .s-mobile-float-stat {
+    right: 12px;
+    top: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .screen-mobile-ready-section {
+    padding: 60px 0;
+  }
+
+  .s-mobile-bento-card {
+    padding: 32px 20px;
+    border-radius: var(--radius-lg);
+  }
+
+  .s-mobile-heading {
+    font-size: 1.75rem;
+  }
+
+  .s-mobile-device-frame {
+    max-width: 270px;
+  }
+}
+
+/* Блок движка 1С-Битрикс внизу — чистый светлый фон без рамок */
+.bitrix-engine-box {
+  background: var(--color-accent-subtle);
+  /* Пастельный #F1FCE8 */
+  color: var(--color-dark);
+  border-radius: var(--radius-xl);
+  padding: 52px 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  box-shadow: 0 16px 36px rgba(10, 15, 29, 0.04);
+}
+
+.engine-title {
+  font-size: 1.85rem;
+  font-weight: 500 !important;
+  color: var(--color-dark);
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+
+.engine-desc {
+  font-size: 1rem;
+  color: var(--color-body);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-width: 580px;
+}
+
+.engine-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.94rem;
+  color: #1F380A;
+  font-weight: 500;
+}
+
+.bitrix-engine-price {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: 36px 40px;
+  text-align: center;
+  min-width: 280px;
+  box-shadow: 0 10px 28px rgba(10, 15, 29, 0.05);
+}
+
+.engine-price-num {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--color-dark);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.engine-price-sub {
+  font-size: 0.82rem;
+  color: var(--color-muted);
+  margin-bottom: 22px;
+}
+
+/* ==========================================================================
+   9. ЧАСТЫЕ ВОПРОСЫ (FAQ)
+   ========================================================================== */
+.clean-faq-section {
+  padding: 80px 0 100px;
+  background: #FFFFFF;
+}
+
+.faq-header-center {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 48px;
+}
+
+.faq-section-title {
+  font-family: var(--font-heading);
+  font-size: 2.6rem;
+  font-weight: 500 !important;
+  color: var(--color-dark);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  margin-bottom: 14px;
+}
+
+.faq-section-desc {
+  font-size: 1.05rem;
+  color: var(--color-body);
+  line-height: 1.6;
+}
+
+.faq-accordion-list {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-item {
+  background: #F1F5F9;
+  border-radius: 20px;
+  padding: 24px 32px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 16px rgba(10, 15, 29, 0.02);
+}
+
+.faq-item:hover {
+  background: #EAF0F6;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(10, 15, 29, 0.04);
+}
+
+.faq-item.active {
+  background: #F1F5F9;
+  box-shadow: 0 12px 30px rgba(10, 15, 29, 0.05);
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  font-weight: 500 !important;
+  color: var(--color-dark);
+  line-height: 1.4;
+}
+
+.faq-toggle-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  color: var(--color-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 6px rgba(10, 15, 29, 0.05);
+}
+
+.faq-toggle-icon svg {
+  transition: transform 0.25s ease;
+}
+
+.faq-item.active .faq-toggle-icon {
+  background: #cef3ae;
+  color: #1a4218;
+}
+
+.faq-item.active .faq-toggle-icon svg {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  display: none;
+  font-size: 1.02rem;
+  color: var(--color-body);
+  line-height: 1.65;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+/* ==========================================================================
+   8. ПРОСТАЯ ДОКУМЕНТАЦИЯ «ДЛЯ ЛЮДЕЙ» — 4-КАРТОЧНЫЙ BENTO ПО РЕФЕРЕНСУ
+   ========================================================================== */
+.clean-docs-section {
+  padding: 80px 0 100px;
+  background: #FFFFFF;
+}
+
+.docs-header-center {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 50px;
+}
+
+.docs-section-title {
+  font-size: 2.8rem;
+  line-height: 1.18;
+  font-weight: 500 !important;
+  color: var(--color-dark);
+  margin-bottom: 16px;
+  letter-spacing: -0.03em;
+}
+
+.docs-section-desc {
+  font-size: 1.12rem;
+  color: var(--color-body);
+  line-height: 1.65;
+}
+
+/* Сетка 2x2 точно по референсу */
+.docs-ref-bento-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.ref-bento-card {
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(10, 15, 29, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+}
+
+.ref-bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 50px rgba(10, 15, 29, 0.08);
+}
+
+/* 1. Карточка с иконкой открытой книги на мягком теплом фоне */
+/* 1. Карточка с пошаговым мини-гайдом «Сфера» */
+.card-book-visual {
+  background: #F8FAFC;
+  padding: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 380px;
+  position: relative;
+}
+
+.docs-guide-mockup {
+  width: 100%;
+  background: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.docs-mockup-header {
+  background: #F1F5F9;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.docs-mock-traffic-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.docs-mock-traffic-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #CBD5E1;
+}
+
+.docs-mock-traffic-dots span:nth-child(1) { background: #FDA4AF; }
+.docs-mock-traffic-dots span:nth-child(2) { background: #FDE047; }
+.docs-mock-traffic-dots span:nth-child(3) { background: #86EFAC; }
+
+.docs-mock-title {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--color-dark);
+  flex-grow: 1;
+}
+
+.docs-mock-badge {
+  font-size: 0.72rem;
+  color: var(--color-muted);
+  background: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.docs-mockup-body {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.docs-step-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: #F8FAFC;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.docs-step-row.active {
+  background: #F0FDF4;
+}
+
+.docs-step-idx {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #E2E8F0;
+  color: var(--color-dark);
+  font-size: 0.78rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.docs-step-row.active .docs-step-idx {
+  background: #cef3ae;
+  color: #1a4218;
+}
+
+.docs-step-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 2px;
+}
+
+.docs-step-name {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+.docs-step-hint {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+.docs-step-check {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #10B981;
+}
+
+.docs-step-pill {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #2563EB;
+  background: #EFF6FF;
+  padding: 3px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+/* 2. Карточка «Понятно с первого клика» со шагом 01 и точками */
+.card-instruction {
+  background: #FFFFFF;
+  padding: 40px 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 380px;
+}
+
+.ref-card-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.ref-step-capsule {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ref-step-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #cef3ae;
+  color: #1a4218;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ref-step-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.ref-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #E2E8F0;
+}
+
+.ref-dot.active {
+  background: #10B981;
+}
+
+.ref-brand-mark {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: #00A3FF;
+  letter-spacing: -0.03em;
+}
+
+.ref-instruction-body {
+  margin-top: auto;
+}
+
+.ref-card-heading {
+  font-family: var(--font-heading);
+  font-size: 2.1rem;
+  font-weight: 500 !important;
+  color: var(--color-dark);
+  margin-bottom: 14px;
+  letter-spacing: -0.02em;
+}
+
+.ref-card-subtext {
+  font-size: 1.05rem;
+  color: var(--color-body);
+  line-height: 1.55;
+  max-width: 380px;
+}
+
+/* 3. Карточка «100% Доступно каждому» + Кнопка Открыть базу знаний */
+.card-accessible {
+  background: #FFFFFF;
+  padding: 44px 40px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 380px;
+}
+
+.ref-accessible-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.ref-percent-num {
+  font-family: var(--font-heading);
+  font-size: 4.4rem;
+  font-weight: 500;
+  color: #00A3FF;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin-bottom: 12px;
+}
+
+.ref-accessible-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-dark);
+  margin-bottom: 6px;
+}
+
+.ref-accessible-sub {
+  font-size: 1rem;
+  color: var(--color-body);
+  line-height: 1.5;
+  max-width: 360px;
+}
+
+.ref-read-action-bar {
+  background: #F1F5F9;
+  border-radius: 18px;
+  padding: 10px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.ref-read-stats {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.86rem;
+  color: var(--color-muted);
+}
+
+.ref-read-stats strong {
+  color: var(--color-dark);
+  font-weight: 600;
+}
+
+.ref-read-dot-sep {
+  color: #CBD5E1;
+}
+
+.ref-read-btn {
+  background: #FFFFFF;
+  color: var(--color-dark);
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(10, 15, 29, 0.05);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.ref-read-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(10, 15, 29, 0.1);
+}
+
+/* 4. Карточка с радарной диаграммой действий «Полная автономность» */
+.card-orbit-support {
+  background: #EFF6FF;
+  padding: 36px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 380px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ref-orbit-brand {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: #00A3FF;
+  position: relative;
+  z-index: 5;
+}
+
+.ref-orbit-badge {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #1E40AF;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  position: relative;
+  z-index: 5;
+}
+
+/* Интерактивный кластер селлеров и орбит */
+.ref-orbit-center-stage {
+  position: relative;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  min-height: 220px;
+}
+
+.ref-orbit-decor-rings {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.ref-orbit-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed rgba(0, 163, 255, 0.25);
+}
+
+.ring-1 {
+  width: 140px;
+  height: 140px;
+}
+
+.ring-2 {
+  width: 240px;
+  height: 240px;
+}
+
+.ring-3 {
+  width: 340px;
+  height: 340px;
+}
+
+.ref-sellers-cluster {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.ref-seller-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-seller-1 {
+  align-self: flex-start;
+  transform: translateX(-10px);
+}
+
+.card-seller-2 {
+  align-self: flex-end;
+  transform: translateX(10px);
+}
+
+.card-seller-3 {
+  align-self: center;
+}
+
+.ref-seller-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
+}
+
+.ref-seller-pic {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.ref-seller-tag {
+  display: flex;
+  flex-direction: column;
+}
+
+.ref-seller-name {
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--color-dark);
+  line-height: 1.2;
+}
+
+.ref-seller-role {
+  font-size: 0.74rem;
+  color: var(--color-muted);
+  line-height: 1.3;
+}
+
+/* Иконки действий на орбитах */
+.ref-action-chip {
+  position: absolute;
+  background: #FFFFFF;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  z-index: 5;
+}
+
+.ref-action-icon {
+  display: inline-flex;
+  align-items: center;
+  color: #10B981;
+}
+
+.chip-click {
+  top: 10px;
+  right: 15px;
+}
+
+.chip-save {
+  bottom: 10px;
+  left: 15px;
+}
+
+.ref-action-label {
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+.ref-orbit-footer-row {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid rgba(0, 163, 255, 0.15);
+}
+
+.ref-orbit-sellers-counter {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ref-counter-num {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #00A3FF;
+  line-height: 1;
+}
+
+.ref-counter-label {
+  font-size: 0.75rem;
+  color: var(--color-body);
+  max-width: 170px;
+  line-height: 1.3;
+}
+
+.ref-orbit-footer-text {
+  text-align: right;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--color-dark);
+}
+
+/* ==========================================================================
+   10. ФИНАЛЬНЫЙ CTA — BENTO СТРУКТУРА С ОТДЕЛЬНОЙ КАРТОЧКОЙ ТЕКСТА
+   ========================================================================== */
+.clean-cta-section {
+  padding: 50px 0 100px;
+}
+
+.cta-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
+
+.cta-card {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(10, 15, 29, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cta-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 50px rgba(10, 15, 29, 0.07);
+}
+
+/* 1. Отдельная текстовая бенто-карточка (слева сверху: 8 колонок из 12) */
+.cta-card-text {
+  background: #F1F5F9;
+  /* строго #F1F5F9 по правилу проекта */
+  padding: 56px 52px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  grid-column: span 8;
+}
+
+.cta-title {
+  font-size: 2.7rem;
+  line-height: 1.15;
+  font-weight: 500 !important;
+  color: var(--color-dark);
+  max-width: 580px;
+  margin: 0 0 16px;
+  letter-spacing: -0.03em;
+}
+
+.cta-subtitle {
+  font-size: 1.12rem;
+  max-width: 520px;
+  margin: 0 0 32px;
+  color: var(--color-body);
+  line-height: 1.6;
+}
+
+.cta-button-row {
+  display: flex;
+  justify-content: flex-start;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* 2. Карточка ценности/скорости 48 часов — узкая (4 колонки), чистая, с фоновыми анимированными сферами */
+.cta-card-benefit {
+  background: #e6fbd5;
+  /* Мягкий салатовый акцентный фон по правилам проекта */
+  padding: 40px 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  grid-column: span 4;
+  position: relative;
+  overflow: hidden;
+  min-height: 380px;
+}
+
+/* Фоновые полупрозрачные сферы с мягким дыханием/вращением */
+.cta-benefit-spheres {
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  transform: translateY(-50%);
+  width: 280px;
+  height: 280px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cta-sphere-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px solid rgba(31, 56, 10, 0.08);
+  pointer-events: none;
+}
+
+.cta-sphere-ring-1 {
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 70%);
+  animation: spherePulseSlow 6s ease-in-out infinite alternate;
+}
+
+.cta-sphere-ring-2 {
+  width: 210px;
+  height: 210px;
+  border-style: dashed;
+  border-color: rgba(31, 56, 10, 0.1);
+  animation: sphereRotateSlow 35s linear infinite;
+}
+
+.cta-sphere-ring-3 {
+  width: 275px;
+  height: 275px;
+  animation: spherePulseSlow 8s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes spherePulseSlow {
+  0% {
+    transform: translate(-50%, -50%) scale(0.96);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1.04);
+    opacity: 1;
+  }
+}
+
+@keyframes sphereRotateSlow {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.cta-benefit-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.cta-benefit-eyebrow {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #2F4D16;
+  opacity: 0.85;
+}
+
+.cta-live-indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(31, 56, 10, 0.08);
+}
+
+.cta-live-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+  animation: pulseBeacon 1.8s infinite;
+}
+
+@keyframes pulseBeacon {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5);
+  }
+
+  70% {
+    transform: scale(1.15);
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+.cta-benefit-hero-stat {
+  position: relative;
+  z-index: 2;
+  margin: 24px 0 20px;
+}
+
+.cta-stat-big-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.cta-stat-big {
+  font-family: var(--font-heading);
+  font-size: 4.8rem;
+  font-weight: 500;
+  color: #152A08;
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+
+.cta-stat-unit {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: #2F4D16;
+  letter-spacing: -0.02em;
+}
+
+.cta-stat-lead {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #152A08;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.cta-benefit-footer {
+  position: relative;
+  z-index: 2;
+  padding-top: 18px;
+  border-top: 1px solid rgba(31, 56, 10, 0.1);
+}
+
+.cta-stat-desc {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #2F4D16;
+  line-height: 1.5;
+}
+
+/* 3. Карточка чертежа логотипа Сфера (слева снизу — компактная на 5 колонок) */
+.cta-card-brand {
+  background: #cef3ae;
+  /* Ровный салатовый фон чертежа */
+  grid-column: span 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.cta-bento-img-brand {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  aspect-ratio: 2752 / 1536;
+  object-fit: contain;
+  display: block;
+}
+
+/* 4. Карточка лайфстайл фото со смартфоном (справа снизу — ШИРОКАЯ на 7 колонок, БОЛЬШЕ ЧЕРТЕЖА) */
+.cta-card-lifestyle {
+  background: #5B95D1;
+  /* Точный небесный тон из фотографии, бесшовный край */
+  grid-column: span 8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.cta-bento-img-lifestyle {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  aspect-ratio: 2752 / 1536;
+  object-fit: contain;
+  display: block;
+}
+
+/* ==========================================================================
+   11. ФУТЕР
+   ========================================================================== */
+.sf-footer {
+  background: #FFFFFF;
+  border-top: 1px solid var(--color-border-subtle);
+  padding: 60px 0 40px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1.4fr 2fr;
+  gap: 60px;
+}
+
+.footer-legal {
+  font-size: 0.9rem;
+  color: var(--color-body);
+  max-width: 360px;
+  margin: 14px 0 20px;
+  line-height: 1.55;
+}
+
+.footer-copy {
+  font-size: 0.82rem;
+  color: var(--color-muted);
+}
+
+.footer-links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.footer-nav-col h4 {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--color-dark);
+}
+
+.footer-nav-col a {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--color-body);
+  margin-bottom: 10px;
+}
+
+.footer-nav-col a:hover {
+  color: var(--color-primary);
+}
+
+/* ==========================================================================
+   12. МОДАЛКА И TOAST
+   ========================================================================== */
+.sf-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 15, 29, 0.45);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.sf-modal-overlay.active {
+  display: flex;
+}
+
+.sf-modal-card {
+  background: #FFFFFF;
+  border-radius: 28px;
+  width: 100%;
+  max-width: 460px;
+  padding: 40px 34px 34px;
+  position: relative;
+  box-shadow: var(--shadow-screen);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-bg-card);
+  color: var(--color-body);
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  color: var(--color-dark);
+  margin-bottom: 8px;
+}
+
+.modal-subtitle {
+  font-size: 0.92rem;
+  color: var(--color-body);
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group label {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--color-dark);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.sf-input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  font-size: 0.96rem;
+  color: var(--color-dark);
+  background: var(--color-bg-card);
+  outline: none;
+  transition: all 0.15s;
+}
+
+.sf-input:focus {
+  border-color: var(--color-primary);
+  background: #FFFFFF;
+}
+
+.form-privacy-note {
+  font-size: 0.76rem;
+  color: var(--color-muted);
+  text-align: center;
+  line-height: 1.4;
+}
+
+.sf-success-toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 16px 22px;
+  box-shadow: var(--shadow-float);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  z-index: 1100;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.sf-success-toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.toast-check {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+}
+
+.toast-msg strong {
+  display: block;
+  font-size: 0.94rem;
+  color: var(--color-dark);
+}
+
+.toast-msg span {
+  font-size: 0.84rem;
+  color: var(--color-body);
+}
+
+/* ==========================================================================
+   13. АДАПТИВНОСТЬ
+   ========================================================================== */
+@media (max-width: 1100px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-browser-mockup {
+    width: 90%;
+  }
+
+  .card-sync {
+    left: 0;
+    top: 30px;
+  }
+
+  .card-editor {
+    right: 0;
+    top: 20px;
+  }
+
+  .card-aspect {
+    left: 0;
+    top: 270px;
+  }
+
+  .card-revenue {
+    right: 10px;
+    bottom: 20px;
+  }
+
+  .bento-split-feature {
+    grid-template-columns: 1fr;
+  }
+
+  .customizer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .customizer-preview-col {
+    order: -1;
+  }
+
+  .calc-interactive-box {
+    grid-template-columns: 1fr;
+  }
+
+  .bitrix-engine-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bitrix-engine-price {
+    width: 100%;
+  }
+
+  .clean-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-heading {
+    font-size: 2.2rem;
+  }
+
+  .hero-stage-wrapper {
+    padding: 10px 0;
+  }
+
+  .hero-browser-mockup {
+    width: 100%;
+  }
+
+  .hero-float-card {
+    position: static;
+    width: 100%;
+    margin-top: 14px;
+    border-radius: var(--radius-md);
+  }
+
+  .screen2-bento-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .s2-bento-row-lower {
+    grid-column: 1 / -1;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .card-team-visual,
+  .card-quick-launch,
+  .card-business-fit,
+  .card-ai-writer {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+
+  .s3-sales-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .s3-sales-title {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .s3-sales-desc {
+    text-align: center;
+  }
+
+  .s3-bento-grid {
+    gap: 20px;
+  }
+
+  .s3-bento-row-bottom {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .s3-collage-stage.s3-stage-with-mockup {
+    padding: 24px 14px;
+  }
+
+  .s3-collage-stage.s3-stage-with-mockup .s3-collage-float-badge {
+    display: none;
+  }
+
+  .s3-collage-stage.s3-stage-with-mockup .s3-collage-app-icon {
+    width: 44px;
+    height: 44px;
+    top: 10px;
+    left: 10px;
+  }
+
+  .clean-benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .clean-metrics-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .clean-compare-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .clean-features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .clean-feat-card.large {
+    grid-column: span 1;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-links-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cta-bento-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .cta-card-text {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    padding: 44px 28px;
+    text-align: center;
+  }
+
+  .cta-title,
+  .cta-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-button-row {
+    justify-content: center;
+  }
+
+  .cta-card-benefit,
+  .cta-card-brand,
+  .cta-card-lifestyle {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+
+  width: 100%;
+  max-height: none;
+}
+
+.cta-bento-img-lifestyle {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.docs-bento-hero-grid {
+  grid-template-columns: 1fr;
+  gap: 36px;
+}
+
+.docs-info-col {
+  text-align: center;
+}
+
+.docs-section-desc {
+  margin-left: auto;
+  margin-right: auto;
+}
+}
+
+@media (max-width: 540px) {
+  .clean-metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .metric-card {
+    padding: 24px 20px;
+  }
+
+  .metric-num {
+    font-size: 2.5rem;
+  }
+
+  .docs-section-title {
+    font-size: 2rem;
+  }
+
+  .cta-title {
+    font-size: 2.1rem;
+  }
+
+  .cta-lifestyle-img-full {
+    height: 280px;
+  }
+}

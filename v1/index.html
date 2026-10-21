@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сфера. — Готовый интернет-магазин с синхронизацией Wildberries</title>
+  <meta name="description"
+    content="Запуск интернет-магазина за 1–3 дня на 1С-Битрикс: Старт. Автоматический импорт каталога с Wildberries по API, AI-описания товаров, вертикальные карточки 3:4.">
+
+  <!-- Современный чистый шрифт Manrope -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Навигация -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <span class="logo-text">сфера<span class="logo-dot">.</span></span>
+      </a>
+      <div class="nav-actions">
+        <span class="nav-pill nav-pill-blue">Для бизнеса</span>
+        <span class="nav-pill">Для селлеров</span>
+        <span class="nav-pill">48 часов</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       Экран 1: Первый экран (Hero) по референсу
+  ========================================================= -->
+  <section class="hero-section" id="hero">
+    <div class="container hero-content">
+      <!-- Центральный логотип-бренд -->
+      <div class="hero-brand">
+        <span class="hero-brand-title">сфера<span class="hero-brand-dot">.</span></span>
+      </div>
+
+      <h1 class="hero-title">
+        Ничего лишнего.<br>
+        <span class="hero-title-accent">Только продажи.</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Готовое решение «Сфера» автоматически загружает ваши товары с Wildberries, создает тексты нейросетью и сразу
+        готово принимать заказы.
+      </p>
+
+      <div class="hero-cta-group">
+        <button class="btn btn-primary btn-lg" onclick="openModal('demo')">
+          <span>Открыть демо-версию</span>
+          <svg class="icon-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </button>
+        <button class="btn btn-outline btn-lg" onclick="openModal('buy')">
+          <span>Купить решение</span>
+        </button>
+      </div>
+
+      <!-- Презентация продукта: Чистое окно десктопа по референсу -->
+      <div class="hero-mockup-wrapper">
+        <div class="screenshot-window-frame hero-web-frame-clean">
+          <div class="window-top-bar">
+            <!-- Левая часть: Точки macOS + стрелки навигации -->
+            <div class="window-controls-group">
+              <div class="window-dots">
+                <span class="w-dot red"></span>
+                <span class="w-dot yellow"></span>
+                <span class="w-dot green"></span>
+              </div>
+              <div class="window-nav-arrows">
+                <button type="button" class="win-nav-btn" aria-label="Назад">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6" />
+                  </svg>
+                </button>
+                <button type="button" class="win-nav-btn" aria-label="Вперед">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Центральная часть: Капсула адреса с защищенным SSL -->
+            <div class="window-url-bar">
+              <div class="url-ssl-lock">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+                <span class="url-protocol">https://</span>
+              </div>
+              <span class="url-domain">sfera-demo.ru</span>
+              <button type="button" class="url-reload-btn" aria-label="Обновить">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l6.73-3.19" />
+                </svg>
+              </button>
+            </div>
+
+            <!-- Правая часть: Аккуратный Live-бейдж производительности -->
+            <div class="window-pill-speed">
+              <span class="speed-pulse"></span>
+              <span class="speed-score">100</span>
+              <span class="speed-label">PageSpeed</span>
+            </div>
+          </div>
+
+          <div class="hero-frame-body">
+            <div class="screenshot-inner-wrap">
+              <img src="sfera.loc.jul__bitrix_include_areas=Y&amp;clear_cache=Y(Nest Hub Max) 1.png"
+                alt="Витрина Сфера — Главная страница" class="sfera-main-screenshot">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================
+       Экран 2: Запуск без затрат на заказную разработку
+  ========================================================= -->
+  <section class="section section-benefits" id="benefits">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title">Запуск без переплат за заказную разработку</h2>
+        <p class="section-desc">
+          Вам не нужно тратить 200 000 ₽ и месяцы на студии. «Сфера» устанавливается за пару вечеров и сразу готова к
+          продажам.
+        </p>
+      </div>
+
+      <!-- Bento Grid Преимуществ с крупными визуальными иллюстрациями по референсам -->
+      <div class="bento-visual-grid">
+
+        <!-- Карточка 1: Старт за 1-3 дня (Иллюстрация: быстрый прогресс таймлайна запуска) -->
+        <div class="bento-card">
+          <div class="bento-visual-canvas canvas-timeline">
+            <div class="mini-launch-timeline">
+              <div class="timeline-step done">
+                <span class="step-check">✓</span>
+                <div class="step-data">
+                  <strong>Установка «Сферы»</strong>
+                  <small>15 минут</small>
+                </div>
+              </div>
+              <div class="timeline-arrow-down">↓</div>
+              <div class="timeline-step active">
+                <span class="step-pulse"></span>
+                <div class="step-data">
+                  <strong>Импорт каталога с WB / Ozon</strong>
+                  <small>По API в 1 клик</small>
+                </div>
+                <span class="step-tag-fast">Готово к продажам</span>
+              </div>
+            </div>
+          </div>
+          <div class="bento-text-footer">
+            <h3 class="bento-title">Запуск за 1–3 дня</h3>
+            <p class="bento-desc">Без многомесячной разработки, ТЗ и переплат студиям. Сайт готов принимать заказы сразу
+              после установки.</p>
+          </div>
+        </div>
+
+        <!-- Карточка 2: Всё включено в коробку (Иллюстрация: готовые модули каталога, корзины и оплат) -->
+        <div class="bento-card featured-bento">
+          <div class="bento-visual-canvas canvas-modules">
+            <div class="modules-chip-cloud">
+              <div class="module-chip chip-main">
+                <span class="chip-dot-green"></span>
+                <strong>Каталог 3:4</strong>
+                <span class="chip-status">Активен</span>
+              </div>
+              <div class="module-chip chip-sub">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <circle cx="9" cy="21" r="1" />
+                  <circle cx="20" cy="21" r="1" />
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                </svg>
+                <span>Корзина и чекаут</span>
+              </div>
+              <div class="module-chip chip-sub">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+                  <line x1="1" y1="10" x2="23" y2="10" />
+                </svg>
+                <span>Форма заявки</span>
+              </div>
+              <div class="module-chip chip-sub">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                  <line x1="12" y1="18" x2="12.01" y2="18" />
+                </svg>
+                <span>Мобильная версия</span>
+              </div>
+            </div>
+          </div>
+          <div class="bento-text-footer">
+            <h3 class="bento-title">Всё включено в коробку</h3>
+            <p class="bento-desc">Каталог 3:4, корзина с удобной формой заявки и адаптивная версия настроены на редакции
+              «1С-Битрикс: Старт».</p>
+          </div>
+        </div>
+
+        <!-- Карточка 3: Для любого бизнеса (Иллюстрация: чистые сегменты ниш без перекрытия) -->
+        <div class="bento-card">
+          <div class="bento-visual-canvas canvas-niches">
+            <div class="niches-clean-stage">
+              <div class="niche-pill-row">
+                <span class="niche-chip active">Одежда и WB</span>
+                <span class="niche-chip">Техника</span>
+                <span class="niche-chip">Услуги</span>
+              </div>
+              <div class="niche-showcase-panel">
+                <div class="niche-showcase-thumb">
+                  <span class="niche-thumb-badge">3:4</span>
+                </div>
+                <div class="niche-showcase-info">
+                  <strong>Селлеры и розница</strong>
+                  <small>Остатки и цены по API</small>
+                  <span class="niche-status-ready">Готовый шаблон</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bento-text-footer">
+            <h3 class="bento-title">Под любую нишу</h3>
+            <p class="bento-desc">Идеально подходит для селлеров маркетплейсов, розничных брендов и сферы услуг с
+              онлайн-записью.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       Экран 3: Интерактивный конфигуратор витрины (Убийца отказов / SEO-магнит)
+  ========================================================= -->
+  <section class="section section-live-customizer" id="live-customizer">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title">Примерьте свой бренд прямо сейчас</h2>
+        <p class="section-desc">
+          В «Сфере» не нужно писать код. Выбирайте фирменные цвета и шрифты — посмотрите,
+          как витрина моментально адаптируется под стилистику вашего бренда в реальном времени.
+        </p>
+      </div>
+
+      <div class="customizer-interactive-wrapper">
+        <!-- Левая панель: Инструменты управления (как в сайдбаре Битрикса) -->
+        <div class="customizer-controls-panel">
+
+          <div class="ctrl-group">
+            <label class="ctrl-label">1. Фирменный цвет акцентов:</label>
+            <div class="palette-grid-interactive" id="widgetPaletteGrid">
+              <button class="palette-swatch-btn active-swatch" data-color="#01A0FC" style="background:#01A0FC;"
+                title="Фирменный Сфера Blue">
+                <span>#01A0FC</span>
+              </button>
+              <button class="palette-swatch-btn" data-color="#059669" style="background:#059669;" title="Изумрудный">
+                <span>Изумруд</span>
+              </button>
+              <button class="palette-swatch-btn" data-color="#EA580C" style="background:#EA580C;" title="Оранжевый">
+                <span>Оранж</span>
+              </button>
+              <button class="palette-swatch-btn" data-color="#0F172A" style="background:#0F172A;" title="Графитовый">
+                <span>Графит</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="ctrl-group">
+            <label class="ctrl-label">2. Шрифтовая пара:</label>
+            <div class="font-toggle-buttons" id="widgetFontButtons">
+              <button class="btn-toggle-font active-font-btn" data-font="'Manrope', sans-serif">
+                <strong>Manrope</strong>
+                <small>Современный технологичный</small>
+              </button>
+              <button class="btn-toggle-font" data-font="'Plus Jakarta Sans', sans-serif">
+                <strong>Jakarta</strong>
+                <small>Мягкий премиальный</small>
+              </button>
+              <button class="btn-toggle-font" data-font="'Inter', sans-serif">
+                <strong>Inter</strong>
+                <small>Строгий деловой</small>
+              </button>
+            </div>
+          </div>
+
+          <div class="customizer-tip-box">
+            <span class="tip-dot"></span>
+            <span>Изменения сразу применяются ко всей витрине, кнопкам и карточкам сайта.</span>
+          </div>
+
+        </div>
+
+        <!-- Правая панель: Живая интерактивная витрина в SaaS-стиле по референсам -->
+        <div class="customizer-live-stage" id="liveStagePreview">
+          <div class="live-stage-topbar">
+            <div class="stage-window-dots">
+              <span class="w-dot red"></span>
+              <span class="w-dot yellow"></span>
+              <span class="w-dot green"></span>
+            </div>
+            <div class="live-stage-header-title">
+              <span class="live-indicator-dot"></span>
+              <span class="live-stage-title">Живой предпросмотр витрины</span>
+            </div>
+            <button class="btn-reset-preview" onclick="resetCustomizerPreview()">Сброс настроек</button>
+          </div>
+
+          <div class="customizer-stage-canvas">
+            <!-- Парящий SaaS курсор-бейдж "Ask AI / Live Edit" как в референсе -->
+            <div class="canvas-floating-tag float-cursor-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#01A0FC">
+                <polygon points="3 3 10.07 19.97 12.58 12.58 19.97 10.07 3 3" />
+              </svg>
+              <span>Мгновенный рендер</span>
+            </div>
+
+            <!-- Сама карточка товара 3:4 с премиальным легким оформлением -->
+            <div class="live-product-card-preview" id="liveCardElement">
+              <div class="live-card-media-col">
+                <div class="live-aspect-badge">Формат 3:4</div>
+                <div class="live-photo-art">
+                  <div class="art-top-row">
+                    <span class="art-badge-chip" id="liveCardBadge">Хит продаж</span>
+                    <span class="art-format-tag">Wildberries Ready</span>
+                  </div>
+
+                  <div class="art-illustration-showcase">
+                    <div class="art-cloth-icon-wrap">
+                      <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                          d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z" />
+                      </svg>
+                    </div>
+                    <div class="sim-brand-logo">SFERA EXCLUSIVE</div>
+                    <div class="sim-item-name">Худи свободного кроя оверсайз</div>
+                    <div class="sim-tags-wrap">
+                      <span>100% Хлопок</span>
+                      <span>Плотность 450г</span>
+                    </div>
+                  </div>
+
+                  <div class="art-bottom-infographic">
+                    <span>Сохранение инфографики 100%</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="live-card-body-col">
+                <div class="live-card-rating">
+                  <span class="stars">★★★★★</span>
+                  <span class="reviews-count">5.0 (248 отзывов)</span>
+                </div>
+                <h3 class="live-card-title" id="liveCardTitle">Худи оверсайз «Сфера Exclusive»</h3>
+                <p class="live-card-desc" id="liveCardDesc">
+                  Прямой импорт фото и характеристик из маркетплейсов по API. Готово к продаже без повторного
+                  заполнения.
+                </p>
+
+                <div class="live-card-price-row">
+                  <span class="live-cur-price" id="liveCurPrice">3 990 ₽</span>
+                  <span class="live-old-price">5 600 ₽</span>
+                  <span class="live-discount-tag">-28%</span>
+                </div>
+
+                <div class="live-card-action-stack">
+                  <button class="btn-live-cart" id="liveCartActionBtn" onclick="testLiveCartClick()">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                      stroke-width="2.2">
+                      <circle cx="9" cy="21" r="1" />
+                      <circle cx="20" cy="21" r="1" />
+                      <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                    </svg>
+                    <span id="liveCartBtnLabel">В корзину сайта</span>
+                  </button>
+                  <div class="live-mp-row">
+                    <button class="btn-live-mp btn-live-wb"
+                      onclick="showToast('Переход в карточку на Wildberries')">Купить на WB</button>
+                    <button class="btn-live-mp btn-live-ozon" onclick="showToast('Переход в карточку на Ozon')">Купить
+                      на Ozon</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       Экран 4: Перенос каталога с маркетплейсов в «Сферу» (по референсу Битрикс24)
+  ========================================================= -->
+  <section class="section section-mp-migration" id="wb-sync">
+    <div class="container">
+      <div class="mp-reference-grid">
+
+        <!-- Левая колонка: Заголовок, описание и кнопка действия по референсу -->
+        <div class="mp-reference-text">
+          <h2 class="mp-ref-title">
+            Перенесите товары<br>
+            из <strong>маркетплейсов в «Сферу»</strong>
+          </h2>
+          <p class="mp-ref-lead">
+            <span class="text-accent-link">Автоматическая синхронизация по API</span> помогает аккуратно и без потерь
+            перенести ваш каталог. Карточки товаров, фотографии, остатки и цены — всё шаг за шагом переносится без
+            ручной работы.
+          </p>
+          <p class="mp-ref-subtext">
+            Вы продолжаете продавать на маркетплейсах, одновременно развивая собственный независимый интернет-магазин
+            без комиссии площадок.
+          </p>
+          <div class="mp-ref-cta">
+            <button class="btn btn-sky-solid btn-lg" onclick="runWbSyncSimulation()">
+              <span>Протестировать импорт товаров</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Правая колонка: Визуальная композиция по референсу Битрикс24 (Десктоп + Смартфон + Плавающие иконки маркетплейсов) -->
+        <div class="mp-reference-visual">
+          <div class="mp-backdrop-soft">
+
+            <!-- Плавающие бейджи маркетплейсов сверху (Wildberries, Ozon, Яндекс Маркет) -->
+            <div class="mp-floating-badges">
+              <div class="mp-floating-icon wb-badge-float" title="Wildberries">
+                <span class="float-badge-logo">WB</span>
+                <span class="float-badge-name">Wildberries</span>
+              </div>
+              <div class="mp-floating-icon ozon-badge-float" title="Ozon">
+                <span class="float-badge-logo">OZON</span>
+              </div>
+              <div class="mp-floating-icon ym-badge-float" title="Яндекс Маркет">
+                <div class="ym-capsule-badge">
+                  <span class="ym-capsule-red"></span>
+                  <span class="ym-capsule-yellow"></span>
+                </div>
+                <span class="float-badge-name ym-name">Маркет</span>
+              </div>
+            </div>
+
+            <!-- Задний план: Окно каталога десктопа (подобно окну Битрикс24 на референсе) -->
+            <div class="mp-desktop-screen">
+              <div class="mp-desktop-topbar">
+                <div class="mp-win-dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="mp-win-title">Каталог «Сфера» • Синхронизация с WB и Ozon</div>
+                <div class="mp-sync-indicator">
+                  <span class="mp-live-pulse" id="syncDot"></span>
+                  <span id="syncStatusText">API подключен</span>
+                </div>
+              </div>
+              <div class="mp-desktop-content" id="wbItemsList">
+                <div class="mp-table-row">
+                  <div class="mp-item-cell">
+                    <span class="mp-chip-brand wb">WB</span>
+                    <div>
+                      <strong>Худи оверсайз из плотного футера</strong>
+                      <small>Арт. 18492031 • 14 шт. на складе</small>
+                    </div>
+                  </div>
+                  <span class="mp-cell-status">Синхронизировано</span>
+                  <strong class="mp-cell-price">5 490 ₽</strong>
+                </div>
+
+                <div class="mp-table-row">
+                  <div class="mp-item-cell">
+                    <span class="mp-chip-brand ozon">OZON</span>
+                    <div>
+                      <strong>Костюм базовый хлопковый</strong>
+                      <small>Арт. 93821045 • 28 шт. на складе</small>
+                    </div>
+                  </div>
+                  <span class="mp-cell-status">Синхронизировано</span>
+                  <strong class="mp-cell-price">7 900 ₽</strong>
+                </div>
+
+                <div class="mp-table-row">
+                  <div class="mp-item-cell">
+                    <span class="mp-chip-brand wb">WB</span>
+                    <div>
+                      <strong>Свитшот утепленный графит</strong>
+                      <small>Арт. 72619402 • 19 шт. на складе</small>
+                    </div>
+                  </div>
+                  <span class="mp-cell-status">Синхронизировано</span>
+                  <strong class="mp-cell-price">4 200 ₽</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- Передний план: Смартфон с мобильной витриной (как iPhone на референсе) -->
+            <div class="mp-phone-mockup">
+              <div class="phone-screen-header">
+                <span class="phone-time">12:38</span>
+                <div class="phone-notch"></div>
+                <div class="phone-status-icons">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 21l3.52-.63C9.32 20.73 10.63 21 12 21c4.97 0 9-4.03 9-9s-4.03-9-9-9z" />
+                  </svg>
+                </div>
+              </div>
+
+              <div class="phone-screen-body">
+                <div class="phone-catalog-pill">Новая коллекция</div>
+                <div class="phone-card-preview">
+                  <div class="phone-card-img">
+                    <span class="phone-card-badge">WB 3:4</span>
+                  </div>
+                  <div class="phone-card-meta">
+                    <strong>Худи оверсайз</strong>
+                    <div class="phone-card-price-row">
+                      <span>5 490 ₽</span>
+                      <small class="text-success">В наличии</small>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="phone-chat-bubble">
+                  <div class="bubble-sender">
+                    <span class="bubble-dot-active"></span>
+                    <span>1С-Битрикс: Старт</span>
+                  </div>
+                  <p>Каталог успешно обновлен по API. Остатки и цены синхронизированы.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       Экран 4: Фотографии формата 3:4 без искажения инфографики
+  ========================================================= -->
+  <section class="section showcase-section section-alternate" id="photo-format">
+    <div class="container">
+      <div class="feature-spotlight-grid reverse-grid">
+        <div class="spotlight-text-block">
+          <h2 class="spotlight-title">Фотографии и инфографика встают без обрезки</h2>
+          <p class="spotlight-lead">
+            Витрина «Сферы» изначально построена под вертикальный формат маркетплейсов <strong>3:4</strong>.
+            Инфографика, плашки преимуществ и состав с Wildberries и Ozon отображаются целиком.
+          </p>
+
+          <div class="spotlight-bullets compact-bullets">
+            <div class="bullet-row">
+              <span class="bullet-check">✓</span>
+              <div>
+                <strong>Экономия на дизайнерах</strong>
+                <p>Используйте те же изображения, что уже загружены на маркетплейсы, без переверстки под квадрат.</p>
+              </div>
+            </div>
+            <div class="bullet-row">
+              <span class="bullet-check">✓</span>
+              <div>
+                <strong>100% читаемость УТП</strong>
+                <p>Покупатель сразу видит размеры, состав и ключевые выгоды прямо в каталоге.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="spotlight-visual-block">
+          <div class="interactive-stage-card modern-infographic-stage">
+            <div class="stage-header">
+              <div class="stage-header-title">
+                <span class="live-indicator-dot"></span>
+                <span class="stage-badge-clean">Инфографика маркетплейсов</span>
+              </div>
+              <span class="stage-badge-pill">Сравнение витрин</span>
+            </div>
+
+            <div class="ratio-comparison-stage">
+              <!-- Левая карточка: Квадрат 1:1 со срезанной инфографикой -->
+              <div class="ratio-compare-card bad-ratio">
+                <div class="compare-card-topbar">
+                  <span class="compare-tag danger">Обычный шаблон (1:1)</span>
+                  <span class="ratio-dimen">Квадрат 600×600</span>
+                </div>
+
+                <div class="modern-crop-frame">
+                  <div class="crop-overlay-band top-crop">
+                    <span class="crop-alert-label">Обрезано: верхние плашки УТП</span>
+                  </div>
+
+                  <div class="mock-product-body square-mode">
+                    <div class="mock-brand-tag muted">PREMIUM HOODIE</div>
+                    <div class="mock-hoodie-visual">
+                      <div class="mock-hoodie-silhouette"></div>
+                    </div>
+                  </div>
+
+                  <div class="crop-overlay-band bottom-crop">
+                    <span class="crop-alert-label">Обрезано: состав и размерная сетка</span>
+                  </div>
+                </div>
+
+                <div class="compare-status-footer fail-status">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="15" y1="9" x2="9" y2="15" />
+                    <line x1="9" y1="9" x2="15" y2="15" />
+                  </svg>
+                  <span>Инфографика срезается, карточка выглядит неряшливо</span>
+                </div>
+              </div>
+
+              <!-- Правая карточка: Сфера 3:4 с идеальной инфографикой -->
+              <div class="ratio-compare-card good-ratio">
+                <div class="compare-card-topbar">
+                  <span class="compare-tag success">Решение «Сфера» (3:4)</span>
+                  <span class="ratio-dimen accent-dimen">Стандарт WB 900×1200</span>
+                </div>
+
+                <div class="modern-ratio-frame">
+                  <!-- Плашки инфографики сверху -->
+                  <div class="infographic-chips-row">
+                    <span class="info-chip chip-hit">Хит продаж 2026</span>
+                    <span class="info-chip chip-feature">Плотность 450г</span>
+                  </div>
+
+                  <!-- Силуэт товара в центре -->
+                  <div class="mock-product-body vert-mode">
+                    <div class="mock-brand-tag">SFERA BRAND</div>
+                    <div class="mock-hoodie-visual highlighted">
+                      <div class="mock-hoodie-silhouette active-silh"></div>
+                    </div>
+                  </div>
+
+                  <!-- Инфографика преимуществ снизу -->
+                  <div class="infographic-badges-grid">
+                    <div class="info-feature-pill">
+                      <span class="pill-dot"></span>
+                      <span>100% чесаный хлопок</span>
+                    </div>
+                    <div class="info-feature-pill">
+                      <span class="pill-dot"></span>
+                      <span>Не скатывается</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="compare-status-footer success-status">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="9 12 11 14 15 10" />
+                  </svg>
+                  <span>100% инфографики с маркетплейса сохранено без доработок</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       Экран 5: Встроенный AI-генератор продающих описаний
+  ========================================================= -->
+  <section class="section showcase-section" id="ai-generator">
+    <div class="container">
+      <div class="feature-spotlight-grid">
+        <div class="spotlight-text-block">
+          <h2 class="spotlight-title">Встроенный AI&#8209;генератор текстов</h2>
+          <p class="spotlight-lead">
+            Тексты пишет нейросеть. Не знаете, как красиво составить новость, анонс или описать услугу? Встроенный
+            ИИ&#8209;помощник за секунды сгенерирует экспертные статьи, новости для блога и тексты для страниц. Вы
+            экономите время и деньги на копирайтерах.
+          </p>
+
+          <div class="spotlight-bullets compact-bullets">
+            <div class="bullet-row">
+              <span class="bullet-check">✓</span>
+              <div>
+                <strong>SEO-статьи и новости для блога</strong>
+                <p>Нейросеть пишет готовые экспертные материалы с ключевыми словами под вашу нишу.</p>
+              </div>
+            </div>
+            <div class="bullet-row">
+              <span class="bullet-check">✓</span>
+              <div>
+                <strong>Экономия времени и бюджета</strong>
+                <p>Публикация готовой статьи в новостной раздел сайта за 1 клик без сторонних авторов.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="spotlight-visual-block">
+          <div class="ai-minimal-card">
+
+            <!-- Табы выбора ниши без бейджей -->
+            <div class="niche-selector-tabs niche-tabs-minimal" id="nicheTabsGroup">
+              <button type="button" class="btn-niche-tab active-niche" data-niche="dentistry"
+                onclick="selectNicheDemo('dentistry')">
+                Стоматология
+              </button>
+              <button type="button" class="btn-niche-tab" data-niche="machinery" onclick="selectNicheDemo('machinery')">
+                Спецтехника
+              </button>
+              <button type="button" class="btn-niche-tab" data-niche="wb-clothing"
+                onclick="selectNicheDemo('wb-clothing')">
+                Одежда на WB
+              </button>
+            </div>
+
+            <!-- Минималистичное поле текста -->
+            <div class="ai-result-terminal terminal-minimal">
+              <div class="terminal-bar">
+                <span class="terminal-title" id="aiArticleTitle">Как восстановить зубной ряд: современные протоколы
+                  имплантации</span>
+                <span class="copy-tag" onclick="copyAiNewsText()">Скопировать</span>
+              </div>
+              <div class="terminal-content">
+                <div class="terminal-text-wrap" id="aiOutputText">
+                  Современная стоматология сделала качественный скачок: инновационные протоколы дентальной имплантации
+                  позволяют восстановить эстетику улыбки за один визит с применением 3D-моделирования челюсти...
+                </div>
+                <span class="typing-cursor" id="typingCursor"></span>
+              </div>
+            </div>
+
+            <!-- Лаконичная кнопка генерации -->
+            <div class="ai-footer-actions footer-actions-minimal">
+              <button type="button" class="btn-ai-generate-action" id="aiGenerateBtn"
+                onclick="triggerCurrentNicheTypewriter()">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <polyline points="23 4 23 10 17 10" />
+                  <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" />
+                </svg>
+                <span>Сгенерировать</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- =========================================================
+       Экран 6: Всё необходимое уже внутри «Сферы»
+  ========================================================= -->
+  <section class="section showcase-section section-ecosystem" id="sales-channels">
+    <div class="container text-center">
+
+      <h2 class="section-title ecosystem-main-title">
+        Всё необходимое уже внутри
+      </h2>
+      <p class="section-desc ecosystem-subtitle">
+        Всё, что нужно для старта и прямых продаж и ничего лишнего. Без сложных настроек, скрытых переплат и лишних
+        модулей.
+      </p>
+
+      <!-- Центральный орбитальный холст с логотипом сферы посередине -->
+      <div class="orbital-ecosystem-stage">
+
+        <!-- Внешние кольца-орбиты с легким градиентом -->
+        <div class="orbit-ring orbit-ring-outer"></div>
+        <div class="orbit-ring orbit-ring-middle"></div>
+        <div class="orbit-ring orbit-ring-inner"></div>
+
+        <!-- Центральный синий значок «сфера.» по файлу i (2).webp -->
+        <div class="center-sfera-core">
+          <div class="sfera-app-icon-squircle">
+            <span class="sfera-app-logo-text">сфера<span class="sfera-core-dot">.</span></span>
+          </div>
+          <div class="center-core-glow"></div>
+        </div>
+
+        <!-- 1. Плашка над орбитой: 1С-Битрикс: Старт -->
+        <div class="orbit-satellite sat-center-top">
+          <span class="sat-node-pill">1С-Битрикс: Старт</span>
+        </div>
+
+        <!-- 2. Кружок сверху слева на орбите (11:30 часов): UI + Конструктор -->
+        <div class="orbit-satellite sat-node-top">
+          <span class="sat-icon-circle ui-color">UI</span>
+          <span class="sat-connector-label">Конструктор</span>
+        </div>
+
+        <!-- 3. Кружок справа на орбите (3 часа): AI + Генератор -->
+        <div class="orbit-satellite sat-node-right">
+          <span class="sat-icon-circle ai-color">AI</span>
+          <span class="sat-connector-label">Генератор</span>
+        </div>
+
+        <!-- 4. Кружок снизу на орбите (6 часов): WB + Перенос по API -->
+        <div class="orbit-satellite sat-node-bottom">
+          <span class="sat-icon-circle wb-color">WB</span>
+          <span class="sat-connector-label">Перенос по API</span>
+        </div>
+
+        <!-- 1. Слева вверху: Визуальный конструктор (по референсу: иконка палитры + метрика + палитра/аватары) -->
+        <div class="eco-float-card card-ref-users">
+          <div class="ref-card-head">
+            <div class="ref-icon-bubble blue">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#01A0FC" stroke-width="2.2">
+                <circle cx="13.5" cy="6.5" r=".5" fill="#01A0FC" />
+                <circle cx="17.5" cy="10.5" r=".5" fill="#01A0FC" />
+                <circle cx="8.5" cy="7.5" r=".5" fill="#01A0FC" />
+                <circle cx="6.5" cy="12.5" r=".5" fill="#01A0FC" />
+                <path
+                  d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z" />
+              </svg>
+            </div>
+            <span class="ref-card-title">Конструктор стиля</span>
+          </div>
+          <div class="ref-stat-row">
+            <div class="ref-stat-val">
+              <strong>Свой бренд</strong>
+              <span class="ref-stat-label">Цвета, шрифты и лого без кода</span>
+            </div>
+            <div class="ref-avatar-stack ref-color-stack">
+              <span class="ref-color-dot dot-c1" title="Синий"></span>
+              <span class="ref-color-dot dot-c2" title="Фиолетовый"></span>
+              <span class="ref-color-dot dot-c3" title="Изумрудный"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Слева внизу: История / Перенос товаров (по референсу: History + табы Daily/Weekly/Yearly + список с суммами) -->
+        <div class="eco-float-card card-ref-history">
+          <div class="ref-card-head">
+            <div class="ref-icon-bubble purple">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#CB11AB" stroke-width="2.2">
+                <polyline points="17 1 21 5 17 9" />
+                <path d="M3 11V9a4 4 0 0 1 4-4h14" />
+                <polyline points="7 23 3 19 7 15" />
+                <path d="M21 13v2a4 4 0 0 1-4 4H3" />
+              </svg>
+            </div>
+            <span class="ref-card-title">Импорт с Wildberries</span>
+          </div>
+          <div class="ref-segmented-tabs">
+            <span class="ref-tab">Фото 3:4</span>
+            <span class="ref-tab active">Цены</span>
+            <span class="ref-tab">Артикулы</span>
+          </div>
+          <div class="ref-history-list">
+            <div class="ref-history-item">
+              <div class="ref-item-left">
+                <span class="ref-brand-icon wb-icon">WB</span>
+                <div class="ref-item-text">
+                  <strong>Платье миди</strong>
+                  <small>Перенесено по API</small>
+                </div>
+              </div>
+              <span class="ref-item-sum success">✓ 1 490 ₽</span>
+            </div>
+            <div class="ref-history-item">
+              <div class="ref-item-left">
+                <span class="ref-brand-icon wb-icon">WB</span>
+                <div class="ref-item-text">
+                  <strong>Жакет оверсайз</strong>
+                  <small>Остаток обновлён</small>
+                </div>
+              </div>
+              <span class="ref-item-sum success">✓ 3 890 ₽</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Справа вверху: Income / AI-генератор статей (по референсу: Income + сумма + фиолетовый прогресс-бар) -->
+        <div class="eco-float-card card-ref-progress">
+          <div class="ref-card-head">
+            <div class="ref-icon-bubble violet">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2.2">
+                <path
+                  d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+              </svg>
+            </div>
+            <span class="ref-card-title">AI-генератор новостей</span>
+          </div>
+          <div class="ref-metric-row">
+            <span class="ref-metric-label">Готовность статьи</span>
+            <strong class="ref-metric-val">100%</strong>
+          </div>
+          <div class="ref-progress-track">
+            <div class="ref-progress-fill" style="width: 86%;">
+              <span class="ref-progress-pct">0 ₽ копирайтерам</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Справа внизу: Success Import Data (по референсу: компактная плашка с круглым чекмарком) -->
+        <div class="eco-float-card card-ref-success">
+          <div class="ref-success-pill-inner">
+            <div class="ref-check-circle">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+            <div class="ref-success-texts">
+              <strong>Документация и запуск</strong>
+              <small>Пошаговые инструкции за 15 мин</small>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================
+       Экран 7: Легкая смена цветов и шрифтов под бренд
+  ========================================================= -->
+  <section class="section showcase-section" id="customization">
+    <div class="container">
+      <div class="feature-spotlight-grid">
+        <div class="spotlight-text-block">
+          <h2 class="spotlight-title">Ваш фирменный стиль за 1 минуту</h2>
+          <p class="spotlight-lead">
+            Меняйте цветовую гамму, шрифты и логотип в визуальной панели настроек. Сайт мгновенно адаптируется под
+            стилистику вашего бренда без программистов.
+          </p>
+
+          <div class="spotlight-bullets">
+            <div class="bullet-row">
+              <span class="bullet-check">✓</span>
+              <div>
+                <strong>Смена темы в 2 клика</strong>
+                <p>Кнопки, бейджи, ссылки и акцентные элементы перекрашиваются автоматически.</p>
+              </div>
+            </div>
+            <div class="bullet-row">
+              <span class="bullet-check">✓</span>
+              <div>
+                <strong>Готовые гармоничные палитры</strong>
+                <p>Подобранные сочетания цветов для одежды, косметики, техники, дома или услуг.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="spotlight-visual-block">
+          <div class="interactive-stage-card">
+            <div class="stage-header">
+              <span class="stage-badge">Примерка палитры</span>
+              <span class="ratio-switch-note">Кликните цвет</span>
+            </div>
+
+            <div class="stage-body">
+              <div class="theme-customizer-box">
+                <div class="palette-select-label">Кликните оттенок для смены стиля страницы:</div>
+                <div class="large-color-palette" id="paletteSwitcher">
+                  <div class="palette-choice c-dot dot-sfera active-palette" data-color="#00A2FF"
+                    title="Лазурный Сфера">
+                    <span class="palette-name">Сфера Blue</span>
+                  </div>
+                  <div class="palette-choice c-dot dot-emerald" data-color="#00BA68" title="Изумрудный">
+                    <span class="palette-name">Изумруд</span>
+                  </div>
+                  <div class="palette-choice c-dot dot-violet" data-color="#8B5CF6" title="Фиолетовый">
+                    <span class="palette-name">Фиолет</span>
+                  </div>
+                  <div class="palette-choice c-dot dot-dark" data-color="#1D2530" title="Графитовый">
+                    <span class="palette-name">Графит</span>
+                  </div>
+                </div>
+
+                <div class="preview-brand-window">
+                  <div class="brand-preview-header">
+                    <span class="brand-badge-demo">Акцентный цвет применен</span>
+                    <strong id="currentThemeNote">Текущий стиль: Лазурный Сфера</strong>
+                  </div>
+                  <div class="brand-preview-actions">
+                    <button class="btn btn-primary btn-sm">Кнопка в фирменном цвете</button>
+                    <span class="demo-tag-accent">Фирменный бейдж</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       Экран 8: Удобная корзина для прямых заказов
+  ========================================================= -->
+  <section class="section showcase-section section-alternate" id="direct-cart">
+    <div class="container">
+      <div class="feature-spotlight-grid reverse-grid">
+        <div class="spotlight-text-block">
+          <h2 class="spotlight-title">Прямые заказы без комиссии маркетплейсов</h2>
+          <p class="spotlight-lead">
+            Принимайте оплату напрямую и сохраняйте до <strong>25% комиссии</strong> с каждого чека. Контакты и
+            повторные продажи остаются в вашей базе.
+          </p>
+
+          <div class="spotlight-bullets compact-bullets">
+            <div class="bullet-row">
+              <span class="bullet-check">✓</span>
+              <div>
+                <strong>Своя клиентская база</strong>
+                <p>Контакты покупателей принадлежат вам — возвращайте клиентов рассылками с нулевой стоимостью
+                  привлечения.</p>
+              </div>
+            </div>
+            <div class="bullet-row">
+              <span class="bullet-check">✓</span>
+              <div>
+                <strong>Чекаут в 2 шага</strong>
+                <p>Простая корзина без принудительной долгой регистрации повышает процент успешных оплат.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="spotlight-visual-block">
+          <div class="interactive-stage-card">
+            <div class="stage-header">
+              <span class="stage-badge">Корзина сайта</span>
+              <span class="ratio-switch-note">Без комиссии</span>
+            </div>
+
+            <div class="stage-body">
+              <div class="cart-stage-box">
+                <div class="cart-items-preview">
+                  <div class="cart-item-row">
+                    <div class="c-thumb"></div>
+                    <div class="c-details">
+                      <strong>Чайник электрический Modern</strong>
+                      <span>Арт. SRM-VITC-04 • Цвет: Слоновая кость</span>
+                    </div>
+                    <div class="c-price">5 490 ₽</div>
+                  </div>
+                </div>
+
+                <div class="cart-summary-card">
+                  <div class="summary-line">
+                    <span>Сумма заказа:</span>
+                    <strong id="cartSumLabel">5 490 ₽</strong>
+                  </div>
+                  <div class="summary-line economy-line">
+                    <span>Экономия на комиссии маркетплейса:</span>
+                    <strong class="text-success" id="economyLabel">~ 1 098 ₽</strong>
+                  </div>
+                  <button class="btn btn-primary btn-block" onclick="openModal('buy')">
+                    Оформить заказ напрямую
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       Экран 9: Сравнительная таблица
+  ========================================================= -->
+  <section class="section section-comparison" id="comparison">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title">Сравните сами: почему бизнес выбирает «Сферу»</h2>
+        <p class="section-desc">Наглядно показываем экономию времени и бюджета при запуске.</p>
+      </div>
+
+      <div class="table-responsive-wrapper">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th class="th-criterion">Критерий</th>
+              <th class="th-standard">Разработка с нуля</th>
+              <th class="th-standard">Обычный шаблон магазина</th>
+              <th class="th-sfera highlight-head">
+                <div class="sfera-th-badge">Выбор бизнеса</div>
+                <span>Готовое решение «Сфера»</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-criterion"><strong>Срок запуска</strong></td>
+              <td class="td-standard">2–4 месяца</td>
+              <td class="td-standard">2–4 недели</td>
+              <td class="td-sfera"><strong>1–3 дня</strong></td>
+            </tr>
+            <tr>
+              <td class="td-criterion"><strong>Стоимость лицензии 1С-Битрикс</strong></td>
+              <td class="td-standard">От 40 900 ₽ <br><span class="td-sub">(«Малый бизнес»)</span></td>
+              <td class="td-standard">От 40 900 ₽ <br><span class="td-sub">(«Малый бизнес»)</span></td>
+              <td class="td-sfera"><strong>Всего 6 200 ₽</strong><br><span class="td-sub accent">(работает на
+                  «Старт»)</span></td>
+            </tr>
+            <tr>
+              <td class="td-criterion"><strong>Заполнение каталога с WB</strong></td>
+              <td class="td-standard">Дорогая доработка у программистов</td>
+              <td class="td-standard">Вручную или через сложные модули</td>
+              <td class="td-sfera"><strong>Автоматический перенос по API</strong></td>
+            </tr>
+            <tr>
+              <td class="td-criterion"><strong>Написание текстов для товаров</strong></td>
+              <td class="td-standard">Копирайтер от 500 ₽/карточка</td>
+              <td class="td-standard">Писать вручную ночами</td>
+              <td class="td-sfera"><strong>Встроенный AI-генератор в 1 клик</strong></td>
+            </tr>
+            <tr>
+              <td class="td-criterion"><strong>Формат фото в карточке товара</strong></td>
+              <td class="td-standard">Верстка с нуля под заказ</td>
+              <td class="td-standard">Квадратный (инфографика WB обрезается)</td>
+              <td class="td-sfera"><strong>Готовый формат 3:4 под маркетплейсы</strong></td>
+            </tr>
+            <tr>
+              <td class="td-criterion"><strong>Кнопки на маркетплейсы и онлайн-запись</strong></td>
+              <td class="td-standard">Только через платные доработки</td>
+              <td class="td-standard">Требует доработки шаблона</td>
+              <td class="td-sfera"><strong>Уже встроены в карточку</strong></td>
+            </tr>
+            <tr>
+              <td class="td-criterion"><strong>Сложность управления</strong></td>
+              <td class="td-standard">Нужен штатный программист</td>
+              <td class="td-standard">Сложные многостраничные инструкции</td>
+              <td class="td-sfera"><strong>Простая инструкция понятными словами</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       Экран 10: Платформа и понятная документация
+  ========================================================= -->
+  <section class="section section-platform" id="platform">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title">Надежная платформа внутри. Простое управление снаружи</h2>
+      </div>
+
+      <div class="platform-duo-grid">
+        <!-- Карточка 1: Инструкция со скриншотами -->
+        <div class="platform-bento-card">
+          <div class="platform-visual-canvas canvas-doc">
+            <div class="mini-doc-window">
+              <div class="doc-window-header">
+                <span class="doc-badge-step">Шаг 1 из 3</span>
+                <span class="doc-badge-time">3 минуты</span>
+              </div>
+              <div class="doc-step-preview">
+                <div class="doc-cursor-click">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#01A0FC">
+                    <path d="M3 3l7 18 3-7 7-3L3 3z" />
+                  </svg>
+                </div>
+                <strong>Вставьте ключ API Wildberries</strong>
+                <span>Нажмите «Синхронизировать» — остальное сделает система</span>
+              </div>
+            </div>
+          </div>
+          <div class="platform-card-body">
+            <h3 class="platform-card-title">Пошаговая инструкция со скриншотами</h3>
+            <p class="platform-card-text">
+              Никакого кода и птичьего языка. Понятная памятка: куда нажать, как подключить API и как обновить витрину.
+            </p>
+          </div>
+        </div>
+
+        <!-- Карточка 2: 1С-Битрикс: Старт -->
+        <div class="platform-bento-card">
+          <div class="platform-visual-canvas canvas-bitrix">
+            <div class="bitrix-economy-calc">
+              <div class="calc-badge-row">
+                <span class="bitrix-logo-text">1С-Битрикс: Старт</span>
+                <span class="calc-save-pill">Экономия 34 700 ₽</span>
+              </div>
+              <div class="calc-prices-row">
+                <div class="price-col">
+                  <small>Обычный интернет-магазин</small>
+                  <del>40 900 ₽</del>
+                </div>
+                <div class="price-col s-accent">
+                  <small>Решение «Сфера»</small>
+                  <strong>6 200 ₽</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="platform-card-body">
+            <h3 class="platform-card-title">Работает на редакции «Старт» за 6 200 ₽</h3>
+            <p class="platform-card-text">
+              Все функции готового интернет-магазина работают на самой доступной лицензии Битрикса без переплат за
+              старшие редакции.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       Экран 11: Три простых шага запуска
+  ========================================================= -->
+  <section class="section section-steps" id="how-it-works">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title">Три шага до первых заявок</h2>
+      </div>
+
+      <div class="steps-container">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h3 class="step-title">Выбираете цвета и шрифты</h3>
+            <p class="step-desc">
+              Задаете фирменный цвет в панели настроек и загружаете логотип своего магазина.
+            </p>
+          </div>
+        </div>
+
+        <div class="step-card step-card-featured">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h3 class="step-title">Загружаете товары с WB</h3>
+            <p class="step-desc">
+              Вставляете ключ API для автоматического переноса карточек, а тексты генерируете через ИИ.
+            </p>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h3 class="step-title">Принимаете заказы</h3>
+            <p class="step-desc">
+              Подключаете кнопки маркетплейсов или онлайн-запись — сайт готов приносить продажи.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       Экран 12: Финал (CTA)
+  ========================================================= -->
+  <section class="section section-cta" id="demo-section">
+    <div class="container">
+      <div class="cta-banner">
+        <div class="cta-content">
+          <h2 class="cta-title">Посмотрите, как «Сфера» работает вживую</h2>
+          <p class="cta-desc">
+            Откройте демо-версию прямо сейчас: протестируйте удобство вертикальных карточек 3:4, смените цветовую гамму
+            и оцените встроенный генератор описаний.
+          </p>
+          <div class="cta-actions">
+            <button class="btn btn-white-primary btn-lg" onclick="openModal('demo')">
+              <span>Открыть демо-версию</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </button>
+            <button class="btn btn-white-outline btn-lg" onclick="openModal('question')">
+              <span>Задать вопрос по решению</span>
+            </button>
+          </div>
+          <div class="cta-micro-features">
+            <span>Демо доступно сразу без ожидания</span>
+            <span>Консультация специалиста за 10 минут</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-text">сфера<span class="logo-dot">.</span></span>
+        </div>
+        <p class="footer-copy">
+          Готовое решение для быстрого запуска интернет-магазина на базе «1С-Битрикс: Старт».
+        </p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <strong>Продукт</strong>
+          <a href="#benefits">Преимущества</a>
+          <a href="#wb-sync">Импорт с WB</a>
+          <a href="#photo-format">Формат 3:4</a>
+          <a href="#comparison">Сравнение</a>
+        </div>
+        <div class="footer-col">
+          <strong>Возможности</strong>
+          <a href="#ai-generator">AI-генератор</a>
+          <a href="#sales-channels">Каналы продаж</a>
+          <a href="#customization">Кастомизация</a>
+          <a href="#direct-cart">Корзина</a>
+        </div>
+        <div class="footer-col">
+          <strong>Связь</strong>
+          <a href="tel:+78000000000">8 (800) 000-00-00</a>
+          <a href="mailto:info@sfera-site.ru">info@sfera-site.ru</a>
+          <a href="#" onclick="openModal('question')">Заказать консультацию</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2026 «Сфера». Все права защищены.</span>
+      <span class="privacy-note">1С-Битрикс является зарегистрированным товарным знаком компании «1С-Битрикс».</span>
+    </div>
+  </footer>
+
+  <!-- Интерактивное модальное окно -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+
+      <div id="modalContentDemo" class="modal-view">
+        <h3 class="modal-title">Доступ к демо-версии</h3>
+        <p class="modal-subtitle">Попробуйте витрину, админку и AI-генератор прямо сейчас.</p>
+        <form class="modal-form" onsubmit="handleFormSubmit(event, 'Демо доступ')">
+          <div class="form-group">
+            <label>Ваше имя</label>
+            <input type="text" placeholder="Иван" required>
+          </div>
+          <div class="form-group">
+            <label>Телефон или Telegram</label>
+            <input type="text" placeholder="+7 (999) 000-00-00 или @username" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Войти в демо-магазин →</button>
+        </form>
+      </div>
+
+      <div id="modalContentBuy" class="modal-view" style="display:none;">
+        <h3 class="modal-title">Заказ решения «Сфера»</h3>
+        <p class="modal-subtitle">Подберем оптимальный вариант запуска под вашу нишу.</p>
+        <form class="modal-form" onsubmit="handleFormSubmit(event, 'Покупка')">
+          <div class="form-group">
+            <label>Ваше имя</label>
+            <input type="text" placeholder="Иван" required>
+          </div>
+          <div class="form-group">
+            <label>Телефон или Telegram</label>
+            <input type="text" placeholder="+7 (999) 000-00-00" required>
+          </div>
+          <div class="form-group">
+            <label>Ваша ниша</label>
+            <select>
+              <option>Товары на Wildberries (перенос каталога)</option>
+              <option>Свой интернет-магазин с корзиной</option>
+              <option>Услуги (онлайн-запись YClients / DIKIDI)</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Получить расчет и консультацию</button>
+        </form>
+      </div>
+
+      <div id="modalSuccess" class="modal-view" style="display:none; text-align: center;">
+        <h3 class="modal-title">Спасибо за обращение</h3>
+        <p class="modal-subtitle">Специалист свяжется с вами в течение 10 минут и отправит доступ к демо-версии.</p>
+        <button class="btn btn-primary" onclick="closeModal()">Закрыть</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast notification -->
+  <div class="toast-notify" id="toastNotify">
+    <span class="toast-indicator"></span>
+    <span id="toastMessage">Действие выполнено</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
