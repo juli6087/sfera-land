@@ -5700,13 +5700,7 @@ input {
                   box-shadow: 0 16px 40px -8px rgba(10, 15, 29, 0.04);
                 }
 
-                .ref-orbit-subtext {
-                  font-size: 0.88rem;
-                  font-weight: 500;
-                  color: #64748B;
-                  position: relative;
-                  z-index: 5;
-                }
+
 
                 .ref-orbit-center-stage {
                   position: relative;
