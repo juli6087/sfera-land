@@ -5499,25 +5499,21 @@ input {
                   display: inline-flex;
                   align-items: center;
                   gap: 12px;
-                  background: #00A3FF;
-                  padding: 4px 18px 4px 4px;
-                  border-radius: var(--radius-pill);
-                  box-shadow: 0 4px 14px rgba(0, 163, 255, 0.22);
                 }
 
                 .ref-step-num {
                   width: 44px;
                   height: 44px;
                   border-radius: 50%;
-                  background: #FFFFFF;
-                  color: #00A3FF;
+                  background: #00A3FF;
+                  color: #FFFFFF;
                   font-family: var(--font-heading);
                   font-size: 1.1rem;
                   font-weight: 500;
                   display: flex;
                   align-items: center;
                   justify-content: center;
-                  box-shadow: 0 2px 6px rgba(10, 15, 29, 0.08);
+                  box-shadow: 0 4px 12px rgba(0, 163, 255, 0.25);
                 }
 
                 .ref-step-dots {
@@ -5530,11 +5526,11 @@ input {
                   width: 8px;
                   height: 8px;
                   border-radius: 50%;
-                  background: rgba(255, 255, 255, 0.4);
+                  background: rgba(0, 163, 255, 0.2);
                 }
 
                 .ref-dot.active {
-                  background: #FFFFFF;
+                  background: #00A3FF;
                 }
 
                 .ref-brand-mark {
