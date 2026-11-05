@@ -5470,8 +5470,8 @@ input {
                 .docs-step-pill {
                   font-size: 0.72rem;
                   font-weight: 500;
-                  color: #00A3FF;
-                  background: #EBF7FF;
+                  color: #1F380A;
+                  background: rgb(244 252 235);
                   padding: 3px 8px;
                   border-radius: 6px;
                   white-space: nowrap;
