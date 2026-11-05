@@ -5508,9 +5508,13 @@ input {
                 }
 
                 .ref-step-capsule {
-                  display: flex;
+                  display: inline-flex;
                   align-items: center;
                   gap: 12px;
+                  background: #00A3FF;
+                  padding: 4px 18px 4px 4px;
+                  border-radius: var(--radius-pill);
+                  box-shadow: 0 4px 14px rgba(0, 163, 255, 0.22);
                 }
 
                 .ref-step-num {
@@ -5518,18 +5522,19 @@ input {
                   height: 44px;
                   border-radius: 50%;
                   background: #FFFFFF;
-                  color: #0A0F1D;
+                  color: #00A3FF;
                   font-family: var(--font-heading);
                   font-size: 1.1rem;
                   font-weight: 500;
                   display: flex;
                   align-items: center;
                   justify-content: center;
-                  box-shadow: 0 4px 12px rgba(10, 15, 29, 0.06);
+                  box-shadow: 0 2px 6px rgba(10, 15, 29, 0.08);
                 }
 
                 .ref-step-dots {
                   display: flex;
+                  align-items: center;
                   gap: 6px;
                 }
 
@@ -5537,11 +5542,11 @@ input {
                   width: 8px;
                   height: 8px;
                   border-radius: 50%;
-                  background: rgba(10, 15, 29, 0.15);
+                  background: rgba(255, 255, 255, 0.4);
                 }
 
                 .ref-dot.active {
-                  background: #0A0F1D;
+                  background: #FFFFFF;
                 }
 
                 .ref-brand-mark {
