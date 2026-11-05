@@ -5887,7 +5887,7 @@ input {
    ========================================================================== */
                 .clean-cta-section {
                   padding: 60px 0 100px;
-                  background: #FFFFFF;
+                  background: #F8FAFC;
                 }
 
                 .cta-bento-grid {
@@ -5908,8 +5908,7 @@ input {
 
                 /* 1. Отдельная текстовая бенто-карточка (слева сверху: 8 колонок из 12) */
                 .cta-card-text {
-                  background: rgb(243, 243, 243);
-                  /* строго rgb(243, 243, 243) по правилу проекта */
+                  background: #FFFFFF;
                   padding: 56px 52px;
                   display: flex;
                   flex-direction: column;
