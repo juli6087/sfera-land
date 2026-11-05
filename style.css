@@ -846,7 +846,6 @@ input {
   gap: 13px;
   padding: 12px 16px;
   box-sizing: border-box;
-  animation: cardSpeedFloat 4s ease-in-out infinite;
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
   z-index: 10;
 }
@@ -878,18 +877,6 @@ input {
 
 .hfc-speed-gauge-fill {
   animation: speedGaugeSweep 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
-
-@keyframes cardSpeedFloat {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-3px);
-  }
 }
 
 @keyframes speedGaugeSweep {
