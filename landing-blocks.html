@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сфера. — Карта структуры блоков лендинга</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #00A3FF;
+      --primary-hover: #008be0;
+      --primary-light: #EBF7FF;
+      --accent-lime: #cef3ae;
+      --bg-page: #FFFFFF;
+      --bg-surface: #F1F5F9;
+      --bg-surface-subtle: #F8FAFC;
+      --text-main: #0A0F1D;
+      --text-muted: #64748B;
+      --border-soft: #E2E8F0;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --shadow-sm: 0 2px 8px rgba(10, 15, 29, 0.04);
+      --shadow-md: 0 10px 24px rgba(10, 15, 29, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.5;
+      padding: 40px 24px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 32px;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .brand-logo {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 26px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+    }
+
+    .brand-logo .dot {
+      color: var(--primary);
+    }
+
+    .actions-group {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: var(--radius-sm);
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: none;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #FFFFFF;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+    }
+
+    .btn-secondary {
+      background-color: var(--bg-surface);
+      color: var(--text-main);
+    }
+
+    .btn-secondary:hover {
+      background-color: #E2E8F0;
+    }
+
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 32px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+      color: var(--text-main);
+    }
+
+    .subtitle {
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 860px;
+      line-height: 1.6;
+    }
+
+    /* Manifest Box */
+    .positioning-manifest {
+      background-color: var(--primary-light);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      margin-top: 20px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .manifest-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .manifest-text {
+      font-size: 14px;
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+
+    .manifest-text strong {
+      font-weight: 600;
+      color: #0369A1;
+    }
+
+    /* Pillars bar */
+    .pillars-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+
+    .pillar-item {
+      background-color: var(--bg-surface);
+      padding: 16px 20px;
+      border-radius: var(--radius-md);
+      transition: transform 0.2s ease;
+    }
+
+    .pillar-item:hover {
+      transform: translateY(-2px);
+    }
+
+    .pillar-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-main);
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pillar-name .indicator {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--primary);
+    }
+
+    .pillar-item:nth-child(2) .indicator {
+      background-color: var(--accent-lime);
+    }
+
+    .pillar-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    /* Controls */
+    .table-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .search-box {
+      position: relative;
+      flex: 1;
+      max-width: 380px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 10px 14px 10px 38px;
+      font-size: 14px;
+      font-family: 'Inter', sans-serif;
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-sm);
+      background-color: #FFFFFF;
+      color: var(--text-main);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .search-input:focus {
+      border-color: var(--primary);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .filter-tabs {
+      display: flex;
+      gap: 6px;
+      background-color: var(--bg-surface);
+      padding: 4px;
+      border-radius: var(--radius-sm);
+    }
+
+    .tab-btn {
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .tab-btn.active {
+      background: #FFFFFF;
+      color: var(--text-main);
+      box-shadow: 0 1px 3px rgba(10, 15, 29, 0.05);
+    }
+
+    /* Table Container */
+    .table-wrapper {
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-soft);
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    thead th {
+      background-color: var(--bg-surface);
+      padding: 14px 18px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      border-bottom: 1px solid var(--border-soft);
+      white-space: nowrap;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid var(--border-soft);
+      transition: background-color 0.15s ease;
+    }
+
+    tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    tbody tr:hover {
+      background-color: var(--bg-surface-subtle);
+    }
+
+    tbody td {
+      padding: 18px;
+      vertical-align: top;
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+
+    .col-num {
+      width: 50px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    .col-block {
+      width: 180px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      color: var(--text-main);
+    }
+
+    .col-goal {
+      width: 220px;
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    .col-heading {
+      width: 230px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      color: var(--text-main);
+    }
+
+    .col-content {
+      min-width: 290px;
+      font-size: 13px;
+      color: #334155;
+    }
+
+    .col-content p {
+      margin-bottom: 6px;
+    }
+
+    .col-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .col-ui {
+      width: 200px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .col-cta {
+      width: 160px;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .cta-chip {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background-color: var(--primary-light);
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .cta-none {
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    .highlight-pill {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-main);
+      background-color: var(--accent-lime);
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-top: 6px;
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #FFFFFF;
+      color: var(--text-main);
+      padding: 12px 20px;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-soft);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.25s ease;
+      z-index: 999;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .toast-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--primary);
+    }
+
+    @media (max-width: 900px) {
+      body {
+        padding: 20px 14px;
+      }
+      h1 {
+        font-size: 24px;
+      }
+      .table-controls {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .search-box {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="header-top">
+        <a href="index.html" class="brand-logo">
+          Сфера<span class="dot">.</span>
+        </a>
+        <div class="actions-group">
+          <a href="landing-blocks.docx" download="landing-blocks.docx" class="btn btn-primary" title="Скачать документ Word (.DOCX)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+              <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+            Скачать .DOCX (Word)
+          </a>
+          <a href="landing-blocks.doc" download="landing-blocks.doc" class="btn btn-secondary" title="Скачать документ Word (.DOC)">
+            Скачать .DOC
+          </a>
+          <a href="landing-blocks.csv" download="landing-blocks.csv" class="btn btn-secondary" title="Скачать таблицу для Excel / Google Sheets">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            .CSV (Excel)
+          </a>
+          <button class="btn btn-secondary" onclick="copyTableText()" title="Скопировать текстовую сводку структуры">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            Скопировать текст
+          </button>
+          <a href="index.html" class="btn btn-secondary">
+            На главную &rarr;
+          </a>
+        </div>
+      </div>
+
+      <h1>Карта структуры блоков лендинга</h1>
+      <p class="subtitle">
+        Обновленная структура сайта «Сфера.»: <strong>легкая онлайн-витрина для прямых продаж</strong> вместо сложного интернет-магазина. Без балласта, лишних настроек и переплат.
+      </p>
+
+      <div class="positioning-manifest">
+        <span class="manifest-dot"></span>
+        <div class="manifest-text">
+          <strong>Позиционирование:</strong> «Сфера» — это <u>не тяжелый интернет-магазин</u> с 15 шагами чекаута и громоздкой CMS. Это легкая, быстрая и эстетичная витрина товаров, где покупатель делает заказ за 10 секунд без паролей и регистраций.
+        </div>
+      </div>
+
+      <div class="pillars-strip">
+        <div class="pillar-item">
+          <div class="pillar-name"><span class="indicator"></span> Простота</div>
+          <div class="pillar-desc">Интуитивная витрина и понятная админка. Настройка за 15 минут без кода, обучения и программистов.</div>
+        </div>
+        <div class="pillar-item">
+          <div class="pillar-name"><span class="indicator"></span> Дешево</div>
+          <div class="pillar-desc">В разы дешевле студийной разработки. Прозрачная фиксированная цена без скрытых абонентских платежей.</div>
+        </div>
+        <div class="pillar-item">
+          <div class="pillar-name"><span class="indicator"></span> Быстро</div>
+          <div class="pillar-desc">Запуск готовой витрины за 48 часов. Покупатель оформляет заказ в 2 клика за 10 секунд.</div>
+        </div>
+        <div class="pillar-item">
+          <div class="pillar-name"><span class="indicator"></span> Ничего лишнего</div>
+          <div class="pillar-desc">Премиальная эстетика 3:4. Фокус только на товаре, без баннеров, поп-апов и ненужных модулей.</div>
+        </div>
+      </div>
+    </header>
+
+    <div class="table-controls">
+      <div class="search-box">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="searchInput" class="search-input" placeholder="Поиск по блокам, заголовкам и текстам..." oninput="filterBlocks()">
+      </div>
+      <div class="filter-tabs">
+        <button class="tab-btn active" onclick="setFilter('all', this)">Все блоки (12)</button>
+        <button class="tab-btn" onclick="setFilter('hero', this)">Первый экран</button>
+        <button class="tab-btn" onclick="setFilter('product', this)">Витрина и чекаут</button>
+        <button class="tab-btn" onclick="setFilter('process', this)">Запуск и цена</button>
+      </div>
+    </div>
+
+    <div class="table-wrapper">
+      <table id="blocksTable">
+        <thead>
+          <tr>
+            <th class="col-num">№</th>
+            <th class="col-block">Блок</th>
+            <th class="col-goal">Роль и цель</th>
+            <th class="col-heading">Заголовок (H1 / H2)</th>
+            <th class="col-content">Смысловой посыл и содержание</th>
+            <th class="col-ui">Визуальный ряд / UI</th>
+            <th class="col-cta">Целевое действие (CTA)</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <!-- 01 -->
+          <tr data-category="hero">
+            <td class="col-num">01</td>
+            <td class="col-block"><strong>Главный экран (Hero)</strong></td>
+            <td class="col-goal">Мгновенное позиционирование: легкий сайт для продаж, а не тяжелый интернет-магазин.</td>
+            <td class="col-heading">«Своя витрина для продаж. Быстро. Доступно. Ничего лишнего.»</td>
+            <td class="col-content">
+              <p>Не громоздкий интернет-магазин, а легкий и стильный сайт для ваших товаров под ключ за 48 часов. Без агентств, долгого ТЗ и лишних затрат. Покупатели видят продукт и заказывают за 10 секунд.</p>
+              <div class="highlight-pill">Без комиссий и без ВБ на 1-м экране</div>
+            </td>
+            <td class="col-ui">Минималистичный макет витрины (вертикальные фото 3:4) + 3 чистые метрики: 48 часов запуск, 0 строк кода, прямой контакт с покупателями.</td>
+            <td class="col-cta">
+              <span class="cta-chip">Кнопка «Запустить витрину»</span>
+            </td>
+          </tr>
+
+          <!-- 02 -->
+          <tr data-category="product">
+            <td class="col-num">02</td>
+            <td class="col-block"><strong>Манифест «Не интернет-магазин»</strong></td>
+            <td class="col-goal">Показать, почему бизнесу не нужны тяжелые CMS и заказные интернет-магазины.</td>
+            <td class="col-heading">«Вам не нужен громоздкий интернет-магазин»</td>
+            <td class="col-content">
+              <p>Классический интернет-магазин — это месяцы разработки, сотни тысяч рублей расходов, сложные админки и десятки пустых страниц. Покупателю не нужны личные кабинеты и пароли. Покупатель хочет увидеть товар и быстро купить. «Сфера» убирает весь балласт: вы получаете стильную витрину, которая сразу приносит заказы.</p>
+            </td>
+            <td class="col-ui">Сравнительный блок: «Тяжелый интернет-магазин (месяцы, 300 000+ ₽, сложные админки, регистрация)» vs «Витрина Сфера (за 48ч, доступно каждому, заказ за 10 сек)».</td>
+            <td class="col-cta"><span class="cta-none">—</span></td>
+          </tr>
+
+          <!-- 03 -->
+          <tr data-category="product">
+            <td class="col-num">03</td>
+            <td class="col-block"><strong>4 столпа Сферы</strong></td>
+            <td class="col-goal">Прямое раскрытие УТП: Простота, Доступность, Быстрота, Ничего лишнего.</td>
+            <td class="col-heading">«Всё самое важное. Без лишнего балласта.»</td>
+            <td class="col-content">
+              <p><strong>1. Простота:</strong> понятная витрина и управление, настройка за 15 минут без кода.</p>
+              <p><strong>2. Быстрота:</strong> запуск за 48 часов, заказ за 10 секунд в 2 клика.</p>
+              <p><strong>3. Доступность:</strong> в разы дешевле студий без скрытых платежей.</p>
+              <p><strong>4. Ничего лишнего:</strong> фокус на товаре, эстетика 3:4 без баннеров и шума.</p>
+            </td>
+            <td class="col-ui">4 бенто-карточки (фон #F1F5F9 и #cef3ae), тонкая векторная микро-графика.</td>
+            <td class="col-cta"><span class="cta-chip">Ссылка «Узнать подробнее»</span></td>
+          </tr>
+
+          <!-- 04 -->
+          <tr data-category="product">
+            <td class="col-num">04</td>
+            <td class="col-block"><strong>Витрина и эстетика</strong></td>
+            <td class="col-goal">Показать товар лицом: премиальный визуальный стиль, где продукт говорит сам за себя.</td>
+            <td class="col-heading">«Современный дизайн, где главный герой — ваш товар»</td>
+            <td class="col-content">
+              <p>Эстетичные вертикальные карточки товаров 3:4 в стиле мировых брендов. Никаких навязчивых баннеров, всплывающих окон и лишних кнопок. Покупатель сразу видит товар, выбирает размер или цвет и оформляет заказ.</p>
+            </td>
+            <td class="col-ui">Интерактивное превью карточки товара: переключение фото, выбор размера/цвета, плавная кнопка «В корзину».</td>
+            <td class="col-cta"><span class="cta-chip">Интерактив витрины</span></td>
+          </tr>
+
+          <!-- 05 -->
+          <tr data-category="product">
+            <td class="col-num">05</td>
+            <td class="col-block"><strong>Заказ в 2 клика</strong></td>
+            <td class="col-goal">Высокая конверсия за счет отсутствия барьеров, паролей и анкет.</td>
+            <td class="col-heading">«Оформление заказа за 10 секунд. Без регистрации и паролей.»</td>
+            <td class="col-content">
+              <p>В тяжелых магазинах 70% клиентов уходят на этапе корзины из-за 15 полей и обязательной регистрации. В «Сфере» всё предельно просто: имя и номер телефона. Заказ моментально попадает к вам в панель управления и Telegram.</p>
+            </td>
+            <td class="col-ui">Минималистичная форма заказа из 2 аккуратных полей + мгновенный статус «Заказ принят».</td>
+            <td class="col-cta"><span class="cta-chip">«Протестировать чекаут»</span></td>
+          </tr>
+
+          <!-- 06 -->
+          <tr data-category="product">
+            <td class="col-num">06</td>
+            <td class="col-block"><strong>Управление без обучения</strong></td>
+            <td class="col-goal">Снять страх перед сложными техническими админками и программистами.</td>
+            <td class="col-heading">«Управляйте витриной прямо со смартфона»</td>
+            <td class="col-content">
+              <p>Добавить новый товар — 1 минута: фото, название, цена. Изменить остатки или статус заказа — в один клик. Никаких толстых инструкций, сложных настроек и штатных программистов.</p>
+            </td>
+            <td class="col-ui">Превью лаконичной панели управления с простым списком заказов и окном быстрого добавления товара.</td>
+            <td class="col-cta"><span class="cta-none">—</span></td>
+          </tr>
+
+          <!-- 07 -->
+          <tr data-category="process">
+            <td class="col-num">07</td>
+            <td class="col-block"><strong>Запуск за 48 часов</strong></td>
+            <td class="col-goal">Понятный и прозрачный пошаговый маршрут от первого клика до продаж.</td>
+            <td class="col-heading">«От первого шага до готового сайта — ровно 48 часов»</td>
+            <td class="col-content">
+              <p><strong>Шаг 1:</strong> Короткая анкета о бренде и товарах.</p>
+              <p><strong>Шаг 2:</strong> Настройка витрины и наполнение каталога нашей командой за 2 дня.</p>
+              <p><strong>Шаг 3:</strong> Подключение вашего домена и старт прямых заказов.</p>
+            </td>
+            <td class="col-ui">Таймлайн из 3 последовательных шагов с чистыми маркерами времени (День 1, День 2, Старт).</td>
+            <td class="col-cta"><span class="cta-none">—</span></td>
+          </tr>
+
+          <!-- 08 -->
+          <tr data-category="process">
+            <td class="col-num">08</td>
+            <td class="col-block"><strong>Легкий перенос ассортимента</strong></td>
+            <td class="col-goal">Снять барьер ручного наполнения каталога для действующих селлеров.</td>
+            <td class="col-heading">«Перенесите каталог за пару минут»</td>
+            <td class="col-content">
+              <p>Если товары уже размещены на Wildberries, в таблице Excel или в соцсетях — вам не придется перебивать их вручную. Удобный импорт перенесет все фото, описания и цены в один клик.</p>
+            </td>
+            <td class="col-ui">Индикатор быстрого импорта: «50 товаров загружено за 12 секунд» со шкалой прогресса.</td>
+            <td class="col-cta"><span class="cta-chip">«Попробовать импорт»</span></td>
+          </tr>
+
+          <!-- 09 -->
+          <tr data-category="product">
+            <td class="col-num">09</td>
+            <td class="col-block"><strong>Мобильный фокус</strong></td>
+            <td class="col-goal">Безупречный пользовательский опыт на экранах смартфонов (85%+ заказов).</td>
+            <td class="col-heading">«Идеально летает на каждом смартфоне»</td>
+            <td class="col-content">
+              <p>Мгновенная скорость загрузки витрины до 1 секунды. Удобная навигация одной рукой, плавные свайпы фотогалереи, крупные кнопки. Без лагов и тяжелых скриптов.</p>
+            </td>
+            <td class="col-ui">Мокап экрана смартфона с плавной прокруткой и живыми микро-действиями.</td>
+            <td class="col-cta"><span class="cta-none">—</span></td>
+          </tr>
+
+          <!-- 10 -->
+          <tr data-category="process">
+            <td class="col-num">10</td>
+            <td class="col-block"><strong>Прозрачная цена</strong></td>
+            <td class="col-goal">Обоснование финансовой выгоды перед студиями и тяжелыми CMS.</td>
+            <td class="col-heading">«Фиксированная цена. В разы дешевле заказной разработки.»</td>
+            <td class="col-content">
+              <p>Студии берут от 300 000 ₽ за разработку и тысячи рублей за каждый мелкий чих программиста. В «Сфере» вы получаете готовую витрину под ключ по прозрачной и доступной цене. Без скрытых доплат.</p>
+            </td>
+            <td class="col-ui">Таблица сравнения затрат: «Заказная разработка» (300 000+ ₽, долгие месяцы) vs «Витрина Сфера» (доступный фикс под ключ за 48 часов).</td>
+            <td class="col-cta"><span class="cta-chip">«Рассчитать выгоду»</span></td>
+          </tr>
+
+          <!-- 11 -->
+          <tr data-category="process">
+            <td class="col-num">11</td>
+            <td class="col-block"><strong>Частые вопросы (FAQ)</strong></td>
+            <td class="col-goal">Закрытие ключевых сомнений и барьеров перед покупкой.</td>
+            <td class="col-heading">«Частые вопросы о витрине»</td>
+            <td class="col-content">
+              <p>• <strong>Чем витрина отличается от интернет-магазина?</strong> (Витрина быстрее, легче, в разы дешевле и не требует обучения. Покупатель делает заказ за 10 секунд без регистраций).</p>
+              <p>• <strong>Нужны ли технические навыки?</strong> (Нет, всё настраивается под ключ, управление понятно за 15 минут).</p>
+              <p>• <strong>Как быстро запустится витрина?</strong> (Ровно 48 часов с момента заполнения анкеты).</p>
+              <p>• <strong>Можно ли подключить свой домен?</strong> (Да, подключается любой ваш домен).</p>
+              <p>• <strong>Что входит в стоимость?</strong> (Полная настройка, витрина 3:4, каталог, адаптация и запуск).</p>
+            </td>
+            <td class="col-ui">Минималистичный аккордеон с мягким раскрытием ответов без перезагрузки страницы.</td>
+            <td class="col-cta"><span class="cta-none">—</span></td>
+          </tr>
+
+          <!-- 12 -->
+          <tr data-category="hero">
+            <td class="col-num">12</td>
+            <td class="col-block"><strong>Финальный экран (CTA)</strong></td>
+            <td class="col-goal">Конверсия прогретого посетителя в заявку на демонстрацию витрины.</td>
+            <td class="col-heading">«Запустите свою витрину уже на этой неделе»</td>
+            <td class="col-content">
+              <p>Оставьте контакт — покажем живое демо витрины под ваши товары и ответим на все вопросы за 15 минут. Никакого спама и навязчивых звонков.</p>
+            </td>
+            <td class="col-ui">Форма заявки из одного поля (телефон или Telegram) + акцентная кнопка запуска (#00A3FF).</td>
+            <td class="col-cta">
+              <span class="cta-chip">Кнопка «Получить демо-витрину»</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div id="toast" class="toast">
+    <div class="toast-dot"></div>
+    <span id="toastMsg">Скопировано в буфер обмена</span>
+  </div>
+
+  <script>
+    function filterBlocks() {
+      const q = document.getElementById('searchInput').value.toLowerCase().trim();
+      const rows = document.querySelectorAll('#tableBody tr');
+      rows.forEach(row => {
+        const text = row.innerText.toLowerCase();
+        row.style.display = text.includes(q) ? '' : 'none';
+      });
+    }
+
+    function setFilter(category, btn) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const rows = document.querySelectorAll('#tableBody tr');
+      rows.forEach(row => {
+        if (category === 'all') {
+          row.style.display = '';
+        } else {
+          row.style.display = (row.getAttribute('data-category') === category) ? '' : 'none';
+        }
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toastMsg').innerText = msg;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2500);
+    }
+
+    function copyTableText() {
+      const rows = document.querySelectorAll('#tableBody tr');
+      let out = "СТРУКТУРА БЛОКОВ ЛЕНДИНГА «СФЕРА.»\nКонцепция: Онлайн-витрина для прямых продаж (Не интернет-магазин)\nУпор: Простота • Дешево • Быстро • Ничего лишнего\n\n";
+      rows.forEach(row => {
+        const num = row.querySelector('.col-num')?.innerText.trim();
+        const block = row.querySelector('.col-block')?.innerText.trim();
+        const goal = row.querySelector('.col-goal')?.innerText.trim();
+        const heading = row.querySelector('.col-heading')?.innerText.trim();
+        const content = row.querySelector('.col-content')?.innerText.trim().replace(/\n+/g, ' ');
+        const ui = row.querySelector('.col-ui')?.innerText.trim();
+        const cta = row.querySelector('.col-cta')?.innerText.trim();
+        out += `${num}. ${block}\n- Заголовок: ${heading}\n- Роль: ${goal}\n- Содержание: ${content}\n- Визуал: ${ui}\n- CTA: ${cta}\n\n`;
+      });
+      navigator.clipboard.writeText(out).then(() => {
+        showToast("Текстовая структура скопирована в буфер");
+      }).catch(() => {
+        showToast("Не удалось скопировать");
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сфера. — Брендборд дизайн-системы</title>
+  <meta name="description"
+    content="Официальный брендборд платформы Сфера: основной цвет #00A3FF, палитра без темных фонов, типографика Montserrat 500, золотой стандарт 3:4 и UI-компоненты.">
+
+  <!-- Шрифты: Montserrat (заголовки 500) и Inter (текст) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       СФЕРА. — ОФИЦИАЛЬНЫЙ БРЕНДБОРД (BRANDBOARD)
+       1. Основной цвет — #00A3FF.
+       2. Запрет на темные фоны у кнопок и элементов.
+       3. Фоны карточек: строго #F1F5F9, #cef3ae или #FFFFFF.
+       4. Заголовки строго font-weight: 500.
+       5. Никаких рамок, никаких бейджей, никаких эмодзи.
+       ========================================================================== */
+    :root {
+      --font-heading: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+      /* ОСНОВНОЙ ЦВЕТ */
+      --color-primary: #00A3FF;
+      --color-primary-hover: #008fe0;
+      --color-primary-subtle: #EBF7FF;
+
+      /* ФИРМЕННЫЙ САЛАТОВЫЙ АКЦЕНТ */
+      --color-accent-lime: #cef3ae;
+      --color-accent-hover: #c0ea9d;
+      --color-accent-subtle: #F1FCE8;
+
+      /* СВЕТЛЫЕ ФОНЫ */
+      --color-canvas: #FFFFFF;
+      --color-grey-card: #F1F5F9;
+      --color-grey-hover: #E2E8F0;
+
+      /* ТЕКСТ (ТОЛЬКО ДЛЯ ШРИФТА, НЕ ДЛЯ ФОНА ЭЛЕМЕНТОВ!) */
+      --color-text-dark: #0A0F1D;
+      --color-text-body: #475569;
+      --color-text-muted: #94A3B8;
+
+      --shadow-soft: 0 4px 20px rgba(10, 15, 29, 0.04);
+      --shadow-card: 0 10px 30px rgba(10, 15, 29, 0.05);
+      --shadow-float: 0 20px 40px rgba(10, 15, 29, 0.08);
+
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 28px;
+      --radius-pill: 9999px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: #F8FAFC;
+      color: var(--color-text-dark);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      padding: 40px 24px 80px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: var(--font-heading);
+      font-weight: 500 !important;
+      letter-spacing: -0.025em;
+      line-height: 1.25;
+      color: var(--color-text-dark);
+    }
+
+    p {
+      color: var(--color-text-body);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      background: none;
+    }
+
+    /* ==========================================================================
+       ХОЛСТ БРЕНДБОРДА (BOARD CANVAS)
+       ========================================================================== */
+    .brandboard-canvas {
+      max-width: 1360px;
+      margin: 0 auto;
+      background: var(--color-canvas);
+      border-radius: 36px;
+      padding: 48px;
+      box-shadow: 0 24px 60px rgba(10, 15, 29, 0.06);
+    }
+
+    /* Верхний блок: шапка брендборда */
+    .board-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 32px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid rgba(10, 15, 29, 0.06);
+      margin-bottom: 40px;
+    }
+
+    .brand-title-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .brand-logo-main {
+      font-family: var(--font-heading);
+      font-size: 3.2rem;
+      font-weight: 500;
+      letter-spacing: -0.04em;
+      color: var(--color-text-dark);
+      line-height: 1;
+      display: flex;
+      align-items: baseline;
+    }
+
+    .brand-logo-dot {
+      color: var(--color-primary);
+    }
+
+    .brand-descriptor {
+      font-size: 1.15rem;
+      color: var(--color-text-body);
+      max-width: 680px;
+    }
+
+    .board-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-action {
+      padding: 10px 22px;
+      border-radius: var(--radius-pill);
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-action-primary {
+      background: var(--color-primary);
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(0, 163, 255, 0.35);
+    }
+
+    .btn-action-primary:hover {
+      background: var(--color-primary-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-action-secondary {
+      background: var(--color-grey-card);
+      color: var(--color-text-dark);
+    }
+
+    .btn-action-secondary:hover {
+      background: var(--color-grey-hover);
+    }
+
+    /* ==========================================================================
+       МОЗАИКА БРЕНДБОРДА (BOARD MOSAIC GRID)
+       ========================================================================== */
+    .board-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 24px;
+    }
+
+    .tile {
+      background: var(--color-grey-card);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      position: relative;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .tile-white {
+      background: var(--color-canvas);
+      box-shadow: var(--shadow-card);
+    }
+
+    .tile-accent-lime {
+      background: var(--color-accent-lime);
+      color: var(--color-text-dark);
+    }
+
+    .tile-primary-subtle {
+      background: var(--color-primary-subtle);
+    }
+
+    .tile-head {
+      margin-bottom: 20px;
+    }
+
+    .tile-category {
+      font-family: var(--font-heading);
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--color-primary);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .tile-title {
+      font-size: 1.35rem;
+      letter-spacing: -0.02em;
+    }
+
+    /* РАЗМЕРЫ ТАЙЛОВ В СЕТКЕ */
+    .span-4 {
+      grid-column: span 4;
+    }
+
+    .span-5 {
+      grid-column: span 5;
+    }
+
+    .span-6 {
+      grid-column: span 6;
+    }
+
+    .span-7 {
+      grid-column: span 7;
+    }
+
+    .span-8 {
+      grid-column: span 8;
+    }
+
+    .span-12 {
+      grid-column: span 12;
+    }
+
+    /* ==========================================================================
+       ТАЙЛ 1: ЛОГОТИП И ОХРАННОЕ ПОЛЕ
+       ========================================================================== */
+    .logo-specimen-stage {
+      background: var(--color-canvas);
+      border-radius: var(--radius-md);
+      padding: 36px 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .logo-safe-guide {
+      position: absolute;
+      top: 12px;
+      bottom: 12px;
+      left: 12px;
+      right: 12px;
+      border: 1px dashed rgba(0, 163, 255, 0.4);
+      border-radius: 8px;
+      pointer-events: none;
+    }
+
+    .safe-tag {
+      position: absolute;
+      top: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: monospace;
+      font-size: 0.7rem;
+      color: var(--color-primary);
+      background: #FFFFFF;
+      padding: 0 4px;
+    }
+
+    .logo-large-display {
+      font-family: var(--font-heading);
+      font-size: 4rem;
+      font-weight: 500;
+      letter-spacing: -0.04em;
+      color: var(--color-text-dark);
+      line-height: 1;
+    }
+
+    .logo-features-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 0.88rem;
+      color: var(--color-text-body);
+    }
+
+    .logo-features-list li {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .bullet-blue {
+      width: 6px;
+      height: 6px;
+      border-radius: var(--radius-pill);
+      background: var(--color-primary);
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       ТАЙЛ 2: ЦВЕТОВЫЕ ТОКЕНЫ (КЛИК ДЛЯ КОПИРОВАНИЯ)
+       ========================================================================== */
+    .palette-swatches-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .board-swatch {
+      background: var(--color-canvas);
+      border-radius: var(--radius-md);
+      padding: 14px;
+      box-shadow: var(--shadow-soft);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 140px;
+    }
+
+    .board-swatch:hover {
+      transform: translateY(-2px);
+    }
+
+    .swatch-color-box {
+      height: 54px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 10px;
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.06);
+    }
+
+    .swatch-name-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-text-dark);
+      margin-bottom: 2px;
+    }
+
+    .swatch-hex-code {
+      font-family: monospace;
+      font-size: 0.8rem;
+      color: var(--color-primary);
+      font-weight: 600;
+    }
+
+    .rule-callout-pill {
+      background: var(--color-primary-subtle);
+      border-radius: var(--radius-md);
+      padding: 12px 18px;
+      font-size: 0.85rem;
+      color: var(--color-text-body);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .rule-pill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: var(--radius-pill);
+      background: var(--color-primary);
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       ТАЙЛ 3: ТИПОГРАФИКА (MONTSERRAT 500)
+       ========================================================================== */
+    .type-alphabet-box {
+      background: var(--color-canvas);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .type-glyph-display {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: var(--color-text-dark);
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+
+    .type-digits-display {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--color-primary);
+      letter-spacing: 0.05em;
+    }
+
+    .type-rules-summary {
+      font-size: 0.88rem;
+      color: var(--color-text-body);
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       ТАЙЛ 4: КНОПКИ И МИКРО-ГРАФИКА (БЕЗ ТЕМНЫХ ФОНОВ)
+       ========================================================================== */
+    .ui-showcase-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .btn-showcase-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .sfera-btn-primary {
+      padding: 12px 26px;
+      background: var(--color-primary);
+      color: #FFFFFF;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border-radius: var(--radius-pill);
+      box-shadow: 0 4px 14px rgba(0, 163, 255, 0.4);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .sfera-btn-primary:hover {
+      background: var(--color-primary-hover);
+      transform: translateY(-1px);
+    }
+
+    .sfera-btn-accent {
+      padding: 12px 26px;
+      background: var(--color-accent-lime);
+      color: var(--color-text-dark);
+      font-weight: 600;
+      font-size: 0.95rem;
+      border-radius: var(--radius-pill);
+      box-shadow: 0 4px 14px rgba(206, 243, 174, 0.5);
+      transition: all 0.2s ease;
+    }
+
+    .sfera-btn-accent:hover {
+      background: var(--color-accent-hover);
+      transform: translateY(-1px);
+    }
+
+    .sfera-btn-secondary {
+      padding: 12px 26px;
+      background: var(--color-canvas);
+      color: var(--color-text-dark);
+      font-weight: 500;
+      font-size: 0.95rem;
+      border-radius: var(--radius-pill);
+      box-shadow: var(--shadow-soft);
+      transition: all 0.2s ease;
+    }
+
+    .sfera-btn-secondary:hover {
+      background: #FFFFFF;
+      transform: translateY(-1px);
+    }
+
+    /* Микро-виджеты: API статус и метрика */
+    .widgets-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .widget-capsule {
+      background: var(--color-canvas);
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--color-text-dark);
+    }
+
+    .live-pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: var(--radius-pill);
+      background: #10B981;
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+      animation: pulseGreen 2s infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes pulseGreen {
+      0% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5);
+      }
+      70% {
+        box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+      }
+    }
+
+    /* ==========================================================================
+       ТАЙЛ 5: ВИЗУАЛЬНЫЙ СТАНДАРТ 3:4 (РЕАЛЬНЫЙ ТОВАР WB)
+       ========================================================================== */
+    .aspect-card-preview {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      background: var(--color-canvas);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 16px;
+    }
+
+    .product-mock-34 {
+      width: 140px;
+      height: 186px;
+      /* ровно пропорция 3:4 */
+      border-radius: 12px;
+      overflow: hidden;
+      flex-shrink: 0;
+      background: #F1F5F9;
+      position: relative;
+    }
+
+    .product-mock-34 img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .aspect-tag-badge {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background: var(--color-primary);
+      color: #FFFFFF;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: var(--radius-pill);
+      box-shadow: 0 2px 6px rgba(0, 163, 255, 0.4);
+    }
+
+    .aspect-info-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .aspect-info-meta h4 {
+      font-size: 1.15rem;
+    }
+
+    .aspect-info-meta p {
+      font-size: 0.88rem;
+      color: var(--color-text-body);
+      line-height: 1.45;
+    }
+
+    /* ==========================================================================
+       ТАЙЛ 6: ОРБИТАЛЬНАЯ КОНЦЕПЦИЯ (СУВЕРЕНИТЕТ СЕЛЛЕРА)
+       ========================================================================== */
+    .orbital-mini-system {
+      width: 160px;
+      height: 160px;
+      position: relative;
+      margin: 10px auto 20px;
+    }
+
+    .orbit-mini-ring {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: var(--radius-pill);
+      border: 1px dashed rgba(0, 163, 255, 0.3);
+      width: 140px;
+      height: 140px;
+      animation: spinMini 25s linear infinite;
+    }
+
+    .orbit-center-orb {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 58px;
+      height: 58px;
+      background: var(--color-primary);
+      border-radius: var(--radius-pill);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      box-shadow: 0 6px 18px rgba(0, 163, 255, 0.4);
+    }
+
+    .mini-sat-wb {
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 12px;
+      height: 12px;
+      border-radius: var(--radius-pill);
+      background: #7B1FA2;
+    }
+
+    .mini-sat-client {
+      position: absolute;
+      bottom: 12px;
+      right: 18px;
+      width: 12px;
+      height: 12px;
+      border-radius: var(--radius-pill);
+      background: var(--color-accent-lime);
+    }
+
+    @keyframes spinMini {
+      from {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+      to {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+
+    /* ==========================================================================
+       ТАЙЛ 7: КОДЕКС ПРАВИЛ (СТРОГИЕ СТАНДАРТЫ GEMINI.MD)
+       ========================================================================== */
+    .rules-checklist-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .rule-check-card {
+      background: var(--color-canvas);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .rule-check-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: var(--radius-pill);
+      background: var(--color-primary-subtle);
+      color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 4px;
+    }
+
+    .rule-check-card h5 {
+      font-size: 0.95rem;
+      color: var(--color-text-dark);
+    }
+
+    .rule-check-card p {
+      font-size: 0.82rem;
+      color: var(--color-text-body);
+      line-height: 1.4;
+    }
+
+    /* Тост копирования — строго светлый фон */
+    .toast-feedback {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--color-canvas);
+      color: var(--color-text-dark);
+      padding: 12px 24px;
+      border-radius: var(--radius-pill);
+      font-size: 0.9rem;
+      font-weight: 500;
+      box-shadow: 0 10px 30px rgba(10, 15, 29, 0.1);
+      border: 1px solid rgba(0, 163, 255, 0.25);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .toast-feedback.show {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* Адаптивность для экранов */
+    @media (max-width: 1024px) {
+      .span-4,
+      .span-5,
+      .span-6,
+      .span-7,
+      .span-8 {
+        grid-column: span 12;
+      }
+
+      .board-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .rules-checklist-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .palette-swatches-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media print {
+      body {
+        padding: 0;
+        background: #FFFFFF;
+      }
+      .brandboard-canvas {
+        box-shadow: none;
+        padding: 20px;
+        border-radius: 0;
+      }
+      .board-actions {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="brandboard-canvas">
+
+    <!-- =========================================================
+         ШАПКА БРЕНДБОРДА
+    ========================================================= -->
+    <header class="board-header">
+      <div class="brand-title-wrap">
+        <div class="brand-logo-main">
+          <span>сфера</span><span class="brand-logo-dot">.</span>
+        </div>
+        <p class="brand-descriptor">
+          Официальный брендборд дизайн-системы. Личный интернет-магазин с современным дизайном:
+          просто, доступно, запуск за 48 часов и 0% комиссий.
+        </p>
+      </div>
+
+      <div class="board-actions">
+        <button class="btn-action btn-action-secondary" onclick="copyCssTokens()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+          </svg>
+          <span>Скопировать CSS токены</span>
+        </button>
+
+        <a href="identity.html" class="btn-action btn-action-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="5 3 19 12 5 21 5 3" />
+          </svg>
+          <span>Открыть презентацию</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- =========================================================
+         СЕТКА БРЕНДБОРДА (BRANDBOARD MOSAIC)
+    ========================================================= -->
+    <main class="board-grid">
+
+      <!-- 1. ЛОГОТИП И ЗНАК (SPAN 5) -->
+      <article class="tile span-5">
+        <div class="tile-head">
+          <div class="tile-category">Идентификатор бренда</div>
+          <h2 class="tile-title">Логотип и знак «сфера.»</h2>
+        </div>
+
+        <div class="logo-specimen-stage">
+          <div class="logo-safe-guide">
+            <span class="safe-tag">1.5x</span>
+          </div>
+          <div class="logo-large-display">
+            <span>сфера</span><span style="color: var(--color-primary);">.</span>
+          </div>
+        </div>
+
+        <ul class="logo-features-list">
+          <li><span class="bullet-blue"></span> Шрифт: Montserrat (строго строчные буквы, вес 500).</li>
+          <li><span class="bullet-blue"></span> Точка-спутник: основной цвет <code>#00A3FF</code>.</li>
+          <li><span class="bullet-blue"></span> Охранное поле: 1.5x высоты литеры «с» со всех сторон.</li>
+          <li><span class="bullet-blue"></span> Запрет: CAPS LOCK, темные подложки, градиенты и контуры.</li>
+        </ul>
+      </article>
+
+      <!-- 2. ЦВЕТОВАЯ ПАЛИТРА (SPAN 7) -->
+      <article class="tile span-7">
+        <div class="tile-head">
+          <div class="tile-category">Цветовой кодекс</div>
+          <h2 class="tile-title">Цветовая палитра: основной #00A3FF</h2>
+        </div>
+
+        <div class="palette-swatches-row">
+          <!-- Sfera Primary -->
+          <div class="board-swatch" onclick="copySwatch('#00A3FF', 'Sfera Primary')">
+            <div class="swatch-color-box" style="background: #00A3FF;"></div>
+            <div>
+              <div class="swatch-name-label">Primary Blue</div>
+              <div class="swatch-hex-code">#00A3FF</div>
+            </div>
+          </div>
+
+          <!-- Sfera Accent Lime -->
+          <div class="board-swatch" onclick="copySwatch('#cef3ae', 'Sfera Accent Lime')">
+            <div class="swatch-color-box" style="background: #cef3ae;"></div>
+            <div>
+              <div class="swatch-name-label">Accent Lime</div>
+              <div class="swatch-hex-code" style="color: #2E7D32;">#cef3ae</div>
+            </div>
+          </div>
+
+          <!-- Canvas White -->
+          <div class="board-swatch" onclick="copySwatch('#FFFFFF', 'Canvas White')">
+            <div class="swatch-color-box" style="background: #FFFFFF;"></div>
+            <div>
+              <div class="swatch-name-label">Canvas White</div>
+              <div class="swatch-hex-code" style="color: var(--color-text-muted);">#FFFFFF</div>
+            </div>
+          </div>
+
+          <!-- Sfera Grey -->
+          <div class="board-swatch" onclick="copySwatch('#F1F5F9', 'Sfera Grey')">
+            <div class="swatch-color-box" style="background: #F1F5F9;"></div>
+            <div>
+              <div class="swatch-name-label">Sfera Grey</div>
+              <div class="swatch-hex-code" style="color: var(--color-text-body);">#F1F5F9</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rule-callout-pill">
+          <span class="rule-pill-dot"></span>
+          <span>
+            <strong>Запрет темных фонов</strong>: мы не используем темные фоны ни у кнопок, ни у других элементов.
+            Цвет <code>#0A0F1D</code> служит исключительно для текста.
+          </span>
+        </div>
+      </article>
+
+      <!-- 3. ТИПОГРАФИКА: СТАНДАРТ 500 (SPAN 6) -->
+      <article class="tile span-6">
+        <div class="tile-head">
+          <div class="tile-category">Типографическая система</div>
+          <h2 class="tile-title">Шрифт Montserrat 500 & Inter</h2>
+        </div>
+
+        <div class="type-alphabet-box">
+          <div class="type-glyph-display">
+            Аа Бб Вв Гг Дд Ее Жж Зз Ии Кк Лл Мм Нн Оо Пп Рр Сс Тт Уу Фф Хх Цц Чч Шш Щщ Ээ Юю Яя
+          </div>
+          <div class="type-digits-display">
+            0 1 2 3 4 5 6 7 8 9 · % № § @
+          </div>
+        </div>
+
+        <div class="type-rules-summary">
+          <p>
+            <strong>Заголовки строго не жирнее 500</strong>: Montserrat 500 обеспечивает европейский технологичный статус
+            без агрессивной жирности. Наборный текст — Inter (400, 500) для безупречной читаемости на экранах любой плотности.
+          </p>
+        </div>
+      </article>
+
+      <!-- 4. КНОПКИ И МИКРО-ГРАФИКА (SPAN 6) -->
+      <article class="tile span-6">
+        <div class="tile-head">
+          <div class="tile-category">Интерфейсная система</div>
+          <h2 class="tile-title">Кнопки действий и индикаторы</h2>
+        </div>
+
+        <div class="ui-showcase-stack">
+          <!-- Кнопки: основная, акцентная, вторичная -->
+          <div class="btn-showcase-row">
+            <button class="sfera-btn-primary">
+              <span>Запустить за 48 часов</span>
+            </button>
+            <button class="sfera-btn-accent">
+              <span>0% комиссий</span>
+            </button>
+            <button class="sfera-btn-secondary">
+              <span>Пощупать демо</span>
+            </button>
+          </div>
+
+          <!-- Виджеты статусов -->
+          <div class="widgets-row">
+            <div class="widget-capsule">
+              <span class="live-pulse-dot"></span>
+              <span>WB API: Каталог синхронизирован</span>
+            </div>
+
+            <div class="widget-capsule">
+              <span style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 500; color: var(--color-primary);">0%</span>
+              <span style="font-size: 0.82rem; color: var(--color-text-body);">Комиссия платформы</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="font-size: 0.88rem; color: var(--color-text-body);">
+          Плавный радиус скругления pill (9999px). Полное отсутствие темных кнопок и цветных рамок.
+        </div>
+      </article>
+
+      <!-- 5. ВИЗУАЛЬНЫЙ СТАНДАРТ 3:4 (SPAN 7) -->
+      <article class="tile span-7">
+        <div class="tile-head">
+          <div class="tile-category">Стандарт фотоконтента</div>
+          <h2 class="tile-title">Формат 3:4 (0% обрезки карточек WB)</h2>
+        </div>
+
+        <div class="aspect-card-preview">
+          <div class="product-mock-34">
+            <img src="img/product-card-electric-kettle-modern.jpg" alt="Товар в формате 3:4"
+              onerror="this.style.display='none'">
+            <span class="aspect-tag-badge">3:4 WB</span>
+          </div>
+
+          <div class="aspect-info-meta">
+            <h4>Инфографика селлера целиком</h4>
+            <p>
+              Карточки товаров переносятся с Wildberries один в один по API. В отличие от CMS с квадратной сеткой 1:1,
+              в Сфере не срезаются размерные таблицы, плашки преимуществ и акценты дизайна.
+            </p>
+          </div>
+        </div>
+
+        <div style="font-size: 0.85rem; color: var(--color-text-muted);">
+          Честные предметные фотографии с естественным светом без стоковых клипартов и шума.
+        </div>
+      </article>
+
+      <!-- 6. СУВЕРЕННАЯ ОРБИТА (SPAN 5) -->
+      <article class="tile span-5" style="text-align: center;">
+        <div class="tile-head" style="text-align: left;">
+          <div class="tile-category">Метафора бренда</div>
+          <h2 class="tile-title">Суверенная орбита селлера</h2>
+        </div>
+
+        <div class="orbital-mini-system">
+          <div class="orbit-mini-ring"></div>
+          <div class="mini-sat-wb" title="Wildberries Catalog"></div>
+          <div class="mini-sat-client" title="Собственная база"></div>
+          <div class="orbit-center-orb">
+            <span style="font-family: var(--font-heading); font-size: 0.75rem; font-weight: 500;">сфера.</span>
+          </div>
+        </div>
+
+        <p style="font-size: 0.88rem; color: var(--color-text-body); max-width: 340px; margin: 0 auto;">
+          Магазин селлера — центр притяжения. Клиенты, продажи и маржа остаются внутри вашей системы навсегда.
+        </p>
+      </article>
+
+      <!-- 7. ЗОЛОТЫЕ ПРАВИЛА GEMINI.MD (SPAN 12) -->
+      <article class="tile span-12 tile-white">
+        <div class="tile-head">
+          <div class="tile-category">Кодекс дизайн-системы</div>
+          <h2 class="tile-title">6 обязательных стандартов Сферы</h2>
+        </div>
+
+        <div class="rules-checklist-grid">
+          <div class="rule-check-card">
+            <div class="rule-check-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+            <h5>0% темных фонов у кнопок</h5>
+            <p>Никаких черных или темных кнопок. Основной цвет — синий #00A3FF, акцентный — #cef3ae, вторичные — #F1F5F9.</p>
+          </div>
+
+          <div class="rule-check-card">
+            <div class="rule-check-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+            <h5>Строгие светлые фоны</h5>
+            <p>Фон страниц — #FFFFFF. Фон карточек строго #F1F5F9 или #cef3ae. Никаких других оттенков серого.</p>
+          </div>
+
+          <div class="rule-check-card">
+            <div class="rule-check-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+            <h5>Шрифт строго веса 500</h5>
+            <p>Заголовки Montserrat строго font-weight: 500. Запрещены тяжелые начертания 700 и 800.</p>
+          </div>
+
+          <div class="rule-check-card">
+            <div class="rule-check-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+            <h5>Запрет на бейджи-ярлыки</h5>
+            <p>Никаких плашек («Хит», «Выбор селлеров», «Старт»). Дизайн говорит типографикой и смыслом.</p>
+          </div>
+
+          <div class="rule-check-card">
+            <div class="rule-check-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+            <h5>Без рамок и градиентов</h5>
+            <p>Никаких рамок у карточек. Разделение мягким тональным контрастом и тенями rgba(10,15,29,0.04).</p>
+          </div>
+
+          <div class="rule-check-card">
+            <div class="rule-check-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+            <h5>Строгий запрет на эмодзи</h5>
+            <p>Никаких смайликов в интерфейсе. Только аккуратная векторная микро-графика (SVG 1.5–2px).</p>
+          </div>
+        </div>
+      </article>
+
+    </main>
+
+  </div>
+
+  <!-- Всплывающее уведомление о копировании -->
+  <div class="toast-feedback" id="boardToast">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#cef3ae" stroke-width="2.5">
+      <polyline points="20 6 9 17 4 12" />
+    </svg>
+    <span id="toastMessage">Скопировано в буфер обмена</span>
+  </div>
+
+  <script>
+    function showToast(text) {
+      const toast = document.getElementById('boardToast');
+      const msg = document.getElementById('toastMessage');
+      if (toast && msg) {
+        msg.textContent = text;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 1800);
+      }
+    }
+
+    function copySwatch(hex, name) {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(hex).then(() => {
+          showToast(`${name}: ${hex} скопирован`);
+        });
+      }
+    }
+
+    function copyCssTokens() {
+      const tokens = `:root {
+  --color-primary: #00A3FF;
+  --color-accent-lime: #cef3ae;
+  --color-canvas: #FFFFFF;
+  --color-grey-card: #F1F5F9;
+  --color-text-dark: #0A0F1D;
+  --color-text-body: #475569;
+  --font-heading: 'Montserrat', sans-serif; /* weight: 500 */
+  --font-body: 'Inter', sans-serif;
+  --radius-pill: 9999px;
+}`;
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(tokens).then(() => {
+          showToast('CSS токены скопированы');
+        });
+      }
+    }
+  </script>
+
+</body>
+
+</html>

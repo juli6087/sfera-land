@@ -7,3 +7,7 @@ $RECYCLE.BIN/
 
 # Logs
 *.log
+
+# Dependencies
+node_modules/
+

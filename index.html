@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Сфера. — Свой магазин за 48 часов</title>
+  <title>Сфера. — Своя витрина для продаж за 48 часов</title>
   <meta name="description"
-    content="Личный интернет-магазин с автоматическим переносом каталога с Wildberries. Карточки 3:4, чекаут за 10 секунд и 0% комиссий.">
+    content="Легкая онлайн-витрина для прямых продаж ваших товаров за 48 часов. Дизайн уровня маркетплейсов, чекаут за 10 секунд и ничего лишнего.">
 
   <!-- Шрифты: Montserrat (заголовки 500) и Inter (текст) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +15,7 @@
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=12.5">
 </head>
 
 <body>
@@ -30,10 +30,10 @@
       </a>
 
       <div class="nav-actions">
-        <button class="sf-btn sf-btn-ghost" onclick="openLeadModal('Вопрос из шапки')">Задать вопрос</button>
-        <button class="sf-btn sf-btn-primary" onclick="openLeadModal('Демо из шапки')">
-          <span>Пощупать демо</span>
-        </button>
+        <a href="https://redsign.ru/" target="_blank" rel="noopener noreferrer" class="nav-developer-link">
+          <span class="nav-dev-label">Разработчик</span>
+          <span class="nav-dev-name">АЛЬФА Системс</span>
+        </a>
       </div>
     </div>
   </header>
@@ -52,28 +52,34 @@
 
     <div class="sf-container hero-container-rel">
       <div class="hero-header-center">
+        <div class="hero-eyebrow-text">
+          <span class="hero-eyebrow-dot"></span>
+          Сайт бренда нового поколения
+        </div>
         <h1 class="hero-heading">
-          Твой личный магазин.<br>
-          Каталог сам прилетит с&nbsp;Wildberries.
+          Своя витрина для продаж.<br>
+          Быстро. Доступно. Ничего лишнего.
         </h1>
         <p class="hero-subheading">
-          Забудьте про месяцы разработки и раздутые бюджеты. Автоматически переносите товары с Wildberries, создавайте
-          тексты через встроенный ИИ и меняйте стиль сайта в пару кликов. Просто. Быстро. Удобно.
+          Только ваш продукт и готовые к заказу клиенты. Интерфейс уровня топовых маркетплейсов, умные AI-инструменты и
+          никакой сложной разработки!
         </p>
         <div class="hero-cta-group">
-          <button class="sf-btn sf-btn-accent sf-btn-xl" onclick="openLeadModal('Запуск из Hero')">
-            <span>Запустить за 48 часов</span>
-          </button>
-          <a href="#features" class="sf-btn sf-btn-secondary sf-btn-xl">
-            <span>Как это работает</span>
+          <a href="https://sfera.redsign.ru/" target="_blank" rel="noopener noreferrer"
+            class="sf-btn sf-btn-accent sf-btn-xl">
+            <span>Посмотреть демо</span>
+          </a>
+          <a href="https://max.ru/u/f9LHodD0cOLWd9W5wZvcTWM3_rM5Veuax769Jt6KFy_HW4vw5ag8vG1SHB8" target="_blank"
+            rel="noopener noreferrer" class="sf-btn sf-btn-secondary sf-btn-xl">
+            <span>Обсудить проект</span>
           </a>
         </div>
       </div>
 
-      <!-- Сцена Hero: компактный мокап браузера и выступающие информативные плашки с инфографикой -->
+      <!-- Сцена Hero: компактный мокап браузера и выступающие информативные плашки -->
       <div class="hero-stage-wrapper">
 
-        <!-- Центральный мокап браузера (сужен по ширине для естественного перекрытия) -->
+        <!-- Центральный мокап браузера -->
         <div class="hero-browser-mockup">
           <div class="screen-mac-bar">
             <div class="mac-dots">
@@ -81,78 +87,134 @@
               <span class="m-dot yellow"></span>
               <span class="m-dot green"></span>
             </div>
-            <div class="screen-url-capsule">sfera.site — витрина интернет-магазина</div>
+            <div class="screen-url-capsule">sfera.redsign.ru</div>
             <div class="screen-status-dot"></div>
           </div>
 
           <div class="hero-screen-canvas">
-            <img src="img/sfera.loc.jul__bitrix_include_areas=Y&clear_cache=Y 1.png" alt="Главная страница магазина Сфера"
-              class="hero-panorama-img">
+            <img src="img/mainsc.jpg" alt="Главная страница витрины Сфера" class="hero-panorama-img">
           </div>
         </div>
 
-        <!-- Плашка Wildberries (Справа сверху: на месте прежнего визуала) -->
-        <div class="hero-float-card card-sync">
-          <div class="card-chart-head">
-            <div class="wb-logo-icon">
-              <span>WB</span>
-            </div>
-            <div class="wb-head-info">
-              <span class="card-head-title">Wildberries</span>
-              <span class="wb-head-sub">Синхронизация по API</span>
-            </div>
+        <!-- Карточка 1: Трендовый UI (Справа сверху, не перекрывает логотип в шапке слева) -->
+        <div class="hero-float-card card-hero-ui">
+          <div class="hfc-graphic hfc-graphic-ui">
+            <svg width="54" height="54" viewBox="0 0 54 54" fill="none">
+              <rect width="54" height="54" rx="14" fill="#EEF2F6" />
+              <!-- Крупный макет карточки товара -->
+              <rect x="11" y="6" width="32" height="42" rx="6" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2" />
+              <rect x="15" y="10" width="24" height="21" rx="4" fill="#EEF2F6" />
+              <!-- Зеленая иконка с галкой внутри карточки -->
+              <circle cx="27" cy="20.5" r="7.5" fill="#cef3ae" />
+              <path d="M23.5 20.5L25.8 22.8L30.5 17.8" stroke="#1F380A" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <!-- Скелетон цены и названия карточки -->
+              <rect x="15" y="36" width="15" height="2.5" rx="1.25" fill="#CBD5E1" />
+              <rect x="15" y="41" width="9" height="2.5" rx="1.25" fill="#00A3FF" />
+            </svg>
           </div>
-
-          <div class="wb-card-content">
-            <div class="wb-sync-indicator-row">
-              <span class="wb-sync-pulse"></span>
-              <span>Остатки, фото и цены обновлены</span>
-            </div>
+          <div class="hfc-text-group">
+            <div class="hfc-title">Трендовый UI</div>
+            <div class="hfc-sub">Адаптация под маркетплейсы</div>
           </div>
         </div>
 
-        <!-- Плашка 3: Карточка товара 3:4 (Слева по центру: компактный вид) -->
-        <div class="hero-float-card card-aspect">
-          <div class="card-chart-head">
-            <span class="card-head-title">Формат фото 3:4</span>
-          </div>
-
-          <div class="aspect-card-body">
-            <div class="aspect-visual-diagram">
-              <div class="diagram-canvas-34">
-                <span class="diagram-tag-ratio">3:4</span>
-                <div class="diagram-mock-photo">
-                  <span class="d-photo-sun"></span>
-                  <span class="d-photo-mountain"></span>
+        <!-- Карточка 2: Простота продаж (Слева по центру, крупная анимированная инфографика и текст под ней) -->
+        <div class="hero-float-card card-hero-checkout card-vertical">
+          <div class="hfc-anim-infographic">
+            <!-- Круговая диаграмма прохождения 10 секунд и статус оформления -->
+            <div class="hfc-anim-timer-row">
+              <div class="hfc-circle-chart-wrap">
+                <svg width="50" height="50" viewBox="0 0 50 50" fill="none">
+                  <circle cx="25" cy="25" r="20" stroke="#E2E8F0" stroke-width="3.2" />
+                  <circle class="hfc-circle-timer-fill" cx="25" cy="25" r="20" stroke="#00A3FF" stroke-width="3.2"
+                    stroke-linecap="round" stroke-dasharray="125.7" stroke-dashoffset="0"
+                    transform="rotate(-90 25 25)" />
+                  <text x="25" y="29.5" font-family="'Inter', sans-serif" font-size="12.5" font-weight="600"
+                    fill="#0A0F1D" text-anchor="middle">10s</text>
+                </svg>
+              </div>
+              <div class="hfc-timer-status-col">
+                <div class="hfc-timer-status-title">Оформить заказ</div>
+                <div class="hfc-timer-status-hint">
+                  <span class="hfc-timer-dot"></span>
+                  <span>В 1 касание</span>
                 </div>
               </div>
-              <div class="diagram-aspect-notes">
-                <div class="aspect-note-bold">0% обрезки</div>
-                <div class="aspect-note-sub">Инфографика целиком</div>
-              </div>
             </div>
+          </div>
+          <div class="hfc-text-group">
+            <div class="hfc-title">Простота продаж</div>
+            <div class="hfc-sub">Без паролей и регистрации</div>
           </div>
         </div>
 
-        <!-- Плашка 4: Прибыль и 0% комиссий (Справа снизу: фокус на 0% комиссии) -->
-        <div class="hero-float-card card-revenue">
-          <div class="card-chart-head">
-            <span class="card-head-title">Продажи без комиссий</span>
-          </div>
+        <!-- Карточка 3: Встроенные AI-инструменты (Справа ниже центра, яркие крупные иконки слева направо) -->
+        <div class="hero-float-card card-hero-ai">
+          <div class="hfc-graphic hfc-graphic-ai">
+            <svg width="80" height="60" viewBox="0 0 66 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <!-- Градиент для иконки 1: Умный контент (насыщенный синий Sfera) -->
+                <linearGradient id="aiIconBlue" x1="3" y1="9" x2="39" y2="45" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#00B4FF" />
+                  <stop offset="50%" stop-color="#00A3FF" />
+                  <stop offset="100%" stop-color="#0072E8" />
+                </linearGradient>
 
-          <div class="revenue-widget-body">
-            <div class="revenue-bars-row">
-              <div class="micro-bars-chart">
-                <span class="m-bar h1"></span>
-                <span class="m-bar h2"></span>
-                <span class="m-bar h3"></span>
-                <span class="m-bar h4 active"></span>
-              </div>
-              <div class="revenue-sum-block">
-                <div class="v-card-sum">100% прибыли</div>
-                <div class="v-card-sub">0 ₽ скрытых сборов и вычетов</div>
-              </div>
-            </div>
+
+                <!-- Тени для объемного наложения слева направо -->
+                <filter id="aiShadowRight" x="23" y="3" width="44" height="44" filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB">
+                  <feDropShadow dx="0" dy="2.5" stdDeviation="2.5" flood-color="#0A0F1D" flood-opacity="0.12" />
+                </filter>
+
+                <filter id="aiShadowLeft" x="-1" y="6" width="46" height="46" filterUnits="userSpaceOnUse"
+                  color-interpolation-filters="sRGB">
+                  <feDropShadow dx="1" dy="3" stdDeviation="2.5" flood-color="#0A0F1D" flood-opacity="0.14" />
+                </filter>
+              </defs>
+
+              <!-- Иконка 2: «Умный поиск» (справа, сзади, нежный голубой #E0F2FE с акцентным синим) -->
+              <g filter="url(#aiShadowRight)">
+                <rect x="27" y="5" width="36" height="36" rx="10" fill="#E0F2FE" />
+                <circle cx="43.5" cy="21.5" r="6.5" stroke="#00A3FF" stroke-width="2.2" />
+                <path d="M48.5 26.5L53.5 31.5" stroke="#00A3FF" stroke-width="2.4" stroke-linecap="round" />
+                <circle cx="43.5" cy="21.5" r="2" fill="#00A3FF" />
+                <path d="M51 13.5L51.8 15.2L53.5 16L51.8 16.8L51 18.5L50.2 16.8L48.5 16L50.2 15.2L51 13.5Z"
+                  fill="#00A3FF" />
+              </g>
+
+              <!-- Иконка 1: «Умный контент» (слева, на переднем плане, фирменный зеленый #cef3ae, контурная графика, центрированный элемент) -->
+              <g filter="url(#aiShadowLeft)">
+                <rect x="3" y="9" width="36" height="36" rx="10" fill="#cef3ae" />
+                <path d="M 21 18 C 21 22.8 25.2 27 30 27 C 25.2 27 21 31.2 21 36 C 21 31.2 16.8 27 12 27 C 16.8 27 21 22.8 21 18 Z"
+                  stroke="#00A3FF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+                <circle cx="21" cy="27" r="1.8" fill="#00A3FF" />
+              </g>
+            </svg>
+          </div>
+          <div class="hfc-text-group">
+            <div class="hfc-title">Встроенные AI-инструменты</div>
+            <div class="hfc-sub">Не нужно писать тексты и подбирать картинки</div>
+          </div>
+        </div>
+
+        <!-- Карточка 4: Запуск за 48 часов (Слева снизу, акцентный фон #cef3ae, анимация, заходит на мокап) -->
+        <div class="hero-float-card card-hero-speed">
+          <div class="hfc-graphic hfc-graphic-speed">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+              <rect width="48" height="48" rx="14" fill="#FFFFFF" />
+              <!-- Круговая шкала 48 часов -->
+              <circle cx="24" cy="24" r="16" stroke="#E0F2FE" stroke-width="2.5" />
+              <circle class="hfc-speed-gauge-fill" cx="24" cy="24" r="16" stroke="#00A3FF" stroke-width="2.8"
+                stroke-linecap="round" stroke-dasharray="100.5" stroke-dashoffset="25" transform="rotate(-90 24 24)" />
+              <text x="24" y="28" font-family="'Inter', sans-serif" font-size="11.5" font-weight="600" fill="#00A3FF"
+                text-anchor="middle">48h</text>
+            </svg>
+          </div>
+          <div class="hfc-text-group">
+            <div class="hfc-title hfc-title-accent">Запуск за 48 часов</div>
+            <div class="hfc-sub hfc-sub-accent">Готовая витрина на Битрикс: Старт</div>
           </div>
         </div>
 
@@ -175,14 +237,8 @@
         </p>
       </div>
 
-      <!-- Инновационная Бенто-структура 2-го экрана с интеграцией фото и скриншотов системы -->
+      <!-- Бенто-структура 2-го экрана: 4 сбалансированные карточки -->
       <div class="screen2-bento-grid">
-
-        <!-- Верхняя Бенто-строка: Фото команды (слева) + Приложение и запуск за пару вечеров (справа) -->
-        <div class="s2-bento-card card-team-visual">
-          <img src="img/Gemini_Generated_Image_9l1cph9l1cph9l1c.jpg"
-            alt="Команда настраивает интернет-магазин Сфера за ноутбуком" class="s2-team-img">
-        </div>
 
         <!-- Карточка 1: Готов к работе с первого дня с чистой визуальной инфографикой процесса -->
         <div class="s2-bento-card card-quick-launch">
@@ -234,118 +290,704 @@
           </div>
         </div>
 
-        <!-- Нижняя Бенто-строка: Карточка 3 (Любой формат продаж) + Карточка 4 (Нейро-копирайтер) -->
-        <div class="s2-bento-row-lower">
-          <!-- Карточка 3: Любой формат продаж (Интерактивная лента сценариев — более компактная по ширине) -->
-          <div class="s2-bento-card card-business-fit">
-            <div class="s2-card-body s2-fit-head">
-              <h3 class="benefit-title">Любой формат продаж</h3>
-              <p class="benefit-desc">«Сфера» легко адаптируется под реальные задачи вашего бизнеса:</p>
+        <!-- Карточка 2: Адаптировано под маркетплейсы (Инфографика вертикального формата и витрины) -->
+        <div class="s2-bento-card card-marketplace-fit">
+          <div class="s2-card-body s2-fit-head">
+            <h3 class="benefit-title">Адаптировано под маркетплейсы</h3>
+          </div>
+
+          <!-- Инфографика: каскадная галерея вертикального контента и маркеры адаптации -->
+          <div class="s2-mp-gallery-stage">
+
+            <!-- Каскад двух вертикальных слайдов инфографики товара -->
+            <div class="s2-mp-frames-cluster">
+              <!-- Задний вертикальный кадр: бытовая техника -->
+              <div class="s2-mp-photo-frame frame-back">
+                <img src="img/showcase-kettle-kitchen.jpg" alt="Слайд инфографики чайника" class="s2-mp-slide-img">
+              </div>
+
+              <!-- Передний вертикальный кадр: косметика (чистый кадр без перекрывающих плашек) -->
+              <div class="s2-mp-photo-frame frame-front">
+                <img src="img/showcase-cosmetics-avocado.jpg" alt="Вертикальный контент косметики 3:4"
+                  class="s2-mp-slide-img">
+              </div>
+
+              <!-- Информационная плашка 1: Формат и соотношение сторон (вверху слева) -->
+              <div class="s2-mp-floating-pill pill-top">
+                <span class="s2-mp-pill-dot blue"></span>
+                <span class="s2-mp-pill-strong">Слайды 3:4</span>
+                <span class="s2-mp-pill-light">без обрезки по краям</span>
+              </div>
+
+              <!-- Информационная плашка 2: Клиентская база и владение данными (внизу справа) -->
+              <div class="s2-mp-floating-pill pill-bottom">
+                <span class="s2-mp-pill-dot green"></span>
+                <span class="s2-mp-pill-strong">База клиентов</span>
+                <span class="s2-mp-pill-light">остаётся у вашего бренда</span>
+              </div>
             </div>
 
-            <!-- Сценарная архитектура: 3 выверенные строки форматов -->
-            <div class="s2-scenarios-stack">
-              <!-- Сценарий 1: Маркетплейсы -->
-              <div class="s2-scenario-row">
-                <div class="s2-row-icon wb">
-                  <span>WB</span>
-                </div>
-                <div class="s2-row-content">
-                  <span class="s2-row-title">Маркетплейсы</span>
-                  <span class="s2-row-hint">Импорт каталога с Wildberries и Ozon</span>
-                </div>
-                <div class="s2-row-check">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            <!-- Две аккуратные строки преимуществ адаптации с укрупнённым текстом -->
+            <div class="s2-mp-benefit-rows">
+              <div class="s2-mp-brow-item">
+                <div class="s2-mp-brow-icon blue">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
                     stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                    <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                    <polyline points="21 15 16 10 5 21"></polyline>
                   </svg>
+                </div>
+                <div class="s2-mp-brow-text">
+                  <span class="s2-mp-brow-title">Вертикальный формат инфографики</span>
+                  <span class="s2-mp-brow-sub">Слайды и фото товаров встают на витрину в нативных пропорциях 3:4</span>
                 </div>
               </div>
 
-              <!-- Сценарий 2: Продажа услуг -->
-              <div class="s2-scenario-row">
-                <div class="s2-row-icon yclients">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              <div class="s2-mp-brow-item">
+                <div class="s2-mp-brow-icon green">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
                     stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="8.5" cy="7" r="4"></circle>
+                    <polyline points="17 11 19 13 23 9"></polyline>
                   </svg>
                 </div>
-                <div class="s2-row-content">
-                  <span class="s2-row-title">Продажа услуг</span>
-                  <span class="s2-row-hint">Быстрая ссылка на онлайн-запись (YCLIENTS, DIKIDI)</span>
+                <div class="s2-mp-brow-text">
+                  <span class="s2-mp-brow-title">Быстрый заказ без лишних шагов</span>
+                  <span class="s2-mp-brow-sub">Покупатель оформляет товар в 1 клик без обязательной регистрации и
+                    паролей</span>
                 </div>
-                <div class="s2-row-check">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Карточка 3: Встроенные AI-инструменты (Ширина 5 колонок) -->
+        <div class="s2-bento-card card-ai-writer">
+          <div class="s2-card-body s2-ai-head">
+            <h3 class="benefit-title">Встроенные AI-инструменты</h3>
+            <p class="benefit-desc">Генерация продающих описаний, автоподбор SEO и умный поиск с исправлением опечаток
+              прямо из коробки.</p>
+          </div>
+
+          <!-- Интерактивная витрина возможностей ИИ (два компактных виджета с акцентным зеленым фоном) -->
+          <div class="s2-ai-stage-grid">
+
+            <!-- Модуль 1: AI-копирайтер и SEO (Акцентный фирменный фон #cef3ae) -->
+            <div class="s2-ai-module-card s2-ai-content-module mod-accent-green">
+              <div class="s2-ai-module-header">
+                <div class="s2-ai-module-title-wrap">
+                  <div class="s2-ai-module-icon green-dark">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"></path>
+                    </svg>
+                  </div>
+                  <span class="s2-ai-module-name mod-name-dark">Генерация описаний и SEO</span>
+                </div>
+                <div class="s2-ai-status-pill mod-pill-white">
+                  <span class="s2-ai-status-dot mod-dot-green"></span>
+                  <span>Готово</span>
                 </div>
               </div>
 
-              <!-- Сценарий 3: Прайс-листы и B2B -->
-              <div class="s2-scenario-row">
-                <div class="s2-row-icon b2b">
-                  <span>B2B</span>
+              <div class="s2-ai-typing-stream">
+                <span>«Беспроводные наушники с активным шумоподавлением и чистым звуком...»</span>
+                <span class="s2-ai-caret"></span>
+              </div>
+
+              <div class="s2-ai-meta-check">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1F380A" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>Автоматический подбор Title, H1 и мета-тегов</span>
+              </div>
+            </div>
+
+            <!-- Модуль 2: Умный поиск с автоисправлением (Фон #F1F5F9, элементы #cef3ae) -->
+            <div class="s2-ai-module-card s2-ai-search-module">
+              <div class="s2-ai-module-header">
+                <div class="s2-ai-module-title-wrap">
+                  <div class="s2-ai-module-icon green">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                  </div>
+                  <span class="s2-ai-module-name">Умный поиск из коробки</span>
                 </div>
-                <div class="s2-row-content">
-                  <span class="s2-row-title">Опт и B2B-заказы</span>
-                  <span class="s2-row-hint">Загрузка документов и корзина заявки</span>
+                <span class="s2-ai-results-count mod-badge-green">14 товаров</span>
+              </div>
+
+              <div class="s2-ai-search-input-sim">
+                <svg class="s2-ai-search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94A3B8"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <span class="s2-ai-search-typo">yfeiybrb</span>
+                <svg class="s2-ai-arrow-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00A3FF"
+                  stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+                <span class="s2-ai-search-fixed">Наушники беспроводные</span>
+              </div>
+
+              <div class="s2-ai-search-chips">
+                <span class="s2-ai-chip"><span class="chip-dot"></span>Опечатки</span>
+                <span class="s2-ai-chip"><span class="chip-dot"></span>Смена раскладки</span>
+                <span class="s2-ai-chip"><span class="chip-dot"></span>Поиск по смыслу</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Карточка 4: Простая документация по продукту (Фото во весь блок + продуманная плашка) -->
+        <div class="s2-bento-card card-team-visual">
+          <img src="img/Gemini_Generated_Image_9l1cph9l1cph9l1c.jpg" alt="Команда разработчиков Сфера"
+            class="s2-team-full-photo">
+
+          <div class="s2-team-plate-wrap">
+            <!-- Персонаж-маскот, выглядывающий из-за плашки -->
+            <div class="s2-team-mascot-behind">
+              <img src="img/sfera-character-peeking.png" alt="Персонаж Сфера" class="s2-mascot-peeking-img">
+            </div>
+
+            <div class="s2-team-plate">
+              <div class="s2-team-plate-header">
+                <div class="s2-team-plate-titles">
+                  <h4 class="s2-team-plate-title">Документация по продукту «для людей»</h4>
+                  <p class="s2-team-plate-sub">Понятные визуальные инструкции: запуск витрины и управление каталогом без
+                    помощи программистов.</p>
                 </div>
-                <div class="s2-row-check">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              </div>
+
+              <div class="s2-team-plate-tags">
+                <span class="s2-team-tag-item">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00A3FF" stroke-width="2.5"
                     stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
-                </div>
+                  <span>Скриншоты каждого шага</span>
+                </span>
+                <span class="s2-team-tag-item">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00A3FF" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>Поддержка авторов</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       2.1. ИИ-СЕРВИСЫ: УМНЫЙ КОНТЕНТ И УМНЫЙ ПОИСК
+  ========================================================= -->
+  <section class="sf-ai-services-section" id="ai-services">
+    <div class="sf-container">
+      <div class="section-header-compact">
+        <h2 class="section-title-center">Встроенные AI-инструменты</h2>
+        <p class="section-subtitle-center">
+          Нейросети для описаний, картинок и&nbsp;SEO плюс умный поиск с&nbsp;распознаванием опечаток прямо
+          «из&nbsp;коробки». Экономьте на&nbsp;услугах сторонних специалистов и&nbsp;запускайтесь быстрее.
+        </p>
+      </div>
+
+      <!-- 1. Интерактивная фото-витрина во всю ширину сверху (собрана кодом из отдельных элементов) -->
+      <div class="ai-hero-full-banner">
+        <div class="ai-phone-hero-card ai-scene-stage">
+          <!-- Фоновый маскот Сферы, выглядывает из-за руки -->
+          <img src="img/ai-blue-mascot-source.png" alt="Сфера маскот" class="ai-scene-el ai-scene-mascot">
+
+          <!-- Левая карточка: AI-генератор описаний -->
+          <div class="ai-scene-el ai-scene-card-left">
+            <div class="ai-card-mock-header">
+              <span class="ai-mock-dot green"></span>
+              <span class="ai-mock-title">AI-генератор описаний</span>
+              <span class="ai-mock-badge-tag">GigaChat</span>
+            </div>
+            <img src="img/ai-product-desc-block-clean.png" alt="Блок описания товара AI" class="ai-card-mock-img">
+            <div class="ai-card-mock-footer">
+              <span class="ai-mock-chip">SEO + Заголовок H1</span>
+              <span class="ai-mock-chip">1 клик</span>
+            </div>
+          </div>
+
+          <!-- Центральный элемент: Рука со смартфоном (из исходника без фона) -->
+          <div class="ai-scene-el ai-scene-hand-center">
+            <img src="img/Gemini_Generated_Image_biix43biix43biix (1) 2-fotor-bg-remover-20261102215544.png"
+              alt="Смартфон с витриной Сфера" class="ai-scene-phone-img">
+          </div>
+
+          <!-- Правая карточка: Умный поиск с подсказками (сдвинута вправо, ничего не перекрывает) -->
+          <div class="ai-scene-el ai-scene-card-right">
+            <div class="ai-card-mock-header">
+              <span class="ai-mock-dot green"></span>
+              <span class="ai-mock-title">Умный поиск из коробки</span>
+              <span class="ai-mock-badge-tag">Модуль АЛЬФА</span>
+            </div>
+            <img src="img/ai-search-suggest-dropdown.png" alt="Выпадающий поиск с подсказками" class="ai-card-mock-img">
+            <div class="ai-card-mock-footer">
+              <span class="ai-mock-chip">Опечатки</span>
+              <span class="ai-mock-chip">Синонимы GigaChat</span>
+            </div>
+          </div>
+
+          <!-- Парящий бейдж AI с микро-иконкой искры -->
+          <div class="ai-scene-el ai-scene-floating-badge" title="Встроенные AI-технологии">
+            <svg class="ai-badge-spark-svg" width="16" height="16" viewBox="0 0 24 24" fill="#00A3FF">
+              <path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z"></path>
+            </svg>
+            <span>AI</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Блоки сервисов ниже в сетке из двух колонок -->
+      <div class="ai-services-bottom-grid">
+        <!-- Карточка 1: AI-генератор описаний и контента -->
+        <div class="ai-widget-card ai-card-connectors">
+          <div class="ai-widget-top-bar">
+            <div class="ai-avatar-group">
+              <span class="ai-avatar-circle sfera" title="Витрина Сфера">сфера.</span>
+              <span class="ai-avatar-circle giga" title="GigaChat">
+                <svg id="Icon/AI/GigaChat" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" width="100%"
+                  height="100%" fill="none">
+                  <path fill="#21A038" d="M0 0h32v32H0z" />
+                  <path fill="#fff" fill-rule="evenodd"
+                    d="M16 5c6.075 0 11 4.924 11 11s-4.925 11-11 11S5 22.075 5 16 9.925 5 16 5m9.058 8.334c-.279 1.928-1.259 3.519-2.076 4.554-1.262 1.555-2.953 2.9-4.893 3.895-1.919.984-3.994 1.581-6.002 1.728q-.51.03-.951.03c-.352 0-.677-.015-.985-.042a9.44 9.44 0 0 0 5.842 2.013l-.001-.002c5.237 0 9.484-4.246 9.484-9.483 0-.91-.128-1.788-.367-2.62q-.025-.037-.052-.073m-7.709-7.33c-3.24 0-6.185 1.335-7.878 3.572l-.011.013c-.732.892-1.219 1.87-1.406 2.83-.107.583-.087 1.12.06 1.587v-.002c.348 1.045 1.194 1.883 2.154 2.13.4.1.784.14 1.14.124l.095-.008c2.428-.196 4.593-1.726 6.39-3.197 1.125-.941 2.2-2.187 2.27-2.992-1.568.76-3.187 1.75-5.054 3.088a.466.466 0 0 1-.643-.094 50 50 0 0 0-2.542-3.065.47.47 0 0 1 .066-.688c2.475-1.856 4.937-2.908 7.325-3.13a11.4 11.4 0 0 0-1.966-.169"
+                    clip-rule="evenodd" />
+                </svg>
+              </span>
+              <span class="ai-avatar-circle plus" title="Персональные промпты">+</span>
+            </div>
+            <div class="ai-widget-tag-pill">
+              <span class="ai-status-pulse"></span>
+              <span>1 клик</span>
+            </div>
+          </div>
+
+          <div class="ai-widget-info">
+            <h3 class="ai-widget-title">Генерация описаний и SEO</h3>
+            <p class="ai-widget-sub">
+              Создание продающих текстов, характеристик и мета-тегов по названию товара.
+            </p>
+          </div>
+
+          <!-- Инфографика: процесс генерации контента -->
+          <div class="ai-infographic-box content-gen">
+            <div class="ai-flow-step">
+              <span class="ai-flow-icon blue">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+              </span>
+              <div class="ai-flow-text">
+                <span class="ai-flow-label">Название</span>
+                <span class="ai-flow-val">Чайник Modern</span>
+              </div>
+            </div>
+
+            <div class="ai-flow-arrow">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </div>
+
+            <div class="ai-flow-step output">
+              <span class="ai-flow-icon lime">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </span>
+              <div class="ai-flow-text">
+                <span class="ai-flow-label">Готово</span>
+                <span class="ai-flow-val">Текст + H1 + SEO</span>
               </div>
             </div>
           </div>
 
-          <!-- Карточка 4: Встроенный ИИ-помощник (Нейро-копирайтер — более широкая) -->
-          <div class="s2-bento-card card-ai-writer">
-            <!-- Иллюстрация: Панель администратора с полем «Описание» и генерацией текста -->
-            <div class="s2-ai-mockup-frame">
-              <div class="s2-ai-mockup-top">
-                <div class="s2-ai-field-label-row">
-                  <span class="s2-ai-field-name">Описание товара</span>
-                  <span class="s2-ai-spark-tag">
-                    <svg class="s2-ai-spark-icon" width="13" height="13" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"></path>
-                    </svg>
-                    <span>AI Генератор</span>
-                  </span>
-                </div>
-              </div>
+          <div class="ai-features-micro-list">
+            <div class="ai-micro-bullet">
+              <span class="ai-bullet-icon">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00A3FF" stroke-width="2.6"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              <span>Автоподбор Title, H1 и продающего описания</span>
+            </div>
+            <div class="ai-micro-bullet">
+              <span class="ai-bullet-icon">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00A3FF" stroke-width="2.6"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              <span>Переписывание и улучшение текстов в 1 клик</span>
+            </div>
+          </div>
+        </div>
 
-              <div class="s2-ai-editor-box">
-                <div class="s2-ai-typing-stream">
-                  «Премиальное качество звука с активным шумоподавлением. До 36 часов работы без подзарядки...»
-                  <span class="s2-ai-caret"></span>
-                </div>
-                <div class="s2-ai-box-footer">
-                  <span class="s2-ai-status-note">
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                      stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    Продающий текст сгенерирован
-                  </span>
-                  <span class="s2-ai-tokens-count">184 слова</span>
-                </div>
+        <!-- Карточка 2: Умный поиск по каталогу -->
+        <div class="ai-widget-card ai-card-pills">
+          <div class="ai-widget-top-bar">
+            <div class="ai-search-badge-group">
+              <span class="ai-avatar-circle search-lead" title="Умный поиск">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1F380A" stroke-width="2.4"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </span>
+              <div class="ai-search-badge-meta">
+                <span class="ai-widget-meta-name">Умный поиск</span>
+                <span class="ai-widget-meta-role">С распознаванием смысла</span>
+              </div>
+            </div>
+            <div class="ai-widget-tag-pill lime">
+              <span class="ai-status-pulse lime"></span>
+              <span>Из коробки</span>
+            </div>
+          </div>
+
+          <div class="ai-widget-info">
+            <h3 class="ai-widget-title">Поиск без потери клиентов</h3>
+            <p class="ai-widget-sub">
+              Находит товары при любых опечатках, неточной формулировке и синонимах.
+            </p>
+          </div>
+
+          <!-- Инфографика: пример распознавания опечатки -->
+          <div class="ai-infographic-box search-sim">
+            <div class="ai-sim-input-row">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <span class="ai-sim-typo">чяйнек электирический</span>
+              <span class="ai-sim-arrow">→</span>
+              <span class="ai-sim-fixed">Чайник электрический</span>
+            </div>
+          </div>
+
+          <div class="ai-pills-stack horizontal">
+            <div class="ai-feature-pill white">
+              <span class="pill-title">Опечатки</span>
+              <span class="pill-plus">+</span>
+            </div>
+            <div class="ai-feature-pill lime">
+              <span class="pill-title">Синонимы GigaChat</span>
+              <span class="pill-plus">+</span>
+            </div>
+            <div class="ai-feature-pill blue">
+              <span class="pill-title">0% упущенных запросов</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
+       2.2. АДАПТИРОВАНО ПОД ТОВАРЫ С МАРКЕТПЛЕЙСОВ (ПО РЕФЕРЕНСУ)
+  ========================================================= -->
+  <section class="sf-marketplaces-section" id="marketplace-adaptation">
+    <div class="sf-container">
+      <div class="section-header-compact">
+        <h2 class="section-title-center">Адаптировано под товары с маркетплейсов</h2>
+        <p class="section-subtitle-center">
+          Никакой двойной работы с контентом! Ваши карточки с маркетплейсов с первого раза идеально встанут на сайт
+          благодаря оригинальным пропорциям. Чистый интерфейс не спорит с вашим визуалом, а 0% комиссий и собственная
+          клиентская база выводят ваши продажи на новый уровень.
+        </p>
+      </div>
+
+      <!-- Сцена с центральным мокапом и плавающими окнами инфографики (по референсу) -->
+      <div class="sf-mp-stage-scene">
+
+        <!-- 1. ЦЕНТРАЛЬНЫЙ МОКАП КАТАЛОГА ТОВАРОВ -->
+        <div class="sf-mp-center-mockup">
+          <div class="sf-mp-mockup-browser-bar">
+            <div class="sf-mp-dots">
+              <span class="sf-mp-dot red"></span>
+              <span class="sf-mp-dot yellow"></span>
+              <span class="sf-mp-dot green"></span>
+            </div>
+            <div class="sf-mp-address-bar">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+              <span>https://sfera.redsign.ru/catalog/products/</span>
+            </div>
+          </div>
+          <div class="sf-mp-mockup-screen">
+            <img src="img/marketplace-catalog-showcase-full.jpg"
+              alt="Витрина каталога товаров Сфера в формате маркетплейсов" class="sf-mp-catalog-img">
+          </div>
+        </div>
+
+        <!-- 2. ОКНО 1 (СЛЕВА СНИЗУ): ОРИГИНАЛЬНЫЕ ПРОПОРЦИИ 3:4 -->
+        <div class="sf-mp-satellite-window window-left-bottom">
+          <div class="sf-mp-sw-header">
+            <h3 class="sf-mp-sw-title">Оригинальные пропорции</h3>
+            <span class="sf-mp-sw-sub">Формат визуала WB & Ozon: 3:4</span>
+          </div>
+
+          <div class="sf-mp-sw-hero-box">
+            <div class="sf-mp-sw-photo-frame">
+              <img src="img/showcase-cosmetics-avocado.jpg" alt="Карточка в нативном формате 3:4"
+                class="sf-mp-sw-photo-img">
+              <span class="sf-mp-sw-badge-34">3 : 4</span>
+              <div class="sf-mp-sw-corner tl"></div>
+              <div class="sf-mp-sw-corner tr"></div>
+              <div class="sf-mp-sw-corner bl"></div>
+              <div class="sf-mp-sw-corner br"></div>
+            </div>
+
+            <div class="sf-mp-sw-stat-col">
+              <span class="sf-mp-sw-huge-num lime">0 px</span>
+              <span class="sf-mp-sw-huge-label">Обрезка фото</span>
+              <div class="sf-mp-sw-pill lime">
+                <span>✓ 100% сетка</span>
+              </div>
+              <span class="sf-mp-sw-note">Без черных полос и сжатия</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. ОКНО 2 (СПРАВА СВЕРХУ): ЧИСТЫЙ ИНТЕРФЕЙС (КОМПАКТНЫЙ МИНИМАЛИЗМ С АНИМАЦИЕЙ) -->
+        <div class="sf-mp-satellite-window window-right-top sf-mp-sw-compact">
+          <div class="sf-mp-sw-header">
+            <h3 class="sf-mp-sw-title">Чистый интерфейс</h3>
+            <span class="sf-mp-sw-sub">Не спорит с инфографикой продавца</span>
+          </div>
+
+          <div class="sf-mp-w2-gauge-box">
+            <div class="sf-mp-gauge-wrap">
+              <svg class="sf-mp-gauge-svg" viewBox="0 0 160 76">
+                <!-- Лучи фокуса (радиальные насечки по референсу) -->
+                <line class="sf-mp-gauge-ray" x1="20.1" y1="56.0" x2="12.4" y2="53.9" />
+                <line class="sf-mp-gauge-ray" x1="26.3" y1="41.0" x2="19.4" y2="37.0" />
+                <line class="sf-mp-gauge-ray" x1="36.2" y1="28.2" x2="30.5" y2="22.5" />
+                <line class="sf-mp-gauge-ray" x1="49.0" y1="18.3" x2="45.0" y2="11.4" />
+                <line class="sf-mp-gauge-ray" x1="64.0" y1="12.1" x2="61.9" y2="4.4" />
+                <line class="sf-mp-gauge-ray" x1="80.0" y1="10.0" x2="80.0" y2="2.0" />
+                <line class="sf-mp-gauge-ray" x1="96.0" y1="12.1" x2="98.1" y2="4.4" />
+                <line class="sf-mp-gauge-ray" x1="111.0" y1="18.3" x2="115.0" y2="11.4" />
+                <line class="sf-mp-gauge-ray" x1="123.8" y1="28.2" x2="129.5" y2="22.5" />
+                <line class="sf-mp-gauge-ray" x1="133.7" y1="41.0" x2="140.6" y2="37.0" />
+                <line class="sf-mp-gauge-ray" x1="139.9" y1="56.0" x2="147.6" y2="53.9" />
+
+                <!-- Базовая серая дуга шкалы -->
+                <path d="M 28 72 A 52 52 0 0 1 132 72" fill="none" stroke="#E2E8F0" stroke-width="8"
+                  stroke-linecap="round" />
+
+                <!-- Активная анимированная дуга 100% фокуса -->
+                <path d="M 28 72 A 52 52 0 0 1 132 72" class="sf-mp-gauge-arc-active" fill="none" stroke="#00A3FF"
+                  stroke-width="8" stroke-linecap="round" />
+              </svg>
+
+              <div class="sf-mp-gauge-center">
+                <span class="sf-mp-gauge-num">100%</span>
+                <span class="sf-mp-gauge-sub">Фокус</span>
               </div>
             </div>
 
-            <div class="s2-card-body">
-              <h3 class="benefit-title">Нейро-копирайтер внутри сайта</h3>
-              <p class="benefit-desc">Нет времени писать тексты? Встроенный ИИ-генератор сам напишет продающие тексты.
-                Экономьте на услугах копирайтеров и запускайтесь.</p>
+            <div class="sf-mp-sw-pill blue sf-mp-focus-pill">
+              <span class="sf-mp-pulse-dot"></span>
+              <span>0% шума витрины</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. ОКНО 3 (СПРАВА СНИЗУ): МАКСИМАЛЬНЫЙ МИНИМАЛИЗМ (ФОН #CEF3AE) -->
+        <div class="sf-mp-satellite-window window-right-bottom sf-mp-sw-lime">
+          <div class="sf-mp-sw-lime-content">
+            <div class="sf-mp-sw-lime-icon-box">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#152A06" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7" rx="2"></rect>
+                <rect x="14" y="3" width="7" height="7" rx="2"></rect>
+                <rect x="14" y="14" width="7" height="7" rx="2"></rect>
+                <polyline points="3.5 16 6 18.5 10 13.5"></polyline>
+              </svg>
+            </div>
+            <div class="sf-mp-sw-header">
+              <h3 class="sf-mp-sw-title">Без двойной работы</h3>
+              <span class="sf-mp-sw-sub">Готовый контент сразу встает в витрину</span>
             </div>
           </div>
         </div>
 
       </div>
+
+      <!-- БЕНТО-БЛОКИ ПОД МОКАПОМ (ВЫВЕРЕННЫЙ МИНИМАЛИЗМ) -->
+      <div class="sf-mp-details-grid">
+
+        <!-- Левая колонка: Клиенты покупают у вашего бренда (чистое фото во весь блок) -->
+        <div class="sf-mp-text-card sf-mp-card-girl-hero">
+          <img src="img/bento-girl-smile-green.jpg?v=2" alt="Своя база клиентов Сфера" class="sf-mp-girl-bg-img">
+
+          <div class="sf-mp-girl-content">
+            <div class="sf-mp-girl-top">
+              <h3 class="sf-mp-girl-title">Клиенты покупают у вашего бренда, а не у маркетплейса</h3>
+            </div>
+
+            <!-- Аккуратная плавающая капсула с аватарами покупателей -->
+            <div class="sf-mp-native-avatar-capsule">
+              <div class="sf-mp-avatar-group">
+                <img src="img/avatar-seller-1.jpg" alt="Покупатель" class="sf-mp-cap-avatar">
+                <img src="img/avatar-seller-2.jpg" alt="Покупатель" class="sf-mp-cap-avatar">
+                <img src="img/avatar-seller-3.jpg" alt="Покупатель" class="sf-mp-cap-avatar">
+                <span class="sf-mp-cap-plus-btn">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1F380A" stroke-width="2.6"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </span>
+              </div>
+              <div class="sf-mp-cap-text">
+                <strong>Личные контакты</strong>
+                <span>Прямая связь и лояльность</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Правая колонка: Два чистых виджета, выровненных по высоте -->
+        <div class="sf-mp-stacked-col">
+
+          <!-- Карточка 2: Вся прибыль остается у вас -->
+          <div class="sf-mp-text-card sf-mp-profit-card">
+            <div class="sf-mp-profit-header">
+              <h3 class="sf-mp-profit-title">Вся прибыль остается у вас</h3>
+              <p class="sf-mp-profit-desc">Никаких комиссий за продажу, скрытых штрафов или удержаний за логистику.</p>
+            </div>
+
+            <!-- Главный крупный визуал: 0% + Минималистичный трекер чистой прибыли -->
+            <div class="sf-mp-profit-hero-visual">
+              <div class="sf-mp-profit-metric-col">
+                <span class="sf-mp-giant-zero">0%</span>
+                <span class="sf-mp-giant-zero-sub">Комиссия сервиса</span>
+                <div class="sf-mp-profit-zero-badge">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.6"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>100% выручки вам</span>
+                </div>
+              </div>
+
+              <div class="sf-mp-profit-divider"></div>
+
+              <!-- Минималистичные треки сравнения чистой прибыли (заполняют пространство) -->
+              <div class="sf-mp-profit-tracks-box">
+                <!-- Трек 1: Маркетплейс -->
+                <div class="sf-mp-ptrack-row">
+                  <div class="sf-mp-ptrack-header">
+                    <span class="sf-mp-ptrack-name">Маркетплейс</span>
+                    <span class="sf-mp-ptrack-note">-35% комиссии и штрафы</span>
+                  </div>
+                  <div class="sf-mp-ptrack-bar-wrap">
+                    <div class="sf-mp-ptrack-bar mp" style="width: 65%;">
+                      <span class="sf-mp-ptrack-val">65% прибыли</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Трек 2: Сфера -->
+                <div class="sf-mp-ptrack-row">
+                  <div class="sf-mp-ptrack-header">
+                    <span class="sf-mp-ptrack-name highlight">Сфера</span>
+                    <span class="sf-mp-ptrack-badge">
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.6"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="19" x2="12" y2="5"></line>
+                        <polyline points="5 12 12 5 19 12"></polyline>
+                      </svg>
+                      +35% к доходу
+                    </span>
+                  </div>
+                  <div class="sf-mp-ptrack-bar-wrap">
+                    <div class="sf-mp-ptrack-bar sfera" style="width: 100%;">
+                      <span class="sf-mp-ptrack-val">100% прибыли</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Карточка 3: 100% Свои правила игры + Мокап телефона -->
+          <div class="sf-mp-text-card sf-mp-widget-card sf-mp-rules-phone-card">
+            <div class="sf-mp-rules-left">
+              <span class="sf-mp-rules-metric">100%</span>
+              <div class="sf-mp-rules-text">
+                <h3 class="sf-mp-rules-title">Свои правила игры</h3>
+                <p class="sf-mp-rules-desc">Вы сами управляете ценообразованием без давления площадок</p>
+              </div>
+            </div>
+
+            <div class="sf-mp-rules-phone-visual">
+              <img src="img/phone-mockup-catalog-sfera.png?v=2" alt="Каталог товаров Сфера на телефоне"
+                class="sf-mp-rules-phone-img">
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- 5. ОТДЕЛЬНАЯ ПЛАШКА: ПЕРЕНОС ТОВАРОВ С МАРКЕТПЛЕЙСА (ФОН #F5FDEC) -->
+      <div class="sf-mp-transfer-banner">
+        <div class="sf-mp-tb-left">
+          <div class="sf-mp-tb-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1F380A" stroke-width="2.6"
+              stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+          </div>
+          <div class="sf-mp-tb-content">
+            <div class="sf-mp-tb-title-line">
+              <h3 class="sf-mp-tb-title">Перенос товаров с маркетплейса</h3>
+              <span class="sf-mp-tb-pill">по запросу</span>
+            </div>
+            <p class="sf-mp-tb-desc">
+              Не нужно вручную заполнять сотни позиций. Бережно перенесем карточки, оригинальные
+              фотографии,
+              инфографику, описания и свойства товаров.
+            </p>
+          </div>
+        </div>
+        <div class="sf-mp-tb-action">
+          <button class="sf-btn sf-btn-primary" onclick="openLeadModal('Перенос товаров с маркетплейса (по запросу)')">
+            <span>Запросить перенос</span>
+          </button>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -358,30 +1000,30 @@
       <div class="section-header-compact">
         <h2 class="section-title-center">Одна карточка под любой сценарий</h2>
         <p class="section-subtitle-center">
-          Никаких обрезанных фотографий и&nbsp;лишних шагов до&nbsp;заказа. Контент переносится как есть, а&nbsp;клиент
-          сам выбирает удобный способ&nbsp;покупки.
+          Продавайте напрямую, перенаправляйте трафик в&nbsp;ПВЗ маркетплейсов или&nbsp;принимайте записи
+          на&nbsp;услуги. Карточка подстраивается под&nbsp;любой формат&nbsp;торговли.
         </p>
       </div>
 
-      <!-- Бенто-сетка Экрана 3: Большая карточка с галереей 3:4 во всю ширину + снизу 3 карточки сценариев -->
-      <!-- Бенто-сетка Экрана 3: Большая карточка с мокапом 3:4 во всю ширину + снизу 3 карточки сценариев -->
+      <!-- Бенто-сетка Экрана 3: Большая карточка с галереей под инфографику во всю ширину + снизу 3 карточки сценариев -->
       <div class="s3-bento-grid">
-        <!-- Большая бенто-карточка: Пропорции фото 3:4 и галерея в мокапе браузера -->
-        <div class="s3-bento-card card-s3-hero-collage card-s3-fullwidth">
+        <!-- Мокап окна браузера во всю ширину контента без подложки -->
+        <div class="card-s3-hero-collage card-s3-fullwidth">
           <!-- Сценический блок с парящими плашками и мокапом браузера по центру -->
           <div class="s3-collage-stage s3-stage-with-mockup">
-            <!-- Фирменная иконка приложения Сфера (Парящая слева сверху) -->
-            <div class="s3-collage-app-icon">
-              <img src="img/Gemini_Generated_Image_c8r7kgc8r7kgc8r7 2.png" alt="Приложение Сфера"
-                class="s3-app-icon-img">
-            </div>
-
-            <!-- Плашка 1: Формат 3:4 (Справа сверху, в свободной зоне) -->
+            <!-- Плашка 1: Кнопки перехода на маркетплейсы (Справа сверху) -->
             <div class="s3-collage-float-badge s3-badge-cart">
-              <span class="s3-badge-ratio-tag">3:4</span>
+              <span class="s3-badge-info-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00A3FF" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </span>
               <div class="s3-badge-cart-info">
-                <span class="s3-badge-cart-text">Стандарт маркетплейсов</span>
-                <span class="s3-badge-cart-sub">Без обрезки и полей</span>
+                <span class="s3-badge-cart-text">Кнопки маркетплейсов</span>
+                <span class="s3-badge-cart-sub">Ozon · Wildberries · Яндекс Маркет</span>
               </div>
             </div>
 
@@ -399,9 +1041,9 @@
                     <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
                     <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
                   </svg>
-                  <span>sfera-brend.ru/catalog/kettle-modern</span>
+                  <span>https://sfera.redsign.ru/catalog/products/electric-kettle-modern/</span>
                 </div>
-                <span class="s3-browser-mockup-label">Карточка товара 3:4</span>
+                <span class="s3-browser-mockup-label">Универсальная карточка товара</span>
               </div>
               <div class="s3-browser-frame-content">
                 <img src="img/product-detail-kettle-modern-gallery.jpg" alt="Открытая карточка товара в Сфере"
@@ -409,44 +1051,22 @@
               </div>
             </div>
 
-            <!-- Плашка: Готовая инфографика без обрезки (Слева снизу, вне контента) -->
+            <!-- Плашка 2: Карточка услуги с ссылкой на онлайн-запись (Слева снизу) -->
             <div class="s3-collage-float-badge s3-badge-infographics">
               <span class="s3-badge-info-icon">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00A3FF" stroke-width="2.2"
                   stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                  <polyline points="14 2 14 8 20 8"></polyline>
-                  <line x1="16" y1="13" x2="8" y2="13"></line>
-                  <line x1="16" y1="17" x2="8" y2="17"></line>
-                  <polyline points="10 9 9 9 8 9"></polyline>
+                  <rect x="3" y="4" width="18" height="18" rx="3" ry="3"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
                 </svg>
               </span>
               <div class="s3-badge-info-text-group">
-                <span class="s3-badge-info-title">Инфографика 3:4</span>
-                <span class="s3-badge-info-sub">Встает ровно по рамке</span>
+                <span class="s3-badge-info-title">Карточка услуги</span>
+                <span class="s3-badge-info-sub">Ссылка на сервисы онлайн-записи</span>
               </div>
             </div>
-
-            <!-- Плашка 3: Быстрый заказ (Справа снизу, вне контента) -->
-            <div class="s3-collage-float-badge s3-badge-lead">
-              <span class="s3-badge-lead-check">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </span>
-              <div class="s3-badge-lead-info">
-                <span class="s3-badge-lead-title">Быстрый заказ</span>
-                <span class="s3-badge-lead-contact">0% комиссии</span>
-              </div>
-              <span class="s3-badge-lead-time">только что</span>
-            </div>
-          </div>
-
-          <div class="s3-card-footer s3-footer-bordered">
-            <h3 class="benefit-title">Галерея 3:4 под инфографику</h3>
-            <p class="benefit-desc">Вам не придется держать две разные папки с фотографиями для сайта и для
-              маркетплейсов. Загружайте карточки с маркетплейсов как есть.</p>
           </div>
         </div>
 
@@ -454,63 +1074,153 @@
         <div class="s3-bento-row-bottom">
           <!-- Сценарий 1: Прямые кнопки на маркетплейсы -->
           <div class="s3-bento-card card-s3-mini-feature">
-            <div class="s3-mini-feat-visual">
-              <div class="s3-market-chips-group">
-                <span class="s3-market-chip">Ozon</span>
-                <span class="s3-market-chip">Wildberries</span>
-                <span class="s3-market-chip">Яндекс Маркет</span>
+            <div class="s3-mini-feat-visual visual-marketplaces">
+              <div class="s3-mp-chips-container">
+                <div class="s3-mp-chip">
+                  <span class="s3-mp-chip-name">Ozon</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </div>
+                <div class="s3-mp-chip">
+                  <span class="s3-mp-chip-name">Wildberries</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </div>
+                <div class="s3-mp-chip">
+                  <span class="s3-mp-chip-name">Яндекс Маркет</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </div>
               </div>
             </div>
+
             <div class="s3-card-footer">
               <h3 class="benefit-title">Кнопки маркетплейсов</h3>
-              <p class="benefit-desc">Для клиентов, привыкших забирать заказы в ПВЗ у дома. Кнопка ведет сразу на
-                страницу вашего товара на маркетплейсе.</p>
+              <p class="benefit-desc">
+                Для клиентов, привыкших забирать заказы в&nbsp;ПВЗ у&nbsp;дома. Кнопка ведет сразу на&nbsp;страницу
+                вашего товара на&nbsp;Ozon, Wildberries или&nbsp;Яндекс Маркете.
+              </p>
             </div>
           </div>
 
           <!-- Сценарий 2: Кнопка со ссылкой на запись на услугу -->
           <div class="s3-bento-card card-s3-mini-feature">
-            <div class="s3-mini-feat-visual">
-              <div class="s3-booking-preview-box">
-                <div class="s3-booking-btn-mock">
+            <div class="s3-mini-feat-visual visual-booking">
+              <div class="s3-booking-showcase">
+                <div class="s3-booking-action-btn">
                   <span>Записаться онлайн</span>
                 </div>
-                <div class="s3-booking-link-indicator">
-                  <span class="s3-link-dot"></span>
-                  <span class="s3-link-text">Ссылка на сервис онлайн-записи</span>
+                <div class="s3-booking-meta-pill">
+                  <span>Ссылка на сервис онлайн-записи</span>
                 </div>
               </div>
             </div>
+
             <div class="s3-card-footer">
-              <h3 class="benefit-title">Ссылка на запись на услугу</h3>
-              <p class="benefit-desc">Вместо сложной интеграции просто добавьте ссылку на ваш сервис онлайн-записи,
-                чтобы клиент сразу выбрал время услуги.</p>
+              <h3 class="benefit-title">Продажа услуг</h3>
+              <p class="benefit-desc">
+                Вместо сложной интеграции просто добавьте ссылку на&nbsp;сервис онлайн-записи (YClients, DIKIDI
+                или&nbsp;свой), чтобы клиент сразу выбрал удобное время мастера.
+              </p>
             </div>
           </div>
 
           <!-- Сценарий 3: Корзина заявок с сайта -->
           <div class="s3-bento-card card-s3-mini-feature">
-            <div class="s3-mini-feat-visual">
-              <div class="s3-cart-preview-box">
-                <div class="s3-cart-btn-circle-ui">
-                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.3"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="9" cy="21" r="1"></circle>
-                    <circle cx="20" cy="21" r="1"></circle>
-                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                  </svg>
-                  <span class="s3-cart-count-badge">3</span>
+            <div class="s3-mini-feat-visual visual-cart">
+              <div class="s3-cart-showcase">
+                <div class="s3-cart-counter-mock">
+                  <div class="s3-cart-icon-circle">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00A3FF" stroke-width="2.3"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="9" cy="21" r="1"></circle>
+                      <circle cx="20" cy="21" r="1"></circle>
+                      <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="s3-cart-count-badge">3</span>
+                  </div>
+                  <span class="s3-cart-mock-label">Корзина заявок</span>
                 </div>
-                <div class="s3-cart-status-pill">
-                  <span class="s3-cart-status-dot"></span>
-                  <span class="s3-cart-status-text">Корзина заявок · 0% комиссии</span>
+                <div class="s3-cart-zero-pill">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#15803D" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <span>0% комиссий · Прямые заказы</span>
                 </div>
               </div>
             </div>
+
             <div class="s3-card-footer">
               <h3 class="benefit-title">Корзина заявок с сайта</h3>
-              <p class="benefit-desc">Готовая корзина для прямых заказов. Покупатель собирает товары и отправляет заявку
-                вам напрямую без комиссий маркетплейсов.</p>
+              <p class="benefit-desc">
+                Готовая корзина для&nbsp;прямых продаж. Покупатель оставляет контакты без&nbsp;лишних шагов, а&nbsp;вы
+                получаете заказ напрямую и&nbsp;сохраняете базу клиентов.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Карточка: Сертификаты и документы прямо в карточке товара (текст слева, фото справа) -->
+        <div class="s3-bento-card s-docs-card s-docs-hero-card card-s3-fullwidth">
+          <div class="s-docs-split-layout">
+            <!-- Текст слева -->
+            <div class="s-docs-text-col">
+              <h3 class="benefit-title">Сертификаты и документы в карточке товара</h3>
+              <p class="benefit-desc">
+                Прикрепляйте сертификаты соответствия, декларации ЕАЭС, инструкции по&nbsp;эксплуатации
+                или&nbsp;гарантийные документы напрямую к&nbsp;товару.
+              </p>
+
+              <div class="s-docs-plashes-group">
+                <div class="s-docs-plash-card">
+                  <div class="s-docs-plash-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                      <polyline points="9 12 11 14 15 10"></polyline>
+                    </svg>
+                  </div>
+                  <div class="s-docs-plash-info">
+                    <span class="s-docs-plash-title">Соответствие ФЗ №&nbsp;2300-1</span>
+                    <span class="s-docs-plash-desc">Защита от&nbsp;штрафов и&nbsp;претензий проверяющих органов</span>
+                  </div>
+                </div>
+
+                <div class="s-docs-plash-card">
+                  <div class="s-docs-plash-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                      stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                      <polyline points="14 2 14 8 20 8"></polyline>
+                      <line x1="12" y1="18" x2="12" y2="12"></line>
+                      <polyline points="9 15 12 18 15 15"></polyline>
+                    </svg>
+                  </div>
+                  <div class="s-docs-plash-info">
+                    <span class="s-docs-plash-title">PDF, сканы и прямые ссылки</span>
+                    <span class="s-docs-plash-desc">Файлы мгновенно открываются и&nbsp;скачиваются на&nbsp;смартфоне
+                      и&nbsp;ПК</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Фото справа -->
+            <div class="s-docs-visual-col">
+              <div class="s-docs-photo-frame">
+                <img src="img/product-documents-list-mobile.jpg?v=4" alt="Сертификаты и документы в карточке товара"
+                  class="s-docs-photo-img">
+              </div>
             </div>
           </div>
         </div>
@@ -519,161 +1229,15 @@
   </section>
 
   <!-- =========================================================
-       4. ПРИКРЕПЛЕНИЕ ДОКУМЕНТОВ И СЕРТИФИКАТОВ К ТОВАРУ
-  ========================================================= -->
-  <section class="screen-docs-section" id="documents">
-    <div class="sf-container">
-      <div class="section-header-compact">
-        <h2 class="section-title-center">Сертификаты и&nbsp;документы прямо&nbsp; в карточке товара</h2>
-        <p class="section-subtitle-center">
-          Соблюдайте требования законодательства и&nbsp;повышайте доверие покупателей. Прикрепляйте PDF-сертификаты,
-          инструкции или&nbsp;внешние ссылки через&nbsp;админку за&nbsp;пару&nbsp;секунд.
-        </p>
-      </div>
-
-      <div class="s-docs-bento-grid">
-        <!-- Главная карточка: Как документы видит покупатель на сайте -->
-        <!-- Главная карточка: Как документы видит покупатель на сайте -->
-        <div class="s-docs-card s-docs-hero-card">
-          <div class="s-docs-stage-wrapper">
-            <!-- Парящий инфографический маркер слева: 100% защита по закону -->
-            <div class="s-docs-float-pill pill-law">
-              <span class="s-docs-pill-icon">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                </svg>
-              </span>
-              <div class="s-docs-pill-text-wrap">
-                <span class="s-docs-pill-label">Соответствие ФЗ № 2300-1</span>
-                <span class="s-docs-pill-sub">Защита от штрафов и претензий</span>
-              </div>
-            </div>
-
-            <!-- Парящий инфографический маркер справа: форматы файлов -->
-            <div class="s-docs-float-pill pill-formats">
-              <span class="s-docs-pill-icon">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"
-                  stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                  <polyline points="14 2 14 8 20 8"></polyline>
-                  <line x1="12" y1="18" x2="12" y2="12"></line>
-                  <line x1="9" y1="15" x2="15" y2="15"></line>
-                </svg>
-              </span>
-              <div class="s-docs-pill-text-wrap">
-                <span class="s-docs-pill-label">PDF, DOCX, скан или ссылка</span>
-                <span class="s-docs-pill-sub">Мгновенное скачивание</span>
-              </div>
-            </div>
-
-            <!-- Мокап окна браузера со скриншотом витрины -->
-            <div class="s-docs-mockup-browser">
-              <div class="s-docs-browser-top">
-                <div class="s4-mockup-dots">
-                  <span class="s4-dot red"></span>
-                  <span class="s4-dot yellow"></span>
-                  <span class="s4-dot green"></span>
-                </div>
-                <div class="s-docs-browser-address">
-                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                  </svg>
-                  <span>sfera-brend.ru/catalog/product #документы</span>
-                </div>
-                <span class="s-docs-browser-badge">Витрина товара</span>
-              </div>
-              <div class="s-docs-hero-screen">
-                <img src="img/product-files-documents-badges-grid.jpg"
-                  alt="Отображение сертификатов и документов в карточке товара" class="s-docs-main-img">
-              </div>
-            </div>
-          </div>
-          <div class="s-docs-card-content">
-            <h3 class="benefit-title">Сертификаты и документы внутри карточки товара</h3>
-            <p class="benefit-desc">
-              Прикрепляйте сертификаты соответствия, декларации ЕАЭС или регистрационные удостоверения напрямую к
-              конкретному товару. Вы полностью закрываете требования закона о защите прав потребителей и правил
-              дистанционной торговли, защищая бизнес от претензий проверяющих органов.
-            </p>
-          </div>
-        </div>
-
-        <!-- Нижний ряд: 2 карточки о том, как это устроено в 1С-Битрикс -->
-        <div class="s-docs-bento-row">
-          <!-- Карточка 1: Drag-and-drop загрузка файлов в 1С-Битрикс -->
-          <div class="s-docs-card s-docs-sub-card">
-            <div class="s-docs-sub-mockup">
-              <div class="s-docs-sub-header">
-                <div class="s4-mockup-dots">
-                  <span class="s4-dot"></span>
-                  <span class="s4-dot"></span>
-                  <span class="s4-dot"></span>
-                </div>
-                <span class="s-docs-sub-title">1С-Битрикс · Загрузка файлов (Drag&Drop)</span>
-              </div>
-              <div class="s-docs-sub-body s-docs-img-centered">
-                <img src="img/admin-bitrix-file-upload-drag-drop.jpg"
-                  alt="Загрузка документов в 1С-Битрикс перетаскиванием" class="s-docs-crm-img">
-              </div>
-            </div>
-            <div class="s-docs-card-content">
-              <div class="s-docs-inline-indicator">
-                <span class="s-docs-ind-badge">Форматы</span>
-                <span class="s-docs-ind-text">PDF, DOC, DOCX, XLS, ZIP</span>
-              </div>
-              <h3 class="benefit-title">Загрузка файлов простым перетаскиванием</h3>
-              <p class="benefit-desc">
-                Перетащите PDF, DOCX или сканы сертификатов в область загрузки в админке 1С-Битрикс. Файлы сразу
-                отобразятся в карточке с точным названием и весом.
-              </p>
-            </div>
-          </div>
-
-          <!-- Карточка 2: Ссылки на внешние документы и законы -->
-          <div class="s-docs-card s-docs-sub-card">
-            <div class="s-docs-sub-mockup">
-              <div class="s-docs-sub-header">
-                <div class="s4-mockup-dots">
-                  <span class="s4-dot"></span>
-                  <span class="s4-dot"></span>
-                  <span class="s4-dot"></span>
-                </div>
-                <span class="s-docs-sub-title">1С-Битрикс · Ссылки на реестры и законы</span>
-              </div>
-              <div class="s-docs-sub-body s-docs-img-centered">
-                <img src="img/admin-bitrix-custom-links-inputs.jpg"
-                  alt="Прикрепление внешних ссылок на документы в 1С-Битрикс" class="s-docs-crm-img">
-              </div>
-            </div>
-            <div class="s-docs-card-content">
-              <div class="s-docs-inline-indicator">
-                <span class="s-docs-ind-badge">Внешние ссылки</span>
-                <span class="s-docs-ind-text">Госреестры и статьи законов</span>
-              </div>
-              <h3 class="benefit-title">Ссылки на реестры, ГОСТы и законы</h3>
-              <p class="benefit-desc">
-                Вставляйте прямые ссылки на реестр Росаккредитации, справочную информацию или статьи законов. Сайт
-                покажет их покупателю с понятной иконкой внешнего перехода.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================
-       5. ГОТОВАЯ КОРЗИНА И ПРИЕМ ЗАЯВОК В 1С-БИТРИКС
+       4. ГОТОВАЯ КОРЗИНА И ПРИЕМ ЗАЯВОК В 1С-БИТРИКС
   ========================================================= -->
   <section class="screen4-cart-crm-section" id="features">
     <div class="sf-container">
       <div class="section-header-compact">
         <h2 class="section-title-center">Корзина, которую доводят до&nbsp;конца</h2>
         <p class="section-subtitle-center s4-balanced-subtitle">
-          Никаких сложных регистраций и&nbsp;анкет на&nbsp;десять экранов. Покупатель собирает товары, оставляет имя с&nbsp;телефоном, и&nbsp;вы получаете готовый заказ со&nbsp;списком покупок.
+          Никаких сложных регистраций и&nbsp;анкет на&nbsp;десять экранов. Покупатель собирает товары, оставляет имя
+          с&nbsp;телефоном, и&nbsp;вы получаете готовый заказ со&nbsp;списком покупок.
         </p>
       </div>
 
@@ -681,25 +1245,27 @@
         <!-- 1. Крупный блок: Полноразмерный скриншот корзины и оформления заказа -->
         <div class="s4-bento-card s4-hero-card">
           <div class="s4-hero-stage">
-            <!-- Слева поверх списка товаров: Парящая плашка с составом корзины -->
+            <!-- Слева поверх списка товаров: Парящая плашка с информацией о лицензии 1С-Битрикс: Старт -->
             <div class="s4-float-cart-pill">
               <span class="s4-float-pill-cart-icon">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"
+                  stroke-linecap="round" stroke-linejoin="round">
                   <circle cx="9" cy="21" r="1"></circle>
                   <circle cx="20" cy="21" r="1"></circle>
                   <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
                 </svg>
               </span>
               <div class="s4-float-pill-text-col">
-                <span class="s4-float-pill-strong">4 позиции на сумму 12 890 ₽</span>
-                <span class="s4-float-pill-sub">Полноценная корзина с пересчетом</span>
+                <span class="s4-float-pill-strong">Редакция «1С-Битрикс: Старт»</span>
+                <span class="s4-float-pill-sub">Полноценный магазин на базовой лицензии</span>
               </div>
             </div>
 
             <!-- Справа рядом с полями: Тонкая выноска «Заполнение за 10 секунд» -->
             <div class="s4-float-callout-pill">
               <span class="s4-callout-icon">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"
+                  stroke-linecap="round" stroke-linejoin="round">
                   <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
                 </svg>
               </span>
@@ -723,7 +1289,7 @@
                     <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
                     <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
                   </svg>
-                  <span>sfera-brend.ru/cart/checkout</span>
+                  <span>https://sfera.redsign.ru/order/</span>
                 </div>
                 <span class="s4-mockup-status">Корзина и оформление заявки</span>
               </div>
@@ -737,7 +1303,8 @@
           <div class="s4-card-content">
             <h3 class="benefit-title">Удобная форма заявки без лишних шагов</h3>
             <p class="benefit-desc">
-              Клиент видит выбранные товары, меняет количество и указывает только контакты для связи. Никаких паролей и обязательных регистраций.
+              Клиент видит выбранные товары, меняет количество и указывает только контакты для связи. Никаких паролей и
+              обязательных регистраций.
             </p>
           </div>
         </div>
@@ -748,84 +1315,99 @@
           <div class="s4-bento-card s4-sub-card">
             <div class="s4-sub-screen-wrap">
               <div class="s4-sub-browser-top">
-                <div class="s4-mockup-dots">
-                  <span class="s4-dot"></span>
-                  <span class="s4-dot"></span>
-                  <span class="s4-dot"></span>
-                </div>
-                <div class="s4-sub-address">
-                  <span>Панель 1С-Битрикс · Заявки с сайта</span>
-                </div>
-              </div>
-              <div class="s4-sub-image-box">
-                <img src="img/admin-bitrix-orders-crm-table.jpg" alt="Таблица заявок в админ-панели 1С-Битрикс"
-                  class="s4-crm-img">
-              </div>
-            </div>
-            <div class="s4-card-content">
-              <h3 class="benefit-title">Заявки сразу падают в админку 1С-Битрикс</h3>
-              <p class="benefit-desc">
-                Все заказы собираются в стандартной таблице инфоблока 1С-Битрикс. Вы видите имя покупателя, телефон,
-                список товаров, дату и сумму заявки в одном месте.
-              </p>
-            </div>
-          </div>
-
-          <!-- 3. Карточка: Продажи без онлайн-касс и банковских комиссий -->
-          <div class="s4-bento-card s4-sub-card">
-            <div class="s4-sub-screen-wrap s4-finance-visual-wrap">
-              <div class="s4-finance-card-mockup">
-                <div class="s4-finance-header-row">
-                  <div class="s4-finance-order-meta">
-                    <span class="s4-finance-order-num">Заказ № 123</span>
-                    <span class="s4-finance-status-pill">Новый</span>
+                  <div class="s4-mockup-dots">
+                    <span class="s4-dot"></span>
+                    <span class="s4-dot"></span>
+                    <span class="s4-dot"></span>
                   </div>
-                  <span class="s4-finance-order-sum">12 890 ₽</span>
-                </div>
-
-                <div class="s4-finance-items-preview">
-                  <span class="s4-finance-item-tag">Чайник электрический Modern</span>
-                  <span class="s4-finance-item-tag">Графин для воды PureDrop</span>
-                </div>
-
-                <div class="s4-finance-metrics-grid">
-                  <div class="s4-finance-stat-card">
-                    <div class="s4-stat-icon-wrap green">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                    </div>
-                    <div class="s4-stat-text-col">
-                      <span class="s4-stat-label">Комиссия за перевод</span>
-                      <span class="s4-stat-val">0 ₽</span>
+                    <div class="s4-sub-address">
+                      <span>Панель 1С-Битрикс · Заявки</span>
                     </div>
                   </div>
-
-                  <div class="s4-finance-stat-card">
-                    <div class="s4-stat-icon-wrap blue">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                    </div>
-                    <div class="s4-stat-text-col">
-                      <span class="s4-stat-label">Подключение кассы</span>
-                      <span class="s4-stat-val">не требуется</span>
+                  <div class="s4-sub-image-box">
+                    <img src="img/admin-bitrix-orders-crm-table.jpg?v=4" alt="Таблица заявок в админ-панели 1С-Битрикс"
+                      class="s4-crm-img">
+                    <div class="s4-crm-float-toast">
+                      <div class="s4-crm-toast-icon">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1F380A" stroke-width="2.5"
+                          stroke-linecap="round" stroke-linejoin="round">
+                          <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                      </div>
+                      <div class="s4-crm-toast-text">
+                        <span class="s4-crm-toast-title">Новая заявка № 125</span>
+                        <span class="s4-crm-toast-sub">Записана в инфоблок · 0 сек</span>
+                      </div>
                     </div>
                   </div>
                 </div>
+                <div class="s4-card-content">
+                  <h3 class="benefit-title">Заявки сразу в&nbsp;админке 1С-Битрикс</h3>
+                  <p class="benefit-desc">
+                    Все заказы собираются в стандартной таблице инфоблока 1С-Битрикс. Вы видите имя покупателя, телефон,
+                    список товаров, дату и сумму заявки в одном месте.
+                  </p>
+                </div>
+              </div>
+
+              <!-- 3. Карточка: Продажи без онлайн-касс и банковских комиссий -->
+              <div class="s4-bento-card s4-sub-card">
+                <div class="s4-sub-screen-wrap s4-finance-visual-wrap">
+                  <div class="s4-finance-card-mockup">
+                    <div class="s4-finance-header-row">
+                      <div class="s4-finance-order-meta">
+                        <span class="s4-finance-order-num">Заказ № 123</span>
+                        <span class="s4-finance-status-pill">Новый</span>
+                      </div>
+                      <span class="s4-finance-order-sum">12 890 ₽</span>
+                    </div>
+
+                    <div class="s4-finance-items-preview">
+                      <span class="s4-finance-item-tag">Чайник электрический Modern</span>
+                      <span class="s4-finance-item-tag">Графин для воды PureDrop</span>
+                    </div>
+
+                    <div class="s4-finance-metrics-grid">
+                      <div class="s4-finance-stat-card">
+                        <div class="s4-stat-icon-wrap green">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                          </svg>
+                        </div>
+                        <div class="s4-stat-text-col">
+                          <span class="s4-stat-label">Комиссия за перевод</span>
+                          <span class="s4-stat-val">0 ₽</span>
+                        </div>
+                      </div>
+
+                      <div class="s4-finance-stat-card">
+                        <div class="s4-stat-icon-wrap blue">
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                          </svg>
+                        </div>
+                        <div class="s4-stat-text-col">
+                          <span class="s4-stat-label">Подключение кассы</span>
+                          <span class="s4-stat-val">не требуется</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="s4-card-content">
+                  <h3 class="benefit-title">Заказы без&nbsp;онлайн-касс и&nbsp;комиссий</h3>
+                  <p class="benefit-desc">
+                    Не нужно арендовать облачную кассу и отдавать процент с каждого чека. Получайте готовый заказ и
+                    договаривайтесь об оплате напрямую.
+                  </p>
+                </div>
               </div>
             </div>
-            <div class="s4-card-content">
-              <h3 class="benefit-title">Принимайте заказы без онлайн-касс и комиссий банкам</h3>
-              <p class="benefit-desc">
-                Не нужно арендовать облачную кассу и отдавать процент с каждого чека. Получайте готовый заказ и договаривайтесь об оплате напрямую.
-              </p>
-            </div>
+
           </div>
         </div>
-
-      </div>
-    </div>
   </section>
 
   <!-- =========================================================
@@ -837,9 +1419,10 @@
   <section class="screen-brand-customizer-section" id="customizer">
     <div class="sf-container">
       <div class="section-header-compact">
-        <h2 class="section-title-center">Смена цветов и&nbsp;шрифтов за&nbsp;одну минуту</h2>
+        <h2 class="section-title-center">Визуальный конструктор: смена цветов и&nbsp;шрифтов за&nbsp;одну минуту</h2>
         <p class="section-subtitle-center s-customizer-subtitle">
-          Не нужно нанимать дизайнера или лезть в код, чтобы сайт выглядел в стиле вашей компании. Открывайте удобную панель настроек, выбирайте свой фирменный цвет и подходящую шрифтовую пару, и витрина мгновенно перекрасится под ваш бренд.
+          Настраивайте витрину под&nbsp;стиль вашего бренда в&nbsp;реальном времени без&nbsp;дизайнеров и&nbsp;кода.
+          Выбирайте фирменную палитру, шрифты и&nbsp;структуру шапки в&nbsp;удобной панели настроек.
         </p>
       </div>
 
@@ -857,7 +1440,8 @@
               <span class="s-modal-window-title">Общие настройки · Цвета и шрифты</span>
             </div>
             <div class="s-modal-window-content">
-              <img src="img/settings-modal-general-colors-fonts.jpg" alt="Панель настройки цветов и шрифтов в Сфере" class="s-modal-img">
+              <img src="img/settings-modal-general-colors-fonts.jpg" alt="Панель настройки цветов и шрифтов в Сфере"
+                class="s-modal-img">
             </div>
           </div>
 
@@ -872,14 +1456,16 @@
               <span class="s-modal-window-title">Шапка сайта · Расположение логотипа и меню</span>
             </div>
             <div class="s-modal-window-content">
-              <img src="img/settings-modal-header-layout-logo.jpg" alt="Панель настройки шапки и логотипа в Сфере" class="s-modal-img">
+              <img src="img/settings-modal-header-layout-logo.jpg" alt="Панель настройки шапки и логотипа в Сфере"
+                class="s-modal-img">
             </div>
           </div>
 
           <!-- Инфографическая плашка: Мгновенное применение прямо на сайте -->
           <div class="s-customizer-floating-callout">
             <span class="s-customizer-callout-icon">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"
+                stroke-linecap="round" stroke-linejoin="round">
                 <path d="M12 20h9"></path>
                 <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
               </svg>
@@ -906,90 +1492,16 @@
             <span class="s-customizer-chip">Расположение меню в 1 клик</span>
           </div>
           <p class="s-customizer-footer-note">
-            Все настройки меняются прямо на сайте без правки файлов и верстки. Вы сразу видите, как меняется дизайн для покупателей.
+            Все настройки меняются прямо на сайте без правки файлов и верстки. Вы сразу видите, как меняется дизайн для
+            покупателей.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-
-
   <!-- =========================================================
-       7. УДОБНО ПОКУПАТЬ С ТЕЛЕФОНА (МОБИЛЬНАЯ ВЕРСИЯ)
-  ========================================================= -->
-  <section class="screen-mobile-ready-section" id="mobile">
-    <div class="sf-container">
-      <div class="s-mobile-bento-card">
-        <div class="s-mobile-grid">
-          <!-- Левая колонка: Текстовый оффер и преимущества мобильной версии -->
-          <div class="s-mobile-text-col">
-            <h2 class="s-mobile-heading">Идеально работает на&nbsp;любом смартфоне</h2>
-            <p class="s-mobile-desc">
-              Больше 70% покупателей заходят на&nbsp;сайты с&nbsp;телефона. В&nbsp;«Сфере» мобильная версия продумана до&nbsp;мелочей: вертикальные фотографии товаров смотрятся крупно, верстка моментально откликается на&nbsp;касания, а&nbsp;кнопка заказа всегда под&nbsp;рукой.
-            </p>
-
-            <div class="s-mobile-perks-list">
-              <div class="s-mobile-perk-item">
-                <span class="s-perk-icon-wrap">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </span>
-                <div class="s-perk-text-wrap">
-                  <span class="s-perk-title">Вертикальные фото 3:4 без полей</span>
-                  <span class="s-perk-sub">Занимают максимум места на экране смартфона</span>
-                </div>
-              </div>
-
-              <div class="s-mobile-perk-item">
-                <span class="s-perk-icon-wrap">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </span>
-                <div class="s-perk-text-wrap">
-                  <span class="s-perk-title">Быстрый чекаут в 1 касание</span>
-                  <span class="s-perk-sub">Никаких микро-кнопок и сложных форм</span>
-                </div>
-              </div>
-
-              <div class="s-mobile-perk-item">
-                <span class="s-perk-icon-wrap">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                </span>
-                <div class="s-perk-text-wrap">
-                  <span class="s-perk-title">Плашка быстрой покупки</span>
-                  <span class="s-perk-sub">Закреплена внизу экрана для мгновенного заказа</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Правая колонка: Реальный фотореалистичный рендер смартфона со Сферой -->
-          <div class="s-mobile-visual-col">
-            <div class="s-mobile-device-frame">
-              <img src="img/Gemini_Generated_Image_6yqbtb6yqbtb6yqb.jpg" alt="Мобильная версия интернет-магазина Сфера на смартфоне" class="s-mobile-device-img">
-              
-              <!-- Парящий инфографический статус-бейдж -->
-              <div class="s-mobile-float-stat">
-                <div class="s-mobile-stat-dot"></div>
-                <div class="s-mobile-stat-content">
-                  <span class="s-mobile-stat-bold">70%+ трафика</span>
-                  <span class="s-mobile-stat-muted">покупают со смартфонов</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================
-       8. ПРОСТАЯ ДОКУМЕНТАЦИЯ «ДЛЯ ЛЮДЕЙ» (ИНТЕРФЕЙСНЫЙ BENTO ПО РЕФЕРЕНСУ)
+       7. ПРОСТАЯ ДОКУМЕНТАЦИЯ «ДЛЯ ЛЮДЕЙ» (ИНТЕРФЕЙСНЫЙ BENTO ПО РЕФЕРЕНСУ)
   ========================================================= -->
   <section class="clean-docs-section" id="docs">
     <div class="sf-container">
@@ -1019,7 +1531,7 @@
               <div class="docs-step-row active">
                 <span class="docs-step-idx">1</span>
                 <div class="docs-step-info">
-                  <span class="docs-step-name">Загрузите товары и фото 3:4</span>
+                  <span class="docs-step-name">Загрузите товары и фото</span>
                   <span class="docs-step-hint">Перетащите файлы прямо в карточку</span>
                 </div>
                 <span class="docs-step-check">✓</span>
@@ -1062,7 +1574,8 @@
 
           <div class="ref-instruction-body">
             <h3 class="ref-card-heading">Понятно с первого клика</h3>
-            <p class="ref-card-subtext">Никакого кода и терминов. Каждое действие снабжено наглядным скриншотом: куда нажать, что отредактировать и как сохранить.</p>
+            <p class="ref-card-subtext">Никакого кода и терминов. Каждое действие снабжено наглядным скриншотом: куда
+              нажать, что отредактировать и как сохранить.</p>
           </div>
         </div>
 
@@ -1140,7 +1653,8 @@
             <!-- Плавающие микро-действия -->
             <div class="ref-action-chip chip-click">
               <span class="ref-action-icon">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </span>
@@ -1149,7 +1663,8 @@
 
             <div class="ref-action-chip chip-save">
               <span class="ref-action-icon">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                  stroke-linecap="round" stroke-linejoin="round">
                   <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
                 </svg>
               </span>
@@ -1176,21 +1691,31 @@
   <!-- =========================================================
        9. ФИНАЛЬНЫЙ БЛОК (CTA) — BENTO СТРУКТУРА С РАЗМЕЩЕНИЕМ ФОТО НА ОДНОЙ ЛИНИИ
   ========================================================= -->
-  <section class="clean-cta-section">
+  <section class="clean-cta-section" id="demo">
     <div class="sf-container">
+      <div class="section-header-compact">
+        <h2 class="section-title-center">Убедитесь сами, насколько всё просто</h2>
+        <p class="section-subtitle-center">
+          Попробуйте демо-магазин в&nbsp;действии: оцените каталог товаров, скорость оформления заказа и&nbsp;удобство
+          управления витриной.
+        </p>
+      </div>
+
       <div class="cta-bento-grid">
 
         <!-- Карточка 1: Главный оффер (широкая карточка сверху) -->
         <div class="cta-card cta-card-text">
-          <h2 class="cta-title">Убедитесь сами, насколько всё просто!</h2>
+          <h3 class="benefit-title">Интерактивное демо интернет-магазина</h3>
           <p class="cta-subtitle">
-            Посмотри, как круто смотрятся карточки товаров, как быстро меняются цвета и как легко всё устроено внутри.
+            Посмотрите, как круто смотрятся карточки товаров, как быстро меняются цвета и&nbsp;как легко всё устроено
+            внутри.
           </p>
           <div class="cta-button-row">
             <button class="sf-btn sf-btn-accent sf-btn-xl" onclick="openLeadModal('Финальный CTA')">
               Пощупать демо-магазин
             </button>
-            <a href="https://t.me/" target="_blank" class="sf-btn sf-btn-secondary sf-btn-xl">
+            <a href="https://t.me/redsignru" target="_blank" rel="noopener noreferrer"
+              class="sf-btn sf-btn-secondary sf-btn-xl">
               Написать в Telegram
             </a>
           </div>
@@ -1249,14 +1774,16 @@
           <div class="faq-question">
             <span>Я смогу сам управлять сайтом без программистов?</span>
             <span class="faq-toggle-icon">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                stroke-linecap="round" stroke-linejoin="round">
                 <line x1="12" y1="5" x2="12" y2="19"></line>
                 <line x1="5" y1="12" x2="19" y2="12"></line>
               </svg>
             </span>
           </div>
           <div class="faq-answer">
-            Да. В комплекте идет простая инструкция понятным языком. Менять цены, обновлять описания и товары можно в несколько кликов в визуальной панели без привлечения разработчиков.
+            Да. В комплекте идет простая инструкция понятным языком. Менять цены, обновлять описания и товары можно в
+            несколько кликов в визуальной панели без привлечения разработчиков.
           </div>
         </div>
 
@@ -1264,14 +1791,16 @@
           <div class="faq-question">
             <span>Как перенести каталог с Wildberries?</span>
             <span class="faq-toggle-icon">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                stroke-linecap="round" stroke-linejoin="round">
                 <line x1="12" y1="5" x2="12" y2="19"></line>
                 <line x1="5" y1="12" x2="19" y2="12"></line>
               </svg>
             </span>
           </div>
           <div class="faq-answer">
-            В настройках указывается API-токен из личного кабинета продавца Wildberries. Система сама загрузит все товары, вертикальные фотографии 3:4 высокого разрешения, остатки и свойства.
+            В настройках указывается API-токен из личного кабинета продавца Wildberries. Система сама загрузит все
+            товары, фотографии высокого разрешения, остатки и свойства.
           </div>
         </div>
 
@@ -1279,14 +1808,16 @@
           <div class="faq-question">
             <span>Нужно ли платить абонентскую плату каждый месяц?</span>
             <span class="faq-toggle-icon">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                stroke-linecap="round" stroke-linejoin="round">
                 <line x1="12" y1="5" x2="12" y2="19"></line>
                 <line x1="5" y1="12" x2="19" y2="12"></line>
               </svg>
             </span>
           </div>
           <div class="faq-answer">
-            Нет. В отличие от конструкторов сайтов с подпиской, вы приобретаете решение один раз. Сайт работает на вашем хостинге и навсегда принадлежит вам.
+            Нет. В отличие от конструкторов сайтов с подпиской, вы приобретаете решение один раз. Сайт работает на вашем
+            хостинге и навсегда принадлежит вам.
           </div>
         </div>
 
@@ -1294,14 +1825,16 @@
           <div class="faq-question">
             <span>Как покупатели смогут заказывать товары?</span>
             <span class="faq-toggle-icon">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                stroke-linecap="round" stroke-linejoin="round">
                 <line x1="12" y1="5" x2="12" y2="19"></line>
                 <line x1="5" y1="12" x2="19" y2="12"></line>
               </svg>
             </span>
           </div>
           <div class="faq-answer">
-            Покупатели оформляют заказ через быструю корзину в 1 клик, либо переходят на вашу карточку товара на маркетплейсе по прямой кнопке. Заявки с сайта мгновенно приходят в Telegram или CRM.
+            Покупатели оформляют заказ через быструю корзину в 1 клик, либо переходят на вашу карточку товара на
+            маркетплейсе по прямой кнопке. Заявки с сайта мгновенно приходят в Telegram или CRM.
           </div>
         </div>
       </div>
@@ -1309,38 +1842,54 @@
   </section>
 
   <!-- =========================================================
-       10. ФУТЕР
+       10. МИНИМАЛИСТИЧНЫЙ ФУТЕР
   ========================================================= -->
   <footer class="sf-footer">
-    <div class="sf-container footer-content">
-      <div class="footer-col-brand">
+    <div class="sf-container footer-minimal-wrap">
+      <div class="footer-minimal-left">
         <a href="#" class="sf-brand">
           <span class="brand-text">сфера<span class="brand-dot">.</span></span>
         </a>
-        <p class="footer-legal">
-          Готовое решение для интернет-магазинов с автоматической выгрузкой каталога с маркетплейсов по API. На базе
-          1С-Битрикс: Старт.
-        </p>
-        <div class="footer-copy">© 2026 Сфера.</div>
+        <span class="footer-dot-sep">·</span>
+        <div class="footer-dev-meta">
+          <span>Разработчик:</span>
+          <a href="https://redsign.ru/" target="_blank" rel="noopener noreferrer" class="footer-dev-link">АЛЬФА
+            Системс</a>
+        </div>
+        <span class="footer-dot-sep">·</span>
+        <span class="footer-copy-text">© 2026 Сфера</span>
       </div>
-      <div class="footer-links-grid">
-        <div class="footer-nav-col">
-          <h4>Платформа</h4>
-          <a href="#features">Возможности</a>
-          <a href="#showcase">Интерфейс</a>
-          <a href="#customizer">Стили</a>
-        </div>
-        <div class="footer-nav-col">
-          <h4>Полезное</h4>
-          <a href="#calculator">Калькулятор</a>
-          <a href="#bitrix">Лицензия</a>
-          <a href="#faq">FAQ</a>
-        </div>
-        <div class="footer-nav-col">
-          <h4>Контакты</h4>
-          <a href="tel:+78000000000">+7 (800) 000-00-00</a>
-          <a href="mailto:hello@sfera.site">hello@sfera.site</a>
-          <a href="https://t.me/" target="_blank">Telegram</a>
+
+      <div class="footer-minimal-right">
+        <a href="tel:+74993504713" class="footer-phone-link">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+            </path>
+          </svg>
+          <span>+7 (499) 350-47-13</span>
+        </a>
+
+        <div class="footer-social-links">
+          <a href="https://t.me/redsignru" target="_blank" rel="noopener noreferrer" class="footer-social-pill"
+            title="Telegram @redsignru">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+            <span>Telegram</span>
+          </a>
+
+          <a href="https://vk.ru/redsignru" target="_blank" rel="noopener noreferrer" class="footer-social-pill"
+            title="ВКонтакте redsignru">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M15.07 2H8.93C4.33 2 2 4.33 2 8.93v6.14C2 19.67 4.33 22 8.93 22h6.14c4.6 0 6.93-2.33 6.93-6.93V8.93C22 4.33 19.67 2 15.07 2zm3.17 12.55h-1.6c-.6 0-.79-.48-1.87-1.57-.94-.91-1.36-1.03-1.6-1.03-.33 0-.42.09-.42.55v1.45c0 .39-.12.6-1.15.6-1.7 0-3.58-1.03-4.9-2.95-1.99-2.83-2.54-4.96-2.54-5.4 0-.24.09-.46.55-.46h1.6c.42 0 .58.19.74.63.82 2.37 2.19 4.45 2.76 4.45.21 0 .31-.1.31-.64V8.42c-.06-1.15-.67-1.25-.67-1.66 0-.2.16-.39.42-.39h2.51c.36 0 .49.19.49.61v3.29c0 .35.15.48.26.48.21 0 .39-.13.79-.53 1.25-1.4 2.14-3.56 2.14-3.56.12-.24.33-.46.75-.46h1.6c.48 0 .58.24.48.61-.19.92-2.12 3.63-2.12 3.63-.18.3-.25.43 0 .76.18.24.77.75 1.16 1.2 1.02 1.14 1.34 1.7 1.49 2.05.15.35-.08.55-.57.55z" />
+            </svg>
+            <span>ВКонтакте</span>
+          </a>
         </div>
       </div>
     </div>
