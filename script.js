@@ -161,16 +161,4 @@ function handleFormSubmit(e) {
 // Инициализация калькулятора при старте
 document.addEventListener('DOMContentLoaded', () => {
   calculateSavings();
-
-  // Плавное появление фона шапки при скролле
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    if (navbar) {
-      if (window.scrollY > 25) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    }
-  });
 });
