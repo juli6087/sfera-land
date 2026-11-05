@@ -5623,21 +5623,12 @@ input {
                   cursor: pointer;
                   text-decoration: none;
                   box-shadow: 0 4px 14px rgba(0, 163, 255, 0.25);
-                  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+                  transition: background 0.2s ease;
                 }
 
                 .ref-read-btn:hover {
                   background: #008be0;
-                  transform: translateY(-1px);
-                  box-shadow: 0 6px 18px rgba(0, 163, 255, 0.35);
-                }
-
-                .ref-read-btn svg {
-                  transition: transform 0.2s ease;
-                }
-
-                .ref-read-btn:hover svg {
-                  transform: translateX(2px);
+                  transform: none;
                 }
 
                 /* 4. Карточка 4 (Справа снизу): Серый технологичный экран орбит и селлеров */
