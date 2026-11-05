@@ -5567,15 +5567,15 @@ input {
                   margin: 0;
                 }
 
-                /* 3. Карточка 3 (Слева снизу): Серый фон rgb(243, 243, 243) с метрикой 100% и кнопкой */
+                /* 3. Карточка 3 (Слева снизу): Зеленоватый фон rgb(244 252 235) с метрикой 100% и кнопкой */
                 .card-accessible {
-                  background: rgb(243, 243, 243);
+                  background: rgb(244 252 235);
                   padding: 44px 40px 36px;
                   display: flex;
                   flex-direction: column;
                   justify-content: space-between;
                   min-height: 400px;
-                  box-shadow: 0 16px 40px -8px rgba(10, 15, 29, 0.04);
+                  box-shadow: 0 16px 44px -8px rgba(10, 15, 29, 0.06), 0 4px 16px rgba(10, 15, 29, 0.02);
                 }
 
                 .ref-accessible-meta {
@@ -5602,7 +5602,7 @@ input {
 
                 .ref-accessible-sub {
                   font-size: 1rem;
-                  color: #64748B;
+                  color: #1E293B;
                   line-height: 1.5;
                   max-width: 380px;
                 }
