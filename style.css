@@ -5535,10 +5535,11 @@ input {
 
                 .ref-brand-mark {
                   font-family: var(--font-heading);
-                  font-size: 1.35rem;
+                  font-size: 1.95rem;
                   font-weight: 500;
                   color: #0A0F1D;
-                  letter-spacing: -0.03em;
+                  letter-spacing: -0.035em;
+                  line-height: 1;
                 }
 
                 .ref-instruction-body {
