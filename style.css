@@ -5226,14 +5226,14 @@ input {
   border-radius: 20px;
   padding: 24px 32px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
   box-shadow: 0 4px 16px rgba(10, 15, 29, 0.02);
 }
 
 .faq-item:hover {
   background: #E8EEF5;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(10, 15, 29, 0.04);
+  transform: none;
+  box-shadow: 0 4px 16px rgba(10, 15, 29, 0.02);
 }
 
 .faq-item.active {
