@@ -5309,7 +5309,6 @@ input {
 
                 .docs-header-center {
                   text-align: center;
-                  max-width: 820px;
                   margin: 0 auto 50px;
                 }
 
@@ -5326,9 +5325,12 @@ input {
                   font-size: 1.12rem;
                   color: var(--color-body);
                   line-height: 1.65;
+                  max-width: 820px;
+                  margin-left: auto;
+                  margin-right: auto;
                 }
 
-                /* Сетка 2x2 точно по референсу */
+                /* Сетка 2x2: продуманный ритм цветов (Белый, Салатовый, Белый, Серый) */
                 .docs-ref-bento-grid {
                   display: grid;
                   grid-template-columns: 1fr 1fr;
@@ -5338,11 +5340,8 @@ input {
                 }
 
                 .ref-bento-card {
-                  background: rgb(243, 243, 243);
                   border-radius: 32px;
                   overflow: hidden;
-                  box-shadow: 0 16px 40px rgba(10, 15, 29, 0.04);
-                  transition: transform 0.25s ease, box-shadow 0.25s ease;
                   position: relative;
                 }
 
@@ -5350,35 +5349,35 @@ input {
                   transform: none;
                 }
 
-                /* 1. Карточка с иконкой открытой книги на мягком теплом фоне */
-                /* 1. Карточка с пошаговым мини-гайдом «Сфера» */
+                /* 1. Карточка 1 (Слева сверху): Чистый белый фон с интерактивным мокапом гайда */
                 .card-book-visual {
-                  background: rgb(243, 243, 243);
+                  background: #FFFFFF;
                   padding: 32px;
                   display: flex;
                   align-items: center;
                   justify-content: center;
-                  min-height: 380px;
+                  min-height: 400px;
                   position: relative;
+                  box-shadow: 0 16px 44px -8px rgba(10, 15, 29, 0.06), 0 4px 16px rgba(10, 15, 29, 0.02);
                 }
 
                 .docs-guide-mockup {
                   width: 100%;
-                  background: #FFFFFF;
+                  background: rgb(243, 243, 243);
                   border-radius: 20px;
-                  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
+                  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
                   overflow: hidden;
                   display: flex;
                   flex-direction: column;
                 }
 
                 .docs-mockup-header {
-                  background: rgb(243, 243, 243);
+                  background: #FFFFFF;
                   padding: 12px 18px;
                   display: flex;
                   align-items: center;
                   gap: 12px;
-                  border-bottom: 1px solid #E2E8F0;
+                  border-bottom: 1px solid rgba(10, 15, 29, 0.06);
                 }
 
                 .docs-mock-traffic-dots {
@@ -5390,7 +5389,6 @@ input {
                   width: 8px;
                   height: 8px;
                   border-radius: 50%;
-                  background: #CBD5E1;
                 }
 
                 .docs-mock-traffic-dots span:nth-child(1) {
@@ -5406,23 +5404,20 @@ input {
                 }
 
                 .docs-mock-title {
-                  font-size: 0.82rem;
+                  font-size: 0.84rem;
                   font-weight: 500;
-                  color: var(--color-dark);
+                  color: #0A0F1D;
                   flex-grow: 1;
                 }
 
-                .docs-mock-badge {
-                  font-size: 0.72rem;
-                  color: var(--color-muted);
-                  background: #FFFFFF;
-                  padding: 2px 8px;
-                  border-radius: 6px;
-                  white-space: nowrap;
+                .docs-mock-time {
+                  font-size: 0.76rem;
+                  color: #64748B;
+                  font-weight: 500;
                 }
 
                 .docs-mockup-body {
-                  padding: 18px;
+                  padding: 16px;
                   display: flex;
                   flex-direction: column;
                   gap: 10px;
@@ -5433,13 +5428,10 @@ input {
                   align-items: center;
                   gap: 12px;
                   padding: 10px 14px;
-                  background: #F8FAFC;
+                  background: #FFFFFF;
                   border-radius: 12px;
+                  box-shadow: 0 2px 6px rgba(10, 15, 29, 0.03);
                   transition: all 0.2s ease;
-                }
-
-                .docs-step-row.active {
-                  background: #F0FDF4;
                 }
 
                 .docs-step-idx {
@@ -5447,9 +5439,9 @@ input {
                   height: 24px;
                   border-radius: 50%;
                   background: #E2E8F0;
-                  color: var(--color-dark);
+                  color: #0A0F1D;
                   font-size: 0.78rem;
-                  font-weight: 600;
+                  font-weight: 500;
                   display: flex;
                   align-items: center;
                   justify-content: center;
@@ -5458,7 +5450,7 @@ input {
 
                 .docs-step-row.active .docs-step-idx {
                   background: #cef3ae;
-                  color: #1a4218;
+                  color: #0A0F1D;
                 }
 
                 .docs-step-info {
@@ -5471,38 +5463,41 @@ input {
                 .docs-step-name {
                   font-size: 0.88rem;
                   font-weight: 500;
-                  color: var(--color-dark);
+                  color: #0A0F1D;
                 }
 
                 .docs-step-hint {
                   font-size: 0.75rem;
-                  color: var(--color-muted);
+                  color: #64748B;
                 }
 
                 .docs-step-check {
-                  font-size: 0.88rem;
-                  font-weight: 700;
+                  display: inline-flex;
+                  align-items: center;
+                  justify-content: center;
                   color: #10B981;
+                  flex-shrink: 0;
                 }
 
                 .docs-step-pill {
                   font-size: 0.72rem;
                   font-weight: 500;
-                  color: #2563EB;
-                  background: #EFF6FF;
+                  color: #00A3FF;
+                  background: #EBF7FF;
                   padding: 3px 8px;
                   border-radius: 6px;
                   white-space: nowrap;
                 }
 
-                /* 2. Карточка «Понятно с первого клика» со шагом 01 и точками */
+                /* 2. Карточка 2 (Справа сверху): Мягкий салатовый фон rgb(244 252 235) */
                 .card-instruction {
-                  background: rgb(243, 243, 243);
+                  background: rgb(244 252 235);
                   padding: 40px 44px;
                   display: flex;
                   flex-direction: column;
                   justify-content: space-between;
-                  min-height: 380px;
+                  min-height: 400px;
+                  box-shadow: 0 16px 44px -8px rgba(10, 15, 29, 0.06), 0 4px 16px rgba(10, 15, 29, 0.02);
                 }
 
                 .ref-card-top-row {
@@ -5522,14 +5517,15 @@ input {
                   width: 44px;
                   height: 44px;
                   border-radius: 50%;
-                  background: #cef3ae;
-                  color: #1a4218;
+                  background: #FFFFFF;
+                  color: #0A0F1D;
                   font-family: var(--font-heading);
                   font-size: 1.1rem;
-                  font-weight: 600;
+                  font-weight: 500;
                   display: flex;
                   align-items: center;
                   justify-content: center;
+                  box-shadow: 0 4px 12px rgba(10, 15, 29, 0.06);
                 }
 
                 .ref-step-dots {
@@ -5541,49 +5537,55 @@ input {
                   width: 8px;
                   height: 8px;
                   border-radius: 50%;
-                  background: #E2E8F0;
+                  background: rgba(10, 15, 29, 0.15);
                 }
 
                 .ref-dot.active {
-                  background: #10B981;
+                  background: #0A0F1D;
                 }
 
                 .ref-brand-mark {
                   font-family: var(--font-heading);
                   font-size: 1.35rem;
                   font-weight: 500;
-                  color: #00A3FF;
+                  color: #0A0F1D;
                   letter-spacing: -0.03em;
                 }
 
                 .ref-instruction-body {
                   margin-top: auto;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 14px;
                 }
 
                 .ref-card-heading {
                   font-family: var(--font-heading);
                   font-size: 2.1rem;
                   font-weight: 500 !important;
-                  color: var(--color-dark);
-                  margin-bottom: 14px;
+                  color: #0A0F1D;
+                  margin: 0;
                   letter-spacing: -0.02em;
+                  line-height: 1.25;
                 }
 
                 .ref-card-subtext {
                   font-size: 1.05rem;
-                  color: var(--color-body);
+                  color: #1E293B;
                   line-height: 1.55;
-                  max-width: 380px;
+                  max-width: 400px;
+                  margin: 0;
                 }
 
-                /* 3. Карточка «100% Доступно каждому» + Кнопка Открыть базу знаний */
+                /* 3. Карточка 3 (Слева снизу): Чистый белый фон с метрикой 100% и кнопкой */
                 .card-accessible {
-                  background: rgb(243, 243, 243);
+                  background: #FFFFFF;
                   padding: 44px 40px 36px;
                   display: flex;
                   flex-direction: column;
                   justify-content: space-between;
-                  min-height: 380px;
+                  min-height: 400px;
+                  box-shadow: 0 16px 44px -8px rgba(10, 15, 29, 0.06), 0 4px 16px rgba(10, 15, 29, 0.02);
                 }
 
                 .ref-accessible-meta {
@@ -5602,24 +5604,23 @@ input {
                 }
 
                 .ref-accessible-title {
-                  font-size: 1.25rem;
+                  font-size: 1.35rem;
                   font-weight: 500;
-                  color: var(--color-dark);
+                  color: #0A0F1D;
                   margin-bottom: 6px;
                 }
 
                 .ref-accessible-sub {
                   font-size: 1rem;
-                  color: var(--color-body);
+                  color: #64748B;
                   line-height: 1.5;
-                  max-width: 360px;
+                  max-width: 380px;
                 }
 
                 .ref-read-action-bar {
-                  background: #FFFFFF;
-                  border-radius: 18px;
-                  padding: 10px 16px;
-                  box-shadow: 0 2px 8px rgba(10, 15, 29, 0.04);
+                  background: rgb(243, 243, 243);
+                  border-radius: 20px;
+                  padding: 12px 18px;
                   display: flex;
                   justify-content: space-between;
                   align-items: center;
@@ -5631,13 +5632,18 @@ input {
                   display: flex;
                   align-items: center;
                   gap: 8px;
-                  font-size: 0.86rem;
-                  color: var(--color-muted);
+                  font-size: 0.88rem;
+                  color: #64748B;
+                }
+
+                .ref-read-stats svg {
+                  color: #00A3FF;
+                  flex-shrink: 0;
                 }
 
                 .ref-read-stats strong {
-                  color: var(--color-dark);
-                  font-weight: 600;
+                  color: #0A0F1D;
+                  font-weight: 500;
                 }
 
                 .ref-read-dot-sep {
@@ -5645,68 +5651,65 @@ input {
                 }
 
                 .ref-read-btn {
-                  background: #FFFFFF;
-                  color: var(--color-dark);
+                  background: #00A3FF;
+                  color: #FFFFFF;
                   font-family: var(--font-heading);
                   font-size: 0.92rem;
                   font-weight: 500;
                   border: none;
-                  border-radius: 12px;
-                  padding: 10px 18px;
+                  border-radius: var(--radius-pill);
+                  padding: 10px 20px;
                   display: inline-flex;
                   align-items: center;
                   gap: 8px;
                   cursor: pointer;
-                  box-shadow: 0 2px 8px rgba(10, 15, 29, 0.05);
-                  transition: transform 0.15s ease, box-shadow 0.15s ease;
+                  text-decoration: none;
+                  box-shadow: 0 4px 14px rgba(0, 163, 255, 0.25);
+                  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
                 }
 
                 .ref-read-btn:hover {
+                  background: #008be0;
                   transform: translateY(-1px);
-                  box-shadow: 0 4px 12px rgba(10, 15, 29, 0.1);
+                  box-shadow: 0 6px 18px rgba(0, 163, 255, 0.35);
                 }
 
-                /* 4. Карточка с радарной диаграммой действий «Полная автономность» */
+                .ref-read-btn svg {
+                  transition: transform 0.2s ease;
+                }
+
+                .ref-read-btn:hover svg {
+                  transform: translateX(2px);
+                }
+
+                /* 4. Карточка 4 (Справа снизу): Серый технологичный экран орбит и селлеров */
                 .card-orbit-support {
                   background: rgb(243, 243, 243);
                   padding: 36px 40px;
                   display: flex;
                   flex-direction: column;
                   justify-content: space-between;
-                  min-height: 380px;
+                  min-height: 400px;
                   position: relative;
                   overflow: hidden;
+                  box-shadow: 0 16px 40px -8px rgba(10, 15, 29, 0.04);
                 }
 
-                .ref-orbit-brand {
-                  font-family: var(--font-heading);
-                  font-size: 1.35rem;
+                .ref-orbit-subtext {
+                  font-size: 0.88rem;
                   font-weight: 500;
-                  color: #00A3FF;
+                  color: #64748B;
                   position: relative;
                   z-index: 5;
                 }
 
-                .ref-orbit-badge {
-                  font-size: 0.78rem;
-                  font-weight: 500;
-                  color: #1E40AF;
-                  background: rgba(255, 255, 255, 0.8);
-                  backdrop-filter: blur(8px);
-                  padding: 4px 10px;
-                  border-radius: var(--radius-pill);
-                  position: relative;
-                  z-index: 5;
-                }
-
-                /* Интерактивный кластер селлеров и орбит */
                 .ref-orbit-center-stage {
                   position: relative;
                   flex-grow: 1;
                   display: flex;
                   align-items: center;
                   justify-content: center;
-                  margin: 20px 0;
+                  margin: 16px 0;
                   min-height: 220px;
                 }
 
@@ -5751,14 +5754,13 @@ input {
                 }
 
                 .ref-seller-card {
-                  background: rgba(255, 255, 255, 0.95);
-                  backdrop-filter: blur(10px);
+                  background: #FFFFFF;
                   border-radius: 16px;
                   padding: 8px 14px;
                   display: flex;
                   align-items: center;
                   gap: 12px;
-                  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+                  box-shadow: 0 8px 24px rgba(10, 15, 29, 0.06);
                   transition: transform 0.25s ease, box-shadow 0.25s ease;
                 }
 
@@ -5776,18 +5778,13 @@ input {
                   align-self: center;
                 }
 
-                .ref-seller-card:hover {
-                  transform: translateY(-2px);
-                  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
-                }
-
                 .ref-seller-pic {
                   width: 44px;
                   height: 44px;
                   border-radius: 50%;
                   object-fit: cover;
                   border: 2px solid #FFFFFF;
-                  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
                   flex-shrink: 0;
                 }
 
@@ -5799,34 +5796,27 @@ input {
                 .ref-seller-name {
                   font-family: var(--font-heading);
                   font-size: 0.92rem;
-                  font-weight: 600;
-                  color: var(--color-dark);
+                  font-weight: 500;
+                  color: #0A0F1D;
                   line-height: 1.2;
                 }
 
                 .ref-seller-role {
-                  font-size: 0.74rem;
-                  color: var(--color-muted);
+                  font-size: 0.76rem;
+                  color: #64748B;
                   line-height: 1.3;
                 }
 
-                /* Иконки действий на орбитах */
                 .ref-action-chip {
                   position: absolute;
                   background: #FFFFFF;
                   border-radius: var(--radius-pill);
-                  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.1);
+                  box-shadow: 0 6px 18px rgba(10, 15, 29, 0.08);
                   display: flex;
                   align-items: center;
                   gap: 6px;
                   padding: 6px 12px;
                   z-index: 5;
-                }
-
-                .ref-action-icon {
-                  display: inline-flex;
-                  align-items: center;
-                  color: #10B981;
                 }
 
                 .chip-click {
@@ -5839,10 +5829,16 @@ input {
                   left: 15px;
                 }
 
+                .ref-action-icon {
+                  display: inline-flex;
+                  align-items: center;
+                  color: #00A3FF;
+                }
+
                 .ref-action-label {
-                  font-size: 0.76rem;
+                  font-size: 0.78rem;
                   font-weight: 500;
-                  color: var(--color-dark);
+                  color: #0A0F1D;
                 }
 
                 .ref-orbit-footer-row {
@@ -5853,8 +5849,8 @@ input {
                   justify-content: space-between;
                   gap: 16px;
                   margin-top: auto;
-                  padding-top: 12px;
-                  border-top: 1px solid rgba(0, 163, 255, 0.15);
+                  padding-top: 14px;
+                  border-top: 1px solid rgba(10, 15, 29, 0.06);
                 }
 
                 .ref-orbit-sellers-counter {
@@ -5865,15 +5861,15 @@ input {
 
                 .ref-counter-num {
                   font-family: var(--font-heading);
-                  font-size: 1.4rem;
-                  font-weight: 600;
+                  font-size: 1.5rem;
+                  font-weight: 500;
                   color: #00A3FF;
                   line-height: 1;
                 }
 
                 .ref-counter-label {
                   font-size: 0.75rem;
-                  color: var(--color-body);
+                  color: #64748B;
                   max-width: 170px;
                   line-height: 1.3;
                 }
@@ -5881,10 +5877,10 @@ input {
                 .ref-orbit-footer-text {
                   text-align: right;
                   font-family: var(--font-heading);
-                  font-size: 0.95rem;
+                  font-size: 0.92rem;
                   font-weight: 500;
                   line-height: 1.35;
-                  color: var(--color-dark);
+                  color: #0A0F1D;
                 }
 
                 /* ==========================================================================
@@ -5905,12 +5901,10 @@ input {
                   border-radius: var(--radius-xl);
                   overflow: hidden;
                   box-shadow: 0 16px 40px rgba(10, 15, 29, 0.04);
-                  transition: transform 0.25s ease, box-shadow 0.25s ease;
                 }
 
                 .cta-card:hover {
-                  transform: translateY(-3px);
-                  box-shadow: 0 24px 50px rgba(10, 15, 29, 0.07);
+                  transform: none;
                 }
 
                 /* 1. Отдельная текстовая бенто-карточка (слева сверху: 8 колонок из 12) */
@@ -6740,9 +6734,9 @@ input {
                     object-fit: contain;
                   }
 
-                  .docs-bento-hero-grid {
+                  .docs-ref-bento-grid {
                     grid-template-columns: 1fr;
-                    gap: 36px;
+                    gap: 20px;
                   }
 
                   .docs-info-col {
@@ -6756,6 +6750,14 @@ input {
                 }
 
                 @media (max-width: 540px) {
+                  .card-book-visual,
+                  .card-instruction,
+                  .card-accessible,
+                  .card-orbit-support {
+                    padding: 26px 20px;
+                    min-height: auto;
+                  }
+
                   .clean-metrics-grid {
                     grid-template-columns: 1fr;
                     gap: 16px;
